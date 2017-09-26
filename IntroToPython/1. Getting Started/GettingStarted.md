@@ -57,9 +57,15 @@ The difference between compiled and interpreted isn't always clear-cut, and one 
 
 Python's interpreted nature is the reason why we installed the __Python interpreter__. This piece of software will take the Python code we'll throw at it and execute it line by line, giving us results or notifying us of mistakes we've made. 
 
-### The python Interpreter
+### The Python interpreter
 
 ### What is Python used for?
+
+Python is present in a lot of places. It's in high-demand in __data science__, where tools like [numpy]() and [scipy]() have become household names. It's also widely used in __machine learning__, with tools like [scikitlearn]() and Google's [TensorFlow]().
+
+It's also embedded in the web as we know it. Websites like [Reddit](https://www.reddit.com) and [Youtube](https://www.youtube.com) use Python as a core technology to generate and manage online content. Frameworks like [Flask]() and {Django]() are also extremely popular in web app development.
+
+Because of its ease-of-use, Python is also a language of choice to build __bots__ that can interact with services like Reddit, Twitter and Facebook to chat with users and provider automated services. Similarly, as an interpreted language, Python is handy to write utility code to accomplish repetitive tasks like data processing.
 
 ## 3. What tools can I use to write code?
 
