@@ -66,6 +66,7 @@ These three tags, `<html>`, `<head>` and `<body>`, define where the page begins,
 
 While these tags _help_ the browser to make sense of your code, if they are absent of malformed, your page will still be displayed. Modern browsers are extremely resilient in front of mishappen pages, but older ones might not be. Moreover, different browsers might have different heuristics when it comes to repairing broken pages. For this reason, it's extremely important to ensure that your pages are structurally sound.
 
+<a id="content-tags"></a>
 ## 3. Content tags
 
 Now that we have a basic page structure, we only need a way to organize our content. Here are a collection of a few content-related tags that you can include in the `<body>` tag to display text and images:
