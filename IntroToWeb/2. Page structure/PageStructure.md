@@ -4,12 +4,15 @@
 
 #### Table of contents
 
-1. HTML & tags
-2. Basic page structure
-3. Content tags
-4. Semantics & Accessibility
+1. [HTML and tags](#HTML-and-tags)
+2. [Basic page structure](#basic-page-structure)
+3. [Content tags](#content-tags)
+4. [Semantics and Accessibility](#semantics-and-accessibility)
+5. [The `<head>` tag](#head-tag)
+6. [Review, Summary and Exercises](#review-and-summary)
 
-## 1. HTML & tags
+<a id="HTML-and-tags"></a>
+## 1. HTML and tags
 
 Hypertext Markup Language (or __HTML__) is the first language we need to get acquainted with to build web pages. While the web involves a fair amount of programming, HTML isn't considered to be a proper programming language. Programming languages are __dynamic__, while HTML is __static__: it defines the structure of web pages the same way wooden frames define the walls and general layout of a house.
 
@@ -40,7 +43,7 @@ Similarly, comments allow you to add notes that, just like indentation, won't af
 	</tag><!-- Closing the second tag -->
 </tag><!-- Closing the first tag -->
 ```
-
+<a id="basic-page-structure"></a>
 ## 2. Basic page structure
 
 Page markup can get quite wordy. If you take a look at Google's home page, which looks simple on the surface, you are faced with this:
@@ -212,7 +215,73 @@ The ordered list is no different, by swapping the `<ul></ul>` for `<ol></ol>`, w
 
 Lists can have as many items as you need them to, but beware: __`<ul></ul>` and `<ol></ol>` tags should only contain list items!__ We'll see later that lists are especially useful as they are the conventional way to make __navigation menus__.
 
-## 3. Semantics & Accessibility
+### Linking with the `<a>` tag
+
+Beyond structure, HTML tags can also allow you to __link__ two pages together. This provides your visitors a direct access to other content, whether it is on your site or on another. It's infinitely useful to provide sources for your content (in the case of text-based pages), but also to allow easy navigation between the pages of your site.
+
+To link pages together, we use the __anchor tag__, written out as `<a>`. Much like the `<img/>` tag, the anchor tag requires an attribute to determine to which resource it points: the `href` attribute. This attribute, much like `src`, allows you to use a __relative path__ or a __URL__ to specify where the user should be taken to if they click on it.
+
+For example, we could write:
+
+```html
+<p>In this paragraph, we link to <a href="http://www.google.com">Google</a>.</p>
+```
+
+Which renders as:
+
+<p>In this paragraph, we link to <a href="http://www.google.com">Google</a>.</p>
+
+Note that the `<a>` tag isn't self-closing; anything between its opening and closing parts will be clickable and will lead to the resource pointed at by `href`. This includes images and organizational tags; anything that is in the `<body>` tag and that occupies space on the page.
+
+As such, you could surround an image tag with an anchor tag to make it clickable:
+
+```html
+<a href="http://www.google.com">
+	<img src="https://www.google.ca/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"/>
+</a>
+```
+
+Which renders as:
+
+<a href="http://www.google.com">
+	<img src="https://www.google.ca/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"/>
+</a>
+
+#### Using anchors as bookmarks
+
+Anchor tags can also be used as bookmarks. By adding the `id` property to an element of your page and using `#id_value` as the target for your links, users will be taken to the section of the page where the element lives when the link is clicked.
+
+For instance, a table of contents might look like this:
+
+```html
+<ol>
+	<li><a href="#chapter1">Chapter 1</a></li>
+	<li><a href="#chapter2">Chapter 2</a></li>
+	<li><a href="#chapter3">Chapter 3</a></li>
+	<li><a href="#chapter4">Chapter 4</a></li>
+</ol>
+
+<!-- More page content -->
+
+<p id="chapter1"></p>
+
+<!-- More page content -->
+
+<p id="chapter2"></p>
+
+<!-- More page content -->
+<p id="chapter3"></p>
+
+<!-- More page content -->
+<p id="chapter4"></p>
+
+<!-- More page content -->
+```
+
+In this case, clicking on the links contained in the table of contents would make the page scroll to the position each of the chapters. This allows you to provide easy access to your content, especially if your pages are lengthy.
+
+<a id="semantics-and-accessibility"></a>
+## 4. Semantics and Accessibility
 
 The myriad of available HTML tags not only allow you to produce visually stunning websites, but can also help with __accessibility__. When HTML was designed, the only devices capable of accessing the web were conventional computers. With time, new actors have entered the stage, including screenreaders and others that help impaired users to navigate the Internet.
 
@@ -280,3 +349,42 @@ Using these in conjunction with the content tags mentioned earlier could give a 
 
 There also exist __non-semantic__ organizational tags such as `<div>`; while the `<div>` serves the same organizational purpose (i.e. allows you to group your code into blocks for easier reading), it does not carry any meaning and will not contribute to the semantic readability of your page.
 
+<a id="head-tag"></a>
+## 5. The `<head>` tag
+
+Earlier, we mentioned that the `<head>` tag contained data that is meant for your browser but not for the visitor's eyes. In the next few sections, we'll make extensive use of it as this is where stylistic data, Javascript files and other metadata elements will live.
+
+Of all the tags that can live in the `<head>`, one is already accessible to us: `<title></title>`. The title tag will allow you to set the phrase that appears in top bar of your browser (as the tab name, if you browser is tabbed).
+
+For example, in our simple page structure, adding an instance of the `<title></title>` tag would have us write:
+
+```html
+<html>
+	<head>
+		<title>My page</title>
+	</head>
+
+	<body>
+	</body>
+</html>
+```
+
+Note that for semantic and "browser-friendliness" reasons, you should not put things in the `<head>` tag lest they need to be there. In the next section, we will start populating the `<head>` tag.
+
+<a id="review-and-summary"></a>
+## 6. Review, summary and exercises
+
+Now that we have some knowledge of how pages are structured and of what HTML tags we can used to build a structural layout for our site, we are equipped to build simple web pages. Of course, the few tags that we mentioned are only the top of the iceberg, as the full list of supported tags goes well beyond that. You can read more about it [here](https://www.w3schools.com/TAGs/).
+
+In short, we now know that...
+
+- HTML helps you __structure__ pages by giving you __tags__ that represent page elements;
+- The browser will try to repair misshappen pages, but might not do a very good job. To prevent issues, make sure that tags that need closing are properly closed and positioned correctly;
+- Text tags such as the heading `<hx></hx>` tags and the text formatting paragraph and emphasis tags provide basic guidance to organize text on your page the same way you would in a printed document;
+- The `<img/>` tag, our first __self-closing__ tag, allows you to add images to your page;
+- The image tag's content is determined by its `src` attribute, which can have a value that is a __URL__ to an image or a __relative path__ to a file if it's hosted locally;
+- __Organizational__ tags such as `<header>`, `<main>` and `<article>` do not produce anything visual on the page but allow you to __semantically organize__ your content. This gives __meaning__ to pages and helps assistive technology devices and automated crawlers to navigate your page and understand what message it carries better;
+- The non-semantic `<div>` can also be used to gather code into blocks;
+- The `<title>` tag can be used inside `<head>` to set the page's title as displayed in your browser's tabs.
+
+[Click here to view exercises relevant to this section](https://github.com/mcataford/Learning/blob/master/IntroToWeb/2.%20Page%20structure/Practice.md)
