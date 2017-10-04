@@ -1,6 +1,7 @@
 # Introduction to Web development
 
 ## Basic page structure - Practice sheet
+_To access the notes associated with these prompts, [click here](https://github.com/mcataford/Learning/blob/master/IntroToWeb/2.%20Page%20structure/PageStructure.md)_
 
 With a grasp of structural elements that you can use to build the backbone of web pages, you can already start experimenting. In the next few sections, we'll be adding style and interactivity to our pages to make them more appealing, but for now, consolidate what you know of HTML tags by trying the following:
 
@@ -50,3 +51,20 @@ When we discussed tables, we said that they are composed of three tags: `<table>
 We defined lists has being split in two types: __ordered__ and __unordered__. Remember that the `<ul>` tag will produce an __unordered__ list while the `<ol>` will produce an ordered one. In both cases, `<li>` should be the only tag in your list block and defines list items.
 
 For the purposes of this experimentation, build a list containing a handful of items (at least 5). The list can be unordered or ordered, as this only changes the list item marker used.
+
+- What happens if you insert non-list tags inside of `<ul>` or `<ol>` enclosures? Does it affect how the page renders?
+- Can you __nest__ lists? Try putting a list inside of another list. Does it change anything visually?
+- Can you put any other content tag inside a `<li>` list element tag?
+
+### `<a>` tags and links
+
+Links are the backbone of the internet. They will allow your sites to link to other resources or to spread over multiple pages, preventing the creation of monolithic, kilometer-long pages. We mentionned that the `<a>` tag has one essential attribute, `href`, which defines what resource is accessed when the user clicks the anchored text.
+
+- We now know that anything between the opening and closing tag of an `<a>` tag will be clickable. Try combining the anchor tag with the text formatting tags we mentioned before. Can you do the same with images?
+- What happens if an anchor tag is malformed? Try intentionally ommiting the `href` attribute, or improperly closing it. Does the link still work then? What about if you forget to close the tag?
+- Using the [random text generator](http://lipsum.com/) linked earlier, organize a page in which you have multiple headings, emulating heavy text with chapters and sections. Can you use anchor tags in "bookmark mode" and a list to create a table of content? If you are unsure of what that would look like, try using the __code inspector__ on the table of contents of the notes for this topic.
+
+### Semantics and accessibility
+
+- Can you explain why __semantics__ are an important feature of the web?
+- What kind of tags can we use to give meaning to our code? Do they produce anything visual by themselves?
