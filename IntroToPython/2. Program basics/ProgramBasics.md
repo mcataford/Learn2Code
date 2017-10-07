@@ -327,7 +327,8 @@ Note that we use the `return` statement in each of these functions: it allows th
 
 - (Short answer) Can you explain how the `return` statement makes nesting functions possible?
 
-## 4. Review & Summary
+<a id="review-and-summary"></a>
+## 4. Review, Summary & Exercises
 
 With the basics of __variables__ and __functions__ in hand, we've now got the tools to build simple programs. Of course, we'll need a few more blocks to be able to put together truly useful software. Here is a quick outline of what we've seen in this section:
 
@@ -343,3 +344,5 @@ def my_function(parameter):
 ```
 
 - The `return` keyword allows you to capture the output of your functions so that you can use the results of one operation for further purpose.
+
+__For exercises on this topic, see the [practice sheet]().__
