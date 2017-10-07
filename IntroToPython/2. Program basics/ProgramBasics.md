@@ -4,13 +4,24 @@
 
 #### Table of contents
 
-1. Executing code
-2. Variables
-3. Functions
-4. Review & Summary
+1. [Executing code](#executing-code)
+- [Using the Python interpreter console](#interpreter-console)
+- [Executing whole scripts at once](#batch-execution)
+2. [Variables](#variables)
+- [Soft typing](#soft-typing)
+- [Variable naming](#variable-naming)
+- [Reusing variables](#variable-reuse)
+- [Data types](#data-types)
+- [Operations on strings](#operations-strings)
+3. [Functions](#functions)
+- [The `return` statement](#return-statement)
+- [Nesting functions](#nesting-functions)
+4. [Review, summary & exercises](#review-and-summary)
 
+<a id="executing-code"></a>
 ## 1. Executing code
 
+<a id="interpreter-console"></a>
 ### Using the Python interpreter console
 
 When we introduced the __Python interpreter__, we mentioned that it had the power to read our programs line by line, executing them as it goes. Of course, this is usually done on a completed program contained in one or several files; however, the interpreter also allows us to _interactively_ run commands.
@@ -75,6 +86,7 @@ The AND, OR, XOR and NOT operators are simpler:
 
 These operators can be handy if you are doing discrete mathematics (using integers only), if you are implementing operations that can _afford_ to do expensive operations all the time (more on this later) and if you are looking at patterns in numbers.
 
+<a id="batch-execution"></a>
 ### Executing whole scripts at once
 
 While we can use the console to execute single commands, it's not that handy for longer sequences -- especially since you'd have to re-enter all the statements one at a time if you wanted to execute your code a second time!
@@ -122,18 +134,21 @@ Open up the interpreter console and try to find the following:
 
 Can you do the same, but by executing a whole file at once? Try solving each all of the above problems in a single file so that you can print the results together.
 
+<a id="variables"></a>
 ## 2. Variables
 
 As you saw when playing with the interpreter, while you can use your computer to do math right now, the results are ephemeral and do not persist between entries. Of course, you can chain operations to compute complex results (such as in the temperature conversion exercise above), but it has limits that easily reached.
 
 To solve the problem of having results persist between entries, we can use __variables__. Variables in programming are just like variables in algebra: they are vessels that can hold data. While mathematical variables can only contain numbers or sets of numbers, programming variables act as __symbolic replacement__ for any piece of data, however big it may be. As we delve deeper into Python, we'll see how big the contents of variables can get.
 
+<a id="soft-typing"></a>
 ### Soft typing
 
 Python is a __soft typed__ language: its variables don't have an assigned type, and the type of a single variable can change during its lifetime. This is in stark contrast with Java, where you are required to declare a variable's type when creating it and then stick to that type until the variable is no longer needed.
 
 Not having to choose a type for our variables allows us to create new ones using two pieces of information: a (unique) name and a piece of data that will act as initial value. We can then __declare and initialize__ a variable by typing `variable_name = value`.
 
+<a id="variable-naming"></a>
 ### Variable names
 
 Variables can have any name that is alphanumerical and that doesn't start with a number. Moreover, you can use underscores as needed.
@@ -148,10 +163,12 @@ In this course, we'll use the following convention:
 
 No matter the convention used, common sense applies: __names should be descriptive__. Naming variables `x` or `i` might make sense if you are writing fast and are not planning on rereading your code ever, but for any code that will need maintenance in the future, you can save time by giving proper descriptive names to your variables. This will not only make rereading your code easier in the long run, it will also help collaborators who would like to help you out by fixing bugs or extending your code, but who would rather avoid spending hours figuring out which of `x1, x2, x3, x4, x5 ...` contains the data they are looking for.
 
+<a id="variable-reuse"></a>
 ### Reusing variables
 
 Since Python variables do not have a fixed type, you can __reuse__ a variable at will. If the data stored in the variable is different than the previous content, the variable will be transformed.
 
+<a id="data-types"></a>
 ### Data types
 
 Since you do not define the type of your variables, you will need to convey that information through the __format__ of the data so that the interpreter can guess. Here is the format of the first handful of data types we will be working with:
@@ -165,6 +182,7 @@ Since you do not define the type of your variables, you will need to convey that
 
 We'll add to this list as we get deeper into programming, but for now, know that any plain number, such as `27` or `180.1` will be interpreted as a numerical value, any collection of characters surrounded by single or double quotation marks will be considered a string, and any of the two values `True` or `False` (notice the uppercase first letter) will be considered a boolean.
 
+<a id="operations-strings"></a>
 ### Operations on strings
 
 Now that we know about different types of data that can be stored in variables, it's time to revisit what we said about __operators__. If you experimented with operations that involved numerical values and strings (or even boolean) values, you probably noticed that errors arise if types are mismatched when an operator is applied.
@@ -203,6 +221,7 @@ Now that we can create variables, let's try to combine them with what we know of
 - (Programming) Create a few variables containing different kinds of data and try using operators on them.
 - (Short answer) What happens if you add __integer__ and __float__ variables together?
 
+<a id="functions"></a>
 ## 3. Functions
 
 Earlier, we said that being able to write __scripts__ helped us make our code easy to execute more than once. What if we wanted to reuse _smaller_ parts of what we've written?
@@ -253,6 +272,7 @@ Keep in mind that a function definition is just that: a definition. It isn't exe
 - (Programming) Write a function that accepts __five input parameters__ representing assignment grades on a 100; your function should compute the final grade of a student that obtained the given grades if the first two are worth 15% of the grade, the third, 20% and the last two, 25%. You should print the resulting grade. __Test this with multiple sets of grades!__
 - (Programming) We've done Celsius to Fahrenheit conversion earlier, write a function that implements the opposite!
 
+<a id="return-statement"></a>
 ### The return statement
 
 In our previous example, we used `print` to display the output of our function to the screen. This is handy if you want to see what the result is, but you can't __reuse__ the product of the function.
@@ -277,6 +297,7 @@ In the snippet above, we call `celsius_to_fahrenheit`, which executes the functi
 - 
 - (Programming) Revisit the function you have written in the previous _Review_ segment and adjust them so that they __return__ values instead of printing them. You should be able to save their return value in a variable, and then use `print()` on this variable to display it to the screen.
 
+<a id="nesting-functions"></a>
 ### Nesting functions
 
 Functions can also be __nested__; you can use functions within functions. Let us define some simple functions:
