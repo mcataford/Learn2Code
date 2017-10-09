@@ -1,4 +1,4 @@
-# Introduction to Java
+# Introduction to Java programming
 
 ## Classes, Methods and Variables
 
