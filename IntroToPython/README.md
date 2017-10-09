@@ -4,5 +4,5 @@ This course is meant as an __introduction__ to programming using Python. It is a
 
 ## Table of content
 
-1. [Getting Started](https://github.com/mcataford/Learning/blob/master/IntroToPython/1.%20Getting%20started/)
+1. [Getting Started](https://github.com/mcataford/Learning/blob/master/IntroToPython/1.%20Getting%20Started/)
 2. [Python basics](https://github.com/mcataford/Learning/blob/master/IntroToPython/2.%20Python%20basics/)
