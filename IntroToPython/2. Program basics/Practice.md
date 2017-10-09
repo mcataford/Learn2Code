@@ -2,6 +2,8 @@
 
 # Python basics - Practice problems
 
+Read the material associated with these problems [here](https://github.com/mcataford/Learning/blob/master/IntroToPython/2.%20Program%20basics/ProgramBasics.md).
+
 ## Executing code
 
 - __(True/False)__ The __interpreter's console__ is a great way to test short snippets of code.
