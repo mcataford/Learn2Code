@@ -2,7 +2,7 @@
 
 # Python basics - Practice problems
 
-Read the material associated with these problems [here](https://github.com/mcataford/Learning/blob/master/IntroToPython/2.%20Program%20basics/ProgramBasics.md).
+Read the material associated with these problems [here](https://github.com/mcataford/Learning/blob/master/IntroToPython/2.%20Python%20basics/ProgramBasics.md).
 
 ## Executing code
 

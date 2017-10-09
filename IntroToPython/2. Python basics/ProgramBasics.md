@@ -345,4 +345,4 @@ def my_function(parameter):
 
 - The `return` keyword allows you to capture the output of your functions so that you can use the results of one operation for further purpose.
 
-__For exercises on this topic, see the [practice sheet](https://github.com/mcataford/Learning/blob/master/IntroToPython/2.%20Program%20basics/Practice.md).__
+__For exercises on this topic, see the [practice sheet](https://github.com/mcataford/Learning/blob/master/IntroToPython/2.%20Pythonm%20basics/Practice.md).__
