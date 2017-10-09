@@ -4,5 +4,5 @@ This course is meant as an __introduction__ to programming using Java. It is a _
 
 ## Table of content
 
-1. [Getting Started]()
-2. [Classes, methods and variables]()
+1. [Getting Started (Available soon)](#)
+2. [Classes, methods and variables](https://github.com/mcataford/Learning/tree/master/IntroToJava/2.%20Classes%2C%20Methods%20and%20Variables)
