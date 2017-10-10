@@ -54,6 +54,10 @@ You can easily play with the `in` operator and the numerical comparison operator
 
 Note that all of these operators will return either `True` or `False`, which can then be used as a condition or stored in a variable for later use.
 
+#### Try it out
+
+Using the __interpreter's console__, try out the operators with different values to see what the output is. Is a String considered to be "within" itself? (eg. `"hello" in "hello"`)
+
 <a id="conditionalstructure"></a>
 ### Conditional statement structure
 
@@ -128,6 +132,13 @@ The `elif` statements can be placed after an `if` and are semantically equivalen
 
 Note that you can have as many `elif` statements as you want, but a chain such as the one above can only contain one `if` and one `else`. Moreover, only the `if` is truly mandatory; you could use `if`/`elif` without an `else`.
 
+#### Try it out
+
+_The structures presented in this subsection can be written out in the interpreter's console, but it's much easier if you write them out as scripts for batch execution._
+
+- Reusing the code we've written for the __Celsius to Fahrenheit__ converter, add a small `if` statement that verifies whether the value give to the function is valid or not (you'll have a bit of research to do to see what is valid Celsius value).
+- Write a small conditional structure that will print whether a number if even or not. In both cases, your structure should print a string that tells the user if the number if odd or even. _Hint: the `%` operator is a mathematical operation called __modulo__ and calculates the __remainder__ in the division of the two operands. For instance, 10 % 3 = 1 since 10 / 3 = 9 with a remainder of 1_
+
 <a id="chainedconditions"></a>
 ### Chained conditions
 
@@ -153,6 +164,13 @@ In this chained expression, either the first two must both be true, or the third
 if (value > 0 and value < 20) or value == 10:
 	print("The value is either between 0-20 exclusive or is equal to 10")
 ```
+
+### Try it out
+
+Using the __interpreter's console__, try the following:
+
+- Can you produce a __chained condition__ that will check if a certain value is positive and lesser than 100?
+- Can you write out an expression that will only return true if a string contains both the phrase "The sky is blue" and the word "clouds"?
 
 <a id="review1"></a>
 ### Review
