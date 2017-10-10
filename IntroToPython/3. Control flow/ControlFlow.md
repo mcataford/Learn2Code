@@ -194,4 +194,3 @@ else:
 - Only the `if` is mandatory for a conditional statement to be valid.
 - An arbitrary number of `elif` can be added after an `if` to evaluate extra conditions.
 - `else` will only be executed if none of the previous `if` and `elif` are executed.
-
