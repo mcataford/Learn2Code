@@ -1,6 +1,6 @@
 # Introduction to Web development
 
-## First contact with CSS
+## Introduction to CSS
 
 #### Table of contents
 
@@ -191,3 +191,30 @@ The `<link>` tag possesses two essential attributes: `href` and `rel`.
 
 `href` works exactly the same way it did with the `<a>` tag or with the `<img/>` tag's `src` attribute: it accepts a __relative path__ or __URL__.
 
+`rel` defines what is the __relationship__ between the tag's linked resource and the page. When linking to stylesheets, we'll give `rel` the value of `stylesheet`.
+
+```html
+<link href="path/to/stylesheet.css" rel="stylesheet"/>
+```
+
+The `<link>` tag should replace all `<style>` tags in your pages; this way, all style is easy to share and distribute. Moreover, separating style from structure allows you to edit style without touching the structure at all, therefore reducing the scope of what you work on.
+
+### Review
+
+- You can add __style__ to your tags by using __inline style__ (through the `style` attribute) or __style blocks__ (through the `<style>` tag).
+- Style is conveyed by using __CSS rules__ that have the format `property: value;`.
+- Each property has a set of valid values; invalid values are ignored by browsers.
+- If you use inline style, your rules are directly attached to the structural elements.
+- If you use `<style>` tags, you need to use __selectors__.
+- The selectors are used to form __style blocks__:
+```css
+selector {
+	property: value;
+}
+```
+- Selectors can be `id` or `class` attributes, or the tag name itself.
+- To use `id` values as selectors, prepend a hashtag in front of it (`#my_id`).
+- To use `class` values as selectors, prepend a period in front of it (`.my_class`).
+- To use tag names, simply use the tag name (`p` to select all `<p>` tags).
+- You can select elements that possess a certain parentage by listing elements one after the other (`p strong` would target all `<strong>` tags inside of `<p>` tags).
+- You can move the contents of any `<style>` tag into `.css` files and link them using `<link>` tag.
