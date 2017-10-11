@@ -9,7 +9,8 @@
 - [Rule structure](#rulestructure)
 - [Basic text styles](#textstyling)
 - [More cascading](#morecascading)
-- [Using the `<style>` tag](#styletag)
+- [Using the `<style>` tag and CSS selectors](#styletag)
+- [Isolating style from structure](#stylestructure)
 
 <a id="css"></a>
 ## 1. Cascaded Stylesheets
@@ -105,3 +106,88 @@ As we said earlier, the `<style>` tag should be included in our pages' `<head>` 
 Before we can do that, however, we need a way to target elements. When we included inline style in the tags, the style was directly on the element on which it applied. When we use the `<style>` tag, our rules will be _separated_ from the tags, requiring us to specify where those rules should go.
 
 To link structural and stylistic elements, we will use the `id` and `class` attributes. Those attributes will allow us to give unique or collective names to our tags so that our CSS markup can target them and apply our style directives at the right place.
+
+Within the `<style>` tags, CSS rules are organized a bit differently than in the `style` attribute; rules will be gathered into blocks assembled under a __selector__ that targets one or more structural elements.
+
+```css
+selector {
+	property: value;
+}
+```
+
+The `selector` can be an `id` or `class` (or more, as we'll see later), and the `property`/`value` couples are the same as they would be in the inline style.
+
+#### The `id` attribute
+
+The `id` attribute allows you to give a unique identifier to your structural elements so that you can refer to them in CSS. Note that once you give an `id` to an element, __you shouldn't give the same `id` value to another element in the same page__!
+
+You can add the `id` attribute to an element by adding `id="my_id"` to its tag:
+
+```html
+<p id="first_paragraph">My text.</p>
+```
+
+Once added to an element, the `id` value can be used as a selector by __prepending a hashtag to it__. If we wanted to change the colour of the `<p>` tag we just defined, we would write:
+
+```html
+<style>
+#first_paragraph {
+	color: blue;
+}
+</style>
+```
+
+#### The `class` attribute
+
+The `class` attribute works the same way the `id` does, but isn't unique. It allows you to define style for a range of elements related to each other somehow. You can attach a class (or multiple) to an element by filling the `class` attribute. Once defined, you can refer to it in CSS by __prepending a period to the `class` value__.
+
+```html
+<p class="important">This is an important paragraph.</p>
+
+<style>
+	.important {
+		font-weight: bold;
+	}
+</style>
+```
+
+#### Using a tag name as selector
+
+You can also select all the tags of a specific type by using the tag name as a selector. For example, you could use `p` as a selector to select and apply style to all `<p>` tags, regardless of the `id` or `class` values attached to them.
+
+#### Parent/children
+
+One last basic feature of selectors that is tremendously helpful is the ability to target tags by specifying their parent. Let's consider the example markup below:
+
+```html
+<p>My text is <strong>important</strong></p>
+<strong>This one is a bit less important.</strong>
+```
+
+How could we target the `<strong>` tag that is __inside__ of the `<p>` tag without targetting the one that is also outside?
+
+Based on our previous discussion of `id` and `class` attributes, it's evident that we could add an id or a class to the tag(s) we want to target. It is however good practice to keep markup as simple as possible: if we can avoid adding attributes and rules, we should. This leads to more concise code that is easier to read and troubleshoot.
+
+To reduce the number of `id` and `class` attributes floating around, we can refer to the tags themselves by defining not only the tag we want to apply the rules on, but also its parent(s):
+
+```
+p strong {
+	color: red;
+}
+```
+
+In the case above, `color: red;` only applies to `<strong>` tags that are within a `<p>` tag. You can add as many ancestors as you want to target elements more precisely (eg. `p em strong` would target `<strong>` tags that are contained in an `<em>`, itself contained in a `<p>`).
+
+<a id="stylestructure"></a>
+### Isolating style and structure
+
+When we discussed the `style` attribute and the `<style>` tag, we mentioned that the main motivation to remove stylistic elements from the tags themselves is to keep our code clean and minimal. Our objective in doing this is also to isolate __style__ from __structure__ so that we can use the same stylistic rules across multiple pages.
+
+Sharing stylesheets will make it possible to effortlessly expand our websites to multiple pages while keeping a common stylistic thread (and without having to duplicate our CSS markup from page to page).
+
+Anything that is put inside of `<style>` tags can be directly moved to a `.css` file, which we can then link to our page. To make that linkage possible, we will use the `<link>` tag. Since it's meant to be viewed by our browser but not by our visitors, this tag belongs to the `<head>`.
+
+The `<link>` tag possesses two essential attributes: `href` and `rel`. 
+
+`href` works exactly the same way it did with the `<a>` tag or with the `<img/>` tag's `src` attribute: it accepts a __relative path__ or __URL__.
+
