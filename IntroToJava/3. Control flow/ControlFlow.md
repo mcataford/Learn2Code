@@ -122,7 +122,7 @@ Earlier, we looked at simple expressions that only had one boolean component. Ja
 |Keyword|Effect|
 |---|---|
 |`A && B`|Both conditions `A` and `B` must be true|
-|`A || B`|Either `A` or `B` must be true|
+|`A \|\| B`|Either `A` or `B` must be true|
 
 Using `&&` and `||`, you can build large conditions that cover very precise cases. For example, you could write `x >= 0 && x <= 10` to evaluate if `x` is included between 0 and 10. Similarly, `x <= 0 || x >= 10` would test if `x` is below or equal to 0 __or__ greater than or equal to 10.
 
