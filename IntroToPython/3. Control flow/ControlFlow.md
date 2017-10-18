@@ -10,6 +10,11 @@
 - [Conditional statement structure](#conditionalstructure)
 - [Chained conditions](#chainedconditions)
 - [Review](#review1)
+3. [Loops](#loops)
+- [While loops](#whileloops)
+- [A note on scope](#scope)
+- [For loops](#forloops)
+- [Review](#review2)
 
 <a id="controlflow"></a>
 ## 1. Control flow
@@ -194,3 +199,148 @@ else:
 - Only the `if` is mandatory for a conditional statement to be valid.
 - An arbitrary number of `elif` can be added after an `if` to evaluate extra conditions.
 - `else` will only be executed if none of the previous `if` and `elif` are executed.
+
+<a id="loops"></a>
+## 3. Loops
+
+As we mentioned earlier, control flow can also be altered by having certain blocks of code be executed __repeatedly__, with or without changing the data being operated on. This comes handy if you have repetitive tasks or have a __collection of data__ to apply a specific set of operations on. In this case, __iterating__ over your collection (as we'll see later) or simply __looping__ over code will allow you to not copy/paste code in your scripts.
+
+__Loops__ are split in two categories: __while__ and __for__ loops. The first relies on __conditions__, much like the __conditional blocks__ discussed earlier, while the second is used to __iterate over a range of values__.
+
+<a id="whileloops"></a>
+### While loops
+
+__While loops__ are the simplest kind of loop in terms of semantics. Their general form is reminiscent of that of __conditional blocks__:
+
+```python
+while condition:
+	#Code
+```
+
+Everything that we said about __conditions__ will apply to the `condition` placeholder here; the role of the __while loop__'s condition is to serve as an __exit condition__: as long as the condition is true, the loop will be repeated.
+
+For example, a loop that would print all the integer values between 0 and 100 would look like this:
+
+```python
+number = 0
+
+while number <= 100:
+	print(number)
+
+	number = number + 1
+```
+
+In this case, we replaced the placeholder condition by `number <= 100`, which is evaluated to `True` as long as `number` is below or equal to 100. Notice that at the end of the loop's code, we __increment__ the value of `number`. This is an extremely important step without which our loop would be __infinite__. 
+
+For obvious reasons and in most cases, __infinite loops__ are undesirable. If the __exit condition__ of a loop is unreachable, the interpreter will continuously repeat the code enclosed in the __while__ block, stalling and forcing you to manually interrupt execution. Depending on what is being done in the block, an infinite loop can also crash your system as code that would request resources from the system would continuously do so until stopped.
+
+#### Try it out
+
+Now that we know that we can use loops to __repeat operations__ without have to explicitly duplicate code, can you use a __while loop__ to calculate the sum of all factors of 9 or 12 (exclusively, so a number that can be divided by 9 and 12 wouldn't be counted) under 10000?
+
+<a id="scope"></a>
+### A note on scope
+
+As we introduce different block-like structures, it's important to mention __variable scope__. Variable scope refers to the area in which your variables live and are accessible by others. The default scope of variables is limited to the code block they are declared in and its children; this means that a variable declared inside a function is __local__ to that function and will cease to exist once the function's execution is done. Let's illustrate this by an example:
+
+```python
+def my_func(parameter):
+	A = 0
+
+	print(parameter)
+
+my_func("Hello") #Prints "Hello")
+print(A) #Erroneous code, A isn't defined OUTSIDE of the function my_func
+```
+
+This implies that a variable declared __outside__ of the function is accessible from within; it is however not recommended to do so because it's harder to exert control on __global variables__ (available to all, declared in the script outside of any other function or block), which leads to programs that are hard to debug and troubleshoot.
+
+The concept of scope applies to any block-like construct such as __functions__, __conditional blocks__ and __loops__, even if they are nested within each other. For an example of a nested block structure, look below:
+
+```python
+def my_nested_function(number):
+	if number > 0:
+		#counter is defined in the if block; it is accessible within this block and its children.
+		counter = 0
+
+		while counter <= 10:
+			#sentence is defined within the while block, if it accessible only within the while block and its children.
+			#Note that we can use "number" here because we are within that variable's scope.
+			#As an input parameter to the function, its scope is the entire function and its children.
+			sentence = "The number is " + number
+			print(sentence)
+			#We can also use counter, because it was declared in the if block, and the while block is within the if block.
+			counter = counter + 1
+```
+
+<a id="forloops"></a>
+### For loops
+
+__For loops__ introduce a different way of describing repetition. Instead of repeating as long as a condition is true, we will __walk through a collection of data__. The most basic collection we can muster is a simple range of numbers, which we can generate using the `range()` function.
+
+The `range()` function will generate a range of numbers given boundaries, you can use it by providing a maximum, both a minimum and a maximum, or a minimum, a maximum and a step:
+
+```python
+#Prints [0, 1, 2, 3, 4]
+print(range(5))
+
+#Prints [5,6,7,8,9]
+print(range(5,10))
+
+#Prints [0,2,4,6,8]
+print(range(0,10,2))
+```
+
+Note that when using `range()`, the maximum parameter is __excluded__ from the range, which is why we get `[0,1,2,3,4]` when executing `range(5)`.
+
+Using that kind of collection, we can put together a `for` loop following model:
+
+```python
+for item in collection:
+	#Code
+```
+
+In this snippet, the `collection` placeholder is replaced by our collection (eg. the `range()` function call) and the `item` placeholder is a variable that we can use __within__ the loop to access the element we are on in the collection:
+
+```python
+for number in range(10):
+	print(number)
+```
+
+The above loop has `number` take all the values in `range(10)` (which is really `[0,1,2,3,4,5,6,7,8,9]`) sequentially. At each loop cycle, the value of `number` is printed to the screen. The result is then numbers 0-9 printed sequentially.
+
+__Strings__ can also be used as collections using the same syntax; to iterate through all of the characters of a string, you can then simply type:
+
+```python
+my_string = "Hello, World!"
+
+for character in my_string:
+	print(character)
+```
+
+Later, we'll see that Python offers us __list__ and __dictionary__ structures that will also behave as collections and that will be traversable using the same kind of syntax.
+
+#### Try it out
+
+Looking back at the __Try it out__ segment of the __ While loops__ section, can you find a way to rewrite a solution to that problem using __for loops__ instead of __while loops__?
+
+<a id="review2"></a>
+### Review
+
+- __Loops__ are another way to alter the flow of a script. By definition, loop blocks will have the interpreter __repeat__ a block of code a set number of times.
+- Loop structures are split in two categories: __for loops__ and __while loops__.
+- __While loops__ contain code that is repeated as long as the __exit condition__ is met. The condition follows the same format as the ones in the `if` blocks discussed earlier. A typical While loop looks like this:
+
+```python
+while condition:
+	#Code
+```
+- __For loops__ repeat their operations __over a collection__. This allows for loops to "walk through" a collection of elements such as a __string__ or a __range__.
+- You can create a range using the `range()` function. Its model is `range(min, max, step)`. The `min` and `max` define the range over which numbers will be generated. The `step` defines the jump between each value. An example usage of the `range()` function would be `range(0,10,1)` which would output `[0,1,2,3,4,5,6,7,8,9]`.
+- Using this, you can build a __for loop__ using the model below:
+```python
+for item in collection:
+	#code
+```
+- Just like __conditional blocks__, __loops__ are __block structures__. As such, the code contained in them is __indented__ and is subject to __scope__.
+- __Scope__ represents the area over which variables are accessible. By default, the scope of a variable is __the block it's declared in and all its children__. This means that a variable created in an `if` block can be accessed anywhere within that `if` block.

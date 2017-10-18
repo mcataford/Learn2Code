@@ -11,6 +11,14 @@
 - [More cascading](#morecascading)
 - [Using the `<style>` tag and CSS selectors](#styletag)
 - [Isolating style from structure](#stylestructure)
+- [Review](#review1)
+2. [Building page layouts](#layouts)
+- [Organizing content into boxes](#boxes)
+- [Units of measurement](#units)
+- [Setting the size of elements](#sizing)
+-	[Building a layout with FlexBox](#flexlayouts)
+- [Spacing](#spacing)
+- [Review](#review2)
 
 <a id="css"></a>
 ## 1. Cascaded Stylesheets
@@ -199,6 +207,7 @@ The `<link>` tag possesses two essential attributes: `href` and `rel`.
 
 The `<link>` tag should replace all `<style>` tags in your pages; this way, all style is easy to share and distribute. Moreover, separating style from structure allows you to edit style without touching the structure at all, therefore reducing the scope of what you work on.
 
+<a id="review1"></a>
 ### Review
 
 - You can add __style__ to your tags by using __inline style__ (through the `style` attribute) or __style blocks__ (through the `<style>` tag).
@@ -218,3 +227,115 @@ selector {
 - To use tag names, simply use the tag name (`p` to select all `<p>` tags).
 - You can select elements that possess a certain parentage by listing elements one after the other (`p strong` would target all `<strong>` tags inside of `<p>` tags).
 - You can move the contents of any `<style>` tag into `.css` files and link them using `<link>` tag.
+
+<a id="layouts"></a>
+## 2. Building page layouts
+
+Using CSS properties, we can build __page layouts__ that will allow us to feature our content differently than in one big "top-to-bottom" page. In the last section, we mentioned the `<table>` tag; before CSS gave developers proper tools to build layouts, they were quite popular to build complex page structures. Because of the "columns and rows" system already in place in `<table>` elements, they were perfect for the job.
+
+Since then, new tools have been introduced, such as the `float` property, which allows us to put elements next to each other (thus creating columns without the restriction put forth by tables), and more recently, the `flexbox` system, which solves most if not all of the layout problems developers are usually facing.
+
+<a id="boxes"></a>
+### Organizing content into boxes
+
+Before we can lay the foundations of our pages, we need to separate content into __boxes__ that we can move around, align and order relative to one another. Earlier, we mentioned that the `<div>` tag was designed as a __plain, non-semantic container__ that we could use to accomplish this. We also mentioned semantic blocks like `<header>` and `<section>`, which we can use in a similar manner when it is appropriate to add meaning to our page structure.
+
+Generally speaking, pages are set up using a __box model__. This model defines each tag as a "box" that can contain text, images, or other boxes; each box then has a parent-child relationship with anything inside of itself, and a child-parent relationship with the tag that contains it.
+
+![Looking at the box model](assets/boxmodel.PNG)
+
+If you use the __code inspector__ in any browser, you can get a firsthand view of the box model in action: no matter the tag on which you hover in the inspector's window, you can see an overlay on the actual rendered page showing you the boundaries of the box model of this element. As we'll see later, all boxes occupy a certain amount of space on the page, and that's what we'll use to determine what fits next to each other, and what occupies its own row.
+
+<a id="sizing"></a>
+### Setting the size of elements
+
+The size of any element can be modified using the `width` and `height` properties. By default, elements tend to occupy as much width as they are allowed, but their height is entirely dependent on their content.
+
+As such, an empty `<div>` would occupy the full width of its container, but its initial `height` value would be `0px` since no content is present to stretch it. We can of course modify this by explicitly setting the `width` and `height` properties in CSS:
+
+```css
+div {
+	width: 500px;
+	height: 200px;
+}
+```
+
+<a id="units"></a>
+### Units of measurement
+
+To specify the size of elements on our page, we'll of course need some measurement units. We've already mentioned `px`, which represents one pixel of your screen, but there is a handful of them that we can use:
+
+|Unit|Meaning|
+|---|---|
+|`px`|Pixels|
+|`%`|Percentage of the container's value|
+|`em`|The base font size of text in the element|
+|`rem`|The base font size of the document|
+|`vw`|Fraction of the width of the browser window|
+|`vh`|Fraction of the height of the browser window|
+
+Generally speaking, the most convenient units for the size of boxes are `%`, `vw` and `vh`. For now, we will focus on `%`.
+
+<a id="flexlayouts"></a>
+### Building a layout with FlexBox
+
+`flexbox` (or `flex`) is the main system we'll use to build our page layouts. It is widely supported by mainstream browsers and usually offers the best results in terms of simplicity and flexibility.
+
+`flex` mainly looks at the relationship between a parent and its children, let's consider the simple structure below.
+
+```html
+<main id="page_content">
+	<section><!-- First section --></section>
+	<section><!-- Second section --></section>
+	<section><!-- Third section --></section>
+</main>
+```
+
+Now, to use `flex`, we need to set the `display` property on the parent to `flex`:
+
+```css
+#page_content {
+	display: flex;
+}
+```
+
+Once that is done, a myriad of other properties can be set on both the parent and the children to modify how they appear on the page:
+
+|Property|Applies to|Meaning|
+|---|---|---|
+|`justify-content`|Parent|Defines the alignment of items along the __main axis__.|
+|`align-content`|Parent|Defines the alignment of items along the __secondary axis__.|
+|`flex-direction`|Parent|Sets the direction in which children should expand (i.e. horizontally or vertically)|
+|`flex-wrap`|Parent|Defines how the content wraps around if there isn't enough space along the main axis for everything|
+|`order`|Child|Defines priority of appearance of elements|
+|`flex`|Child|Defines if elements grow or shrink, and what their default size if (in three parts)|
+
+Using these properties and by nesting elements on which `flex` is applied, we can build complex structures which we can then populate with our content.
+
+You can find further reading on `flex` [here](https://css-tricks.com/snippets/css/a-guide-to-flexbox/).
+
+<a id="spacing"></a>
+### Spacing
+
+__Spacing__ can also be applied on elements to separate them from each other; the `margin` and `padding` property can be set the same way as the `width` and `height` in order to specify how much space is added around and inside elements.
+
+![Box model demonstrating different kinds of spacing](assets/spacing.PNG)
+
+`padding` adjusts spacing that is __inside__ the element. It __expands__ the boundaries of the element.
+
+`margin` adjusts the space __outside__ the element. Any element surrounding the one that has margin will be pushed away.
+
+Finally, `border` can add visible borders around elements and also contributes to the size of the element.
+
+It is customary to use `em`, `rem` or `px` for spacing rules since they tend to be rather small as opposed to block sizes, which are much larger.
+
+<a id="review2"></a>
+### Review
+
+- Building page layouts requires the use of __boxes__ in which we place our content.
+- HTML tags like `<div>` can help us boxing up our content and creating a wireframe we can work with, but we can also use __semantic__ tags like `<header>`, `<section>` and `<main>` to build layouts that have __meaning__.
+- We can set the size of elements using the `width` and `height` property; the former is initially as large as possible given the element's parent, and the latter, 0.
+- Many units of measurement can be used to define sizes: `px`, `em` and `rem` define sizes appropriate for minute details or text whereas `%`, `vw` and `vh` define much larger spans and are useful when setting up large blocks.
+- __Flexbox__ is the main system we will use to set up our layouts; it relies on parent-children relationships and can be enabled for a container by using the `display: flex;` CSS rule on it.
+- A certain number of rules can apply on the `flex` parent and its children, these rules define how elements are align with respect with each other, how much space they occupy and how they react if the container can't accomodate everything as intended (wrapping).
+- __Spacing__ can also be used to modify the space occupied by elements; `margin` can add space __outside__ elements, `padding` can add space __inside__ and `border` can add a visible lining to our elements, also making their footprint a bit bigger.
