@@ -71,4 +71,4 @@ _Note: You should be generating the lines dynamically._
 - __(Programming)__ Generalize the previous program so that you can generate the Nth prime number.
 - __(Programming)__ Write a program that will, given a seed integer N, print all the numbers part of the _Collatz sequence_ starting from N. If you have a current value `n` in your sequence, the next Collatz sequence value is defined by the following relationship:
 
-->![Collatz relationship](assets/collatz.PNG)<-
+![Collatz relationship](assets/collatz.PNG)
