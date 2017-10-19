@@ -12,6 +12,10 @@ In this section, we will explore how we can use __conditional statements__ and _
 - [Conditional structures](#conditionalstructures)
 - [Chained conditions](#chainedconditions)
 - [Review](#review1)
+3. [Loops](#loops)
+- [`while` loops](#whileloops)
+- [A note on scope](#scope)
+- [`for` loops](#forloops)
 
 <a id="controlflow"></a>
 ## 1. Control flow
@@ -161,3 +165,115 @@ if(condition) {
 - Only the `if` is mandatory for a conditional statement to be valid.
 - An arbitrary number of `else if` can be added after an `if` to evaluate extra conditions.
 - `else` will only be executed if none of the previous `if` and `else if` are executed.
+
+<a id="loops"></a>
+## 3. Loops
+
+Aside from __selective execution__, __repetition__ is the other main way by which we can alter the flow of our programs. Much like __conditional statements__, __loops__ are code blocks delimited by braces and that operate on the code they contain. We will discuss two types of loops, __for loops__ and __while loops__, but in both cases, the functionality is the same, only the semantics and the syntax changes.
+
+<a id="whileloops"></a>
+### `while` loops
+
+__While loops__ are __condition-based blocks__. Their continued execution depend on the condition(s) attached to them, conditions which follow the same model as the ones discussed in conjunction with the `if` blocks:
+
+```java
+while(condition) {
+	//Code.
+}
+```
+
+In this template, the `while` keyword introduces the block, the `condition` placeholder can be any boolean expression or value, and `//Code.` is the code payload that will be repeated. As long as `condition` can be evaluated to `true`, the code contained in the `while` block is repeated.
+
+__Be extremely careful!__ The loop's condition must be satisfiable! If your loop can never reach a state where the condition is no longer met, it will execute forever and become an __infinite loop__ which can then eventually crash your system.
+
+Let's look at a more complex `while` loop:
+
+```java
+int i = 0;
+
+while(i <= 10) {
+	System.out.println(i);
+	i = i + 1;
+}
+```
+
+In the fragment above, the loop is __not infinite__ because while `i` is initially 0, it will be incremented at each iteration and will eventually break the condition `i <= 10`. However, if the last line of our loop wasn't there (i.e. `i = i + 1`), then the value of `i` would remain 0, thus never reaching a point where `i <= 10`.
+
+<hr>
+
+#### Try it out!
+
+Using a `while` loop,  could you compute the sum of all numbers between 0 and 1000 that are multiples of 3 or 5 but not both?
+
+<hr>
+
+<a id="scope"></a>
+### A note on scope
+
+In the previous fragment, notice that we defined the `i` variable __outside__ of the loop block, yet we use it __inside__ the loop block. This bring forth the idea of __scope__.
+
+In programming, __scope__ is the notion that variables exist as long as they are relevant before being destroyed by Java's garbage collector. A variable lives __within the block in which it is declared and its children__.
+
+```java
+public class MyClass {
+	public static void main(String[] args) {
+		int i = 0;
+
+		while(i <= 10) {
+			System.out.println(i);
+			i = i + 1;
+		}
+	}
+}
+```
+
+In this more complete example, `i` is declared __in the main method__, it is then available for use anywhere within the main method and within its children. The `while` loop block being in the main method, it is considered to be a child of the main method. As such `i` can be used in there.
+
+Note that this relationship isn't reversible: something declared in a child isn't available outside that child.
+
+<hr>
+
+#### Try it out!
+
+What happens if you try to access a variable __out of scope__? Try writing a program in which a parent attempts to access a variable declared in its child. What happens then?
+
+<hr>
+
+<a id="forloop"></a>
+### `for` loops
+
+__For loops__ are functionally the same as __while loops__: they outline code that is to be repeated a certain number of times. Unlike `while` loops, `for` loops will need more setup to properly define a __counter variable__ that will track the state of the loop.
+
+```java
+for(initialize the counter ; condition ; update the counter) {
+	//Code.
+}
+```
+
+In this simple model, we notice that the `for` loop header has three components:
+
+- The first will __initialize__ the counter used by the loop. Here, we can __declare and initialize__ a variable or reuse a variable and give it a new value.
+- The second is a __condition__ just like the `while` loop's: as long as this condition is satisfied, the loop will continue operating.
+- The third is executed __at the end of every loop iteration__ and is usually an operation executed on the counter to make sure that the condition is eventually broken (so that the loop can end).
+
+A `for` loop version of the `while` loop we wrote earlier would be:
+
+```java
+for(int i = 0 ; i <= 10 ; i = i + 1) {
+	System.out.println(i);
+}
+```
+
+Here, we __declare and initialize__ the variable `i`, which will serve as our counter; at each iteration, the condition `i <= 10` is checked to make sure that we are allowed to run the loop's code again, then we run the loop's code. Finally, the `i = i + 1` statement is executed to update `i` and the program goes back to the condition to see if it can run through the loop one more time.
+
+The difference between a `for` and `while` loop is primarily syntactic, and as we just saw, we can rewrite any `while` loop into a `for` loop (and vice-versa). Moreover, one shouldn't perform worse or better than the other. 
+
+Choosing which loop type to use is then left to the programmer's discretion, depending on what is more convenient to implement the functionality being worked on.
+
+<hr>
+
+#### Try it out!
+
+Can you write a `for` loop that would __print__ all of the __odd numbers__ between 100 and 200? Try doing it using an `if` block, without, and once you are done, try converting your `for` loop into a `while` loop.
+
+<hr>
