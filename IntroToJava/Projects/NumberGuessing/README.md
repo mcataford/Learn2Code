@@ -83,4 +83,4 @@ You should __keep track of the turns__ so that when the player eventually guesse
 
 ### 3. Demo
 
-You can find a compiled example of the game [here](). To run it, simply open up a command prompt and navigate to the file (using `cd`), then use `java NumberGuessing` to execute it.
+You can find a compiled example of the game [here](https://github.com/mcataford/Learning/blob/master/IntroToJava/Projects/NumberGuessing/NumberGuessing.class). To run it, simply open up a command prompt and navigate to the file (using `cd`), then use `java NumberGuessing` to execute it.
