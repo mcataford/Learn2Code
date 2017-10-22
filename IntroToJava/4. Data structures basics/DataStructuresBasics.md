@@ -2,7 +2,7 @@
 
 ## Data structures basics
 
-In programming, __ data structures__ refer to ways of organizing data or collections of related data in a way that is easy to process and to use by both programs and their developers. Now that we have a working understanding of how we can alter the flow of your programs and how variables work, we will focus on how we can use Java's built-in data structures and elaborate our own so that we can not only adapt our code to the problems we are tackling, but also the way in which we store data.
+In programming, __data structures__ refer to ways of organizing data or collections of related data in a way that is easy to process and to use by both programs and their developers. Now that we have a working understanding of how we can alter the flow of your programs and how variables work, we will focus on how we can use Java's built-in data structures and elaborate our own so that we can not only adapt our code to the problems we are tackling, but also the way in which we store data.
 
 The main object of this lesson is the most basic data structure offered by Java: the __array__.
 
