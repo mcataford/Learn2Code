@@ -15,6 +15,7 @@ public class TicTacToe {
 	private boolean turn;							//Flag to indicate whose turn it is.
 	private boolean external_start;		//Flag to determine who starts.
 	private int turn_count;						//Counter for the number of turns (2x per round)
+	private boolean manual;
 
 	private Scanner user_input;				//Collector for user input if manual mode.
 	private Player computer_player;		//Player objects.
@@ -24,7 +25,7 @@ public class TicTacToe {
 	*	Prepares the game state; initializes the game board to empties, the two player AIs and the turn count.
 	*/
 
-	public TicTacToe() {
+	public TicTacToe(boolean manual, boolean start) {
 
 		//Initialize the board and set its default state.
 
@@ -38,22 +39,20 @@ public class TicTacToe {
 
 		//Initialize the game variables.
 
-		this.turn = false;
+		this.turn = start;
 		this.turn_count = 0;
 		this.user_input = new Scanner(System.in);
 		this.computer_player = new RandomAI();
-		this.user_player = new OtherAI();
-		this.external_start = false;
+		if(!manual) this.user_player = new OtherAI();
+		this.manual = manual;
 	}
 
 	/*
 	*	Executes a single turn (half a round) and produces on-screen output. The turn flag 
 	* will decide who gets to play. This method is the main game method.
-	*
-	*	@param manual Flag to determine whether the user plays manually or using its chosen AI.
 	*/
 
-	public void play(boolean manual) {
+	public void play() {
 
 		//By default, the game is set to continue. This flag will be used to stop the game later.
 		boolean game_continues = true;
@@ -72,7 +71,7 @@ public class TicTacToe {
 				this.printBoard();
 
 				//If the player chose to play manually...
-				if(manual) {
+				if(this.manual) {
 					boolean move_captured = false;
 					int row = 0, column = 0;
 
@@ -245,7 +244,7 @@ public class TicTacToe {
 			}
 
 			//If either flat boards passed that test, we have a winner.
-			
+
 			if(win1) winner = 1;
 			else if(win2) winner = 2;
 		}
