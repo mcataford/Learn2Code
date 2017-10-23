@@ -2,6 +2,8 @@
 
 In this project, you'll be working on a simple __game playing bot__ that implements a playing strategy. Your goal is to produce an AI that has a high change of winning a game of __tic tac toe__.
 
+__Download the game files [here](https://github.com/mcataford/Learning/blob/master/IntroToJava/Projects/TicTacToe/TicTacToe.zip) to get started!__
+
 ## Table of contents
 
 1. [Running the game](#exec)
