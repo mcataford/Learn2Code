@@ -19,6 +19,9 @@
 -	[Building a layout with FlexBox](#flexlayouts)
 - [Spacing](#spacing)
 - [Review](#review2)
+3. [Advanced selectors](#adv_selectors)
+- [Parent/child selection](#parchild_select)
+- [Pseudoselectors](#pseudoselect)
 
 <a id="css"></a>
 ## 1. Cascaded Stylesheets
@@ -339,3 +342,52 @@ It is customary to use `em`, `rem` or `px` for spacing rules since they tend to 
 - __Flexbox__ is the main system we will use to set up our layouts; it relies on parent-children relationships and can be enabled for a container by using the `display: flex;` CSS rule on it.
 - A certain number of rules can apply on the `flex` parent and its children, these rules define how elements are align with respect with each other, how much space they occupy and how they react if the container can't accomodate everything as intended (wrapping).
 - __Spacing__ can also be used to modify the space occupied by elements; `margin` can add space __outside__ elements, `padding` can add space __inside__ and `border` can add a visible lining to our elements, also making their footprint a bit bigger.
+
+<a id="adv_selectors"></a>
+## 3. Advanced selectors
+
+Earlier, we mentioned that we can use the `id` and `class` attributes as well as the tag names themselves to select elements on pages. There exist other selectors that can be used to target elements by using their relative position in the page's markup and similar information. While these selectors might seem to be needlessly complicating things, they actually serve a good purpose: they help coders avoid creating too many classes and ids, which are then hard to keep track of.
+
+<a id="parchild_select"></a>
+### Parent/children selection
+
+You can exploit the parent/child relationship existing between tags in selectors. As we mentioned in our introductory talk about HTML, each tag is either contained within another, contains other tags, or both. In this context, we call any container a __parent__ and any content, __child__. These identifiers are relative to your reference point. For example, consider the following markup segment:
+
+```html
+<div>
+	<p>
+		My text is <strong>great<strong>.
+	</p>
+</div>
+```
+
+In this snippet, we can define a few parent/children relationships:
+
+- `<div>` is the parent of `<p>` and the ancestor of `<strong>`;
+- `<p>` is the child of `<div>` and the parent of `<strong>`;
+- `<strong>` is the child of `<p>` and the descendant of `<div>`.
+
+Using these relationships and the "parent/child operator" `>`, we can write more complex selectors like the following:
+
+- `div > p` : All the `<p>` tags that are children of `<div>` tags;
+- `div > p > strong` : All the `<strong>` tags that are children of `<p>` tags, which are themselves children of `<div>` tags.
+
+This allows for more specific selectors to be used, leaving classes, ids and tag names to be general selectors that define broad rules about their related elements.
+
+<a id="pseudo_select"></a>
+### Pseudoselectors
+
+CSS also allows a large amount of __pseudoselectors__ which can target elements based on where they are located in their parent, in the page, whether they are hovered on, or whether certain rules apply to them. A thorough account of which pseudoselectors are allowed can be found [here](https://css-tricks.com/pseudo-class-selectors/).
+
+|Pseudoselector|Effect|Example|
+|---|---|---|
+|`:not(x)`|Any item that __does not__ satisfy `x`".|`p:not(.my_class)`|
+|`:empty`|Any tag that is empty.|`p:empty`|
+|`:first-child`|Any tag that is the first child of its parent.|`p:first-child`|
+|`:last-child`|Any tag that is the last child of its parent.|`p:last-child`|
+|`:only-child`|Any tag that is the only child of its parent.|`p:only-child`|
+|`:hover`|Applies if the tag is hovered on by a cursor.|`p:hover`|
+|`::first-letter`|Applies to text elements, style is applied to the first letter of the text.|`p::first-letter`|
+|`::first-line`|Applies to text elements, style is applied on the first line of text.|`p::first-line`|
+
+Any of these pseudoselectors can be appended to other selectors; note that `:` and `::` needs to separate the pseudoselectors and the selectors themselves.
