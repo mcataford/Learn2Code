@@ -22,6 +22,7 @@
 3. [Advanced selectors](#adv_selectors)
 - [Parent/child selection](#parchild_select)
 - [Pseudoselectors](#pseudoselect)
+4. [Example: menus](https://github.com/mcataford/Learning/blob/master/IntroToWeb/3.%20First%20contact%20with%20CSS/CSS_basicnavigation.md)
 
 <a id="css"></a>
 ## 1. Cascaded Stylesheets
