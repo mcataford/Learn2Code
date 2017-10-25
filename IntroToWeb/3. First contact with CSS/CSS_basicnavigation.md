@@ -2,7 +2,7 @@
 
 ## Basic navigation elements with CSS
 
-In this tutorial, we get to apply elements we discussed previously to put together basic navigation elements. Before going through this document, make sure that you have a fair understanding of [the introduction to CSS and the segment about `flex`](). The best way to use this document is to go along using a tool such as [CodePen]() to build the components discussed as we go; this will allow you to see the effect of each change directly.
+In this tutorial, we get to apply elements we discussed previously to put together basic navigation elements. Before going through this document, make sure that you have a fair understanding of [the introduction to CSS and the segment about `flex`](https://github.com/mcataford/Learning/blob/master/IntroToWeb/3.%20First%20contact%20with%20CSS/CSS.md#layouts). The best way to use this document is to go along using a tool such as [CodePen](http://codepen.io) to build the components discussed as we go; this will allow you to see the effect of each change directly.
 
 ### Table of contents
 
