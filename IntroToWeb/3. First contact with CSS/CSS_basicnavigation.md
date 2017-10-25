@@ -112,6 +112,8 @@ To refine further, we can eliminate the default "blue link" style attached to `<
 
 	text-decoration: none;
 	color: black;
+	
+	display: block;
 }
 ```
 
@@ -134,4 +136,62 @@ In this specific case, we would make use of `justify-content` and `align-items` 
 
 At this point, we have a minimalist menu that we can adapt easily for our websites. An assembled version of the menu can be found [here](https://codepen.io/marccataford/pen/WZBvvb).
 
- 
+<a id="menus_dd"></a>
+### Dropdown menus
+
+__Dropdown menus__ build on top our our menu structure to add "submenus" that can be accessed when the user hovers over certain menu elements. To start working on our dropdown menu, we will first replicate our menu structure __within__ one of the main menu items:
+
+```html
+<nav id="menu">
+	<ul>
+		<li><a href="#">Item 1</a>
+			<ul class="dropdown">
+				<li><a href="#">Submenu item 1</a></li>
+				<li><a href="#">Submenu item 2</a></li>
+				<li><a href="#">Submenu item 3</a></li>
+			</ul>
+		</li>
+		<li><a href="#">Item 2</a></li>
+		<li><a href="#">Item 3</a></li>
+	</ul>
+</nav>
+```
+
+Notice that we created a `dropdown` class to identify our submenus: we do this because the dropdown will require specific style that doesn't apply to the rest of the menu. We could also use the parent-child notation (chaining selectors and using `>` such as in `#menu > ul > li > ul`) to avoid having to create a class, but that depends on your preference.
+
+Once we have our structure, we need to set a few things up style-wise:
+
+- First, we need to make sure that our dropdown menu is hidden until hovered; we can use the `:hover` selector to achieve that. Remember that `:hover` will trigger the attached rules only if the element is hovered. We can create two rule sets: one that applies when the root item (in this case, the `<li>` that contains the dropdown) is hovered, and one that applies when it isn't. For now, we'll just hide the submenu when not hovered.
+
+```css
+#menu li:hover .dropdown {
+	display: block;
+}
+
+#menu li dropdown {
+	display: none;
+}
+```
+
+- Second, we need to address __positioning__. By default, the submenu will be inserted as an inline item, which prevents it from aligning properly under the first menu item. We can solve this by using the `position` property, which defines what type of positioning system is used. The `absolute` value will tell our item to position itself relativey to the position of its ancestor, so the position of our submenu no longer depends on the position of the link that is inside of the main menu item:
+
+```css
+#menu li:hover .dropdown {
+	display: block;
+}
+
+#menu li dropdown {
+	display: none;
+	position: absolute;
+}
+```
+
+- Third, we can start styling our submenu by removing some extraneous margins and spacing, such as the margin around the `<li>` tags that is relevant when the menu is horizontal, but not as much when it is vertical. We can then simply set the `margin` property to 0 on the submenu's `<li>` tags.
+
+```css
+.dropdown > li {
+	margin: 0;
+}
+```
+
+These small modifications should now generate a functional and easily modifiable dropdown menu! The assembled example, building on top of what was done with the simple menu, can be found [here](https://codepen.io/marccataford/pen/yzmVpY).
