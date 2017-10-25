@@ -2,7 +2,7 @@
 
 ## Basic navigation elements with CSS
 
-In this section, we get to apply elements we discussed previously to put together basic navigation elements. Before going through this document, make sure that you have a fair understanding of [the introduction to CSS and the segment about `flex`]().
+In this tutorial, we get to apply elements we discussed previously to put together basic navigation elements. Before going through this document, make sure that you have a fair understanding of [the introduction to CSS and the segment about `flex`](). The best way to use this document is to go along using a tool such as [CodePen]() to build the components discussed as we go; this will allow you to see the effect of each change directly.
 
 ### Table of contents
 
@@ -58,17 +58,7 @@ Because it will make __selecting__ elements better in CSS, we also gave the `<na
 
 In this demonstration, we will primarily look at __horizontal menus__. However, everything we will do in terms of CSS can also be applied to a __vertical menu__ to change its look and feel.
 
-First, we need to make our list _horizontal_, as you may have noticed that the code above renders as :
-
-<nav id="menu">
-	<ul>
-		<li><a href="#">Item 1</a></li>
-		<li><a href="#">Item 2</a></li>
-		<li><a href="#">Item 3</a></li>
-	</ul>
-</nav>
-
-In lists, `<li>` are defined as block elements by default; this means that they occupy the full width of their parent. We can allow them to occupy the same line by making them __inline elements__. This can be done using the `display` property:
+First, we need to make our list _horizontal_. In lists, `<li>` are defined as block elements by default; this means that they occupy the full width of their parent. We can allow them to occupy the same line by making them __inline elements__. This can be done using the `display` property:
 
 ```css
 #menu > ul > li {
@@ -76,17 +66,7 @@ In lists, `<li>` are defined as block elements by default; this means that they 
 }
 ```
 
-_Note: We use the `>` selector to define that the left tag is the direct parent of the right tag. Go back to the CSS introduction to review this if needed._
-
-After this modification, our list is transformed into:
-
-<nav id="menu">
-	<ul>
-		<li style="display:inline-block;"><a href="#">Item 1</a></li>
-		<li style="display:inline-block;"><a href="#">Item 2</a></li>
-		<li style="display:inline-block;"><a href="#">Item 3</a></li>
-	</ul>
-</nav>
+_Note: We use `>` in the selector to define that the left tag is the direct parent of the right tag. Go back to the CSS introduction to review this if needed._
 
 We should also remove the __list item markers__. While they don't appear in this specific rendering, it's only because each bullet is hidden under the item on its left. We can remove the bullets through a property applied on the `<ul>` tag: `list-style`. By setting it to `none`, we remove any "list style", which includes bullets.
 
@@ -120,14 +100,6 @@ We can make good use of some properties such as the `border`, `font-weight` and 
 }
 ```
 
-<nav id="menu">
-	<ul>
-		<li style="display:inline-block;"><a href="#" style="padding: 1em;margin: 0.5em;border: 3px solid black;font-weight: bold;">Item 1</a></li>
-		<li style="display:inline-block;"><a href="#" style="padding: 1em;margin: 0.5em;border: 3px solid black;font-weight: bold;">Item 2</a></li>
-		<li style="display:inline-block;"><a href="#" style="padding: 1em;margin: 0.5em;border: 3px solid black;font-weight: bold;">Item 3</a></li>
-	</ul>
-</nav>
-
 To refine further, we can eliminate the default "blue link" style attached to `<a>` tags by modifying `color` and `text-decoration`:
 
 ```css
@@ -143,14 +115,6 @@ To refine further, we can eliminate the default "blue link" style attached to `<
 }
 ```
 
-<nav id="menu">
-	<ul>
-		<li style="display:inline-block;"><a href="#" style="padding: 1em;margin: 0.5em;border: 3px solid black;font-weight: bold;color:black;text-decoration:none;">Item 1</a></li>
-		<li style="display:inline-block;"><a href="#" style="padding: 1em;margin: 0.5em;border: 3px solid black;font-weight: bold;color:black;text-decoration:none;">Item 2</a></li>
-		<li style="display:inline-block;"><a href="#" style="padding: 1em;margin: 0.5em;border: 3px solid black;font-weight: bold;color:black;text-decoration:none;">Item 3</a></li>
-	</ul>
-</nav>
-
 Our menu now looks a lot more like a menu you'd see online. Without the telltale "link colour," it's however a bit hard to determine whenever we are on a clickable element. We can solve this problem using the `:hover` selector.
 
 The `:hover` selector can, as we mentioned before, define rules that only apply __when the element is hovered by the cursor__. We can then put together a ruleset like this to produce a visual feedback to the user hovering our menu:
@@ -162,67 +126,12 @@ The `:hover` selector can, as we mentioned before, define rules that only apply 
 }
 ```
 
-<nav id="menu" class="hover1">
-	<ul>
-		<li style="display:inline-block;"><a href="#" style="padding: 1em;margin: 0.5em;border: 3px solid black;font-weight: bold;text-decoration:none;">Item 1</a></li>
-		<li style="display:inline-block;"><a href="#" style="padding: 1em;margin: 0.5em;border: 3px solid black;font-weight: bold;text-decoration:none;">Item 2</a></li>
-		<li style="display:inline-block;"><a href="#" style="padding: 1em;margin: 0.5em;border: 3px solid black;font-weight: bold;text-decoration:none;">Item 3</a></li>
-	</ul>
-</nav>
-
 In this case, the item being hovered will have an inverted colour scheme.
 
-At this point, our basic navigation can be made functional and can easily be integrated on a website; we might want to add some frills to it by aligning it differently on the page using `flex`:
-
-<nav id="menu" class="hover1 flex">
-	<ul>
-		<li style="display:inline-block;"><a href="#" style="padding: 1em;margin: 0.5em;border: 3px solid black;font-weight: bold;text-decoration:none;">Item 1</a></li>
-		<li style="display:inline-block;"><a href="#" style="padding: 1em;margin: 0.5em;border: 3px solid black;font-weight: bold;text-decoration:none;">Item 2</a></li>
-		<li style="display:inline-block;"><a href="#" style="padding: 1em;margin: 0.5em;border: 3px solid black;font-weight: bold;text-decoration:none;">Item 3</a></li>
-	</ul>
-</nav>
-
-By using `flex`, we can align our menu items (contained in `<ul>`) to the left, the right, or the center of the `<nav>` that contains them. This can even create room for a logo to be added at the opposite end:
-
-<nav id="menu" class="hover1 flex">
-	<img src="" class="logo"/>
-	<ul>
-		<li style="display:inline-block;"><a href="#" style="padding: 1em;margin: 0.5em;border: 3px solid black;font-weight: bold;text-decoration:none;">Item 1</a></li>
-		<li style="display:inline-block;"><a href="#" style="padding: 1em;margin: 0.5em;border: 3px solid black;font-weight: bold;text-decoration:none;">Item 2</a></li>
-		<li style="display:inline-block;"><a href="#" style="padding: 1em;margin: 0.5em;border: 3px solid black;font-weight: bold;text-decoration:none;">Item 3</a></li>
-	</ul>
-</nav>
+At this point, our basic navigation can be made functional and can easily be integrated on a website; we might want to add some frills to it by aligning it differently on the page using `flex`. By using `flex`, we can align our menu items (contained in `<ul>`) to the left, the right, or the center of the `<nav>` that contains them. This can even create room for a logo to be added at the opposite end.
 
 In this specific case, we would make use of `justify-content` and `align-items` to put items are opposite end of their container (using `space-between` for `justify-content`) and to vertically align them at the center (`align-items: center;`).
 
-<style>
-	#menu {
-		margin: 2em 0;
-	}
+At this point, we have a minimalist menu that we can adapt easily for our websites. An assembled version of the menu can be found [here](https://codepen.io/marccataford/pen/WZBvvb).
 
-	.hover1 li > a:hover {
-		background-color: #000;
-		color: #fff;
-	}
-
-	.hover1 li > a {
-		color: #000;
-	}
-
-	.logo {
-		width: 45px;
-		height: 45px;
-		background-color: #888;
-	}
-
-	.hover1.flex {
-		width: 100%;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	.hover1.flex ul {
-
-	}
-<style>
+ 
