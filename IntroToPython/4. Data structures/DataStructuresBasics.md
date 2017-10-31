@@ -249,7 +249,17 @@ my_list = list(my_tuple)
 my_tuple2 = tuple(my_list)
 ```
 
-Note that the tuple doesn't support any functions like the list's `append` and `remove` since it's immutable! 
+Note that the tuple doesn't support any functions like the list's `append` and `remove` since it's immutable!
+
+<hr>
+
+#### Try it out!
+
+- Using the __interpreter's console__, try converting a list to a tuple and then using the __square bracket notation__ to attempt to modify any of the elements of the tuple. What happens?
+- Considering that __tuples__ are perfect for the implementation of __vectors__, can you implement a [dot product](https://en.wikipedia.org/wiki/Dot_product#Algebraic_definition) function that takes as input two __tuples__ representing vectors and outputs a numerical value representing their product?
+- Still using tuples as vectors, can you put together a function that adds two vectors together and returns the resulting vector? (In this case, you should take tuples in, and return a tuple at the end.)
+
+<hr>
 
 <a id="dictionaries"></a>
 ## 3. Dictionaries
@@ -321,6 +331,30 @@ Being a collection, `len()` can be used on a dictionary to get the number of key
 |`update(dict)`|Merges the current dictionary with given dictionary `dict`.|
 |`items()`|Returns a list of __tuples__ representing all the key/value pairs in the dictionary.|
 
+<hr>
+
+#### Try it out!
+
+Given the following dictionary, representing people and their respective age:
+
+```python
+pairs = {"Marc": 27, "James": 64, "Matthew": 14}
+```
+
+- What are two ways of getting James's age? Is one safer than the other?
+- If you didn't know what was in the dictionary, what would be a good way of checking if you have an entry for Max?
+- Can you complete the following function?
+
+```python
+def merge_and_filter(d1, d2, d3, excludes):
+	#Your function should merge dictionaries d1, d2 and d3, excluding any key/value pair whose key is in the 'excludes' list.
+	#The resulting dictionary should be returned.
+	#You should be able to test this function in a script and verify that all the information of the three dictionaries
+	#is present EXCEPT the keys from 'excludes'
+```
+
+<hr>
+
 <a id="dict_loops"></a>
 ### Using dictionaries and loops
 
@@ -337,3 +371,14 @@ for key in my_dict:
 
 Variants of this could replace the collection by `my_dict.keys()` to loop through the list of keys returns by `keys()`, `my_dict.values()` to process the values and `my_dict.items()` to go through all the pairs.
 
+<hr>
+
+#### Try it out!
+
+Without using the `keys()`, `values()` or `items()` functions, can you write a short script that would separate the following dictionary into a list of keys and another of values?
+
+```python
+pairs = {"Marc": 27, "James": 64, "Matthew": 14, "Bob": 56, "Jane": 24, "Kelly": 30}
+```
+
+</hr>
