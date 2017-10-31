@@ -13,6 +13,9 @@ Python provides us with three basic collections: the __list__, the __tuple__ and
 - [Creating lists](#lists_create)
 - [Manipulating lists](#lists_manip)
 - [Iterating over lists](#lists_iter)
+2. [Tuples](#tuples)
+3. [Dictionaries](#dicts)
+ 
 
 <a id="lists"></a>
 ## 1. Lists
@@ -205,3 +208,128 @@ my_numbers = [1, 100, 2, 56, 93, 132]
 Make sure that you __iterate__ through the list. You should start by identifying which parts of the process is _repeated_ and can be encapsulated in a loop.
 
 <hr>
+
+<a id="tuples"></a>
+## 2. Tuples
+
+The __tuple__ is very similar to the __list__ structure. the main difference between the two is that while the list can be __modified__ (either through insertion, removal or updating of elements), the tuple is __immutable__. The tuple structure is then useful for small sequences of data that aren't meant to change: coordinates, vectors or other couplings of data that are read-only.
+
+The other difference is the usage of the __parentheses__ instead of the  __square-brackets__:
+
+```python
+#This declared a list of three elements
+my_list = [1,2,3]
+#This declares a tuple of three elements
+my_tuple = (1,2,3)
+```
+
+The tuple can be __accessed__ the same way as the list, using __indices__ and the __square bracket notation__:
+
+```python
+my_tuple = (1,2,3)
+
+print(my_tuple[0]) #prints 1
+print(my_tuple[1]) #prints 2
+print(my_tuple[2]) #prints 3
+```
+
+Tuples can be converted to lists and vice versa using the __constructor__ we mentioned earlier:
+
+```python
+my_tuple = (1,2,3)
+
+#Convert to list
+my_list = list(my_tuple)
+
+#Back to a tuple
+my_tuple2 = tuple(my_list)
+```
+
+Note that the tuple doesn't support any functions like the list's `append` and `remove` since it's immutable! 
+
+<a id="dictionaries"></a>
+## 3. Dictionaries
+
+Our third basic data structure is the __dictionary__. In Python, a __dictionary__ is equivalent to a [hash table](https://en.wikipedia.org/wiki/Hash_table); unlike a list, which uses __indices__ to tag data, dictionaries will use __keys__. Dictionary keys can be any type of data! Moreover, while lists are __sortable__ and __linear__, dictionaries are more like a __bag__ of data in which each piece of data has a tag attached to it representing its key.
+
+Within a dictionary, keys must be unique: reusing a key causes a __collision__ and erases the previous data to replace it with the new.
+
+<a id="dicts_create"></a>
+### Creating dictionaries
+
+Dictionaries follow the same kind of convention as the lists we've seen before: they can be created __empty__ or __populated__:
+
+```python
+#Creating an empty dictionary using empty braces:
+my_dict = {}
+
+#Creating an empty dictionary using a constructor:
+my_dict2 = dict()
+
+#Creating a populated dictionary:
+my_dict3 = {"key": "value", "key2": "value2"}
+```
+
+Note that when creating populated dictionaries, we use lists of __comma-separated key/value pairs__. Each pair has the format `key: value`, where `key` is a unique identifier of any type. If keys are repeated, the last value associated with the key will be kept and the others will be discarded.
+
+Just as in lists, content can be heterogeneous: keys can vary in type and so can values, which allows a dictionary like the one below to be perfectly syntactically correct:
+
+```python
+my_dict = {True: 1, "key2": 2, 3: "three"}
+```
+
+Just as with the lists, however, there are advantages to regularly: a regular set of keys or values makes processing easier, especially if loops are involved.
+
+<a id="dict_access"></a>
+### Accessing and using dictionaries
+
+Once a dictionary is created, the __square bracket notation__ can be used with any valid key to either access, modify or insert a key/value pair. For instance, consider the following dictionary:
+
+```python
+my_dict = {"key1": 1, "key2": 2, "key3": 3}
+```
+
+Then we can access any of the elements using their keys:
+
+```python
+#Print the element associated with "key2"
+print(my_dict["key2"])
+```
+
+Using an invalid key, that is a key that doesn't exist in the dictionary, will result in a `KeyError` exception which is equivalent to the `IndexError` exception we witnessed when using invalid indices in lists. Of course, the `KeyError` only appears when trying to __access__ an invalid key: using any key with the assignment operator `=` will insert the key in the dictionary if it doesn't exist:
+
+```python
+#Insert a key/value pair in the dictionary
+my_dict["key4"] = 4
+```
+
+<a id="dict_functions"></a>
+### Dictionary functions
+
+Being a collection, `len()` can be used on a dictionary to get the number of key/value pairs it contains. The following functions can also be useful:
+
+|Function|Effect|
+|---|---|
+|`get(key)`|`get()` will fetch the data located associated with `key`, but will not cause a `KeyError` if the key doesn't exist.|
+|`keys()`|Returns a list of all the keys contained in the dictionary.|
+|`values()`|Returns a list of all the values contained in the dictionary.|
+|`has_key(key)`|Returns a boolean representing whether a given `key` exists in the dictionary.|
+|`update(dict)`|Merges the current dictionary with given dictionary `dict`.|
+|`items()`|Returns a list of __tuples__ representing all the key/value pairs in the dictionary.|
+
+<a id="dict_loops"></a>
+### Using dictionaries and loops
+
+As you may have guessed from the presence of the `keys()`, `values()` and `items()` functions, which return lists we can iterate over. Other than using the lists of keys, values or tuples with loops, you can use `for` loops directly to cycle through all available keys:
+
+```python
+my_dict = {"key1": 1, "key2": 2, "key3": 3}
+
+
+for key in my_dict:
+	#Prints all the keys alongside their associated value
+	print("Key: " + key + " Value: " + my_dict[key])
+```
+
+Variants of this could replace the collection by `my_dict.keys()` to loop through the list of keys returns by `keys()`, `my_dict.values()` to process the values and `my_dict.items()` to go through all the pairs.
+
