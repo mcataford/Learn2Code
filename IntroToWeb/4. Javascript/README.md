@@ -55,11 +55,6 @@ Any browser's code inspector contains a __Console__ or __Web console__ tab that 
 
 To produce output in this tab, we will use the `console.log()` function. We will discuss it at length later, but `console.log` will output its results directly to the console tab of your browser; for example, `console.log(6)` would output the value `6` to the console tab. 
 
-<a id="js_basic_data"></a>
-### Basic data types
-
-
-
 <a id="js_vars_ops"></a>
 ### Variables and operations
 
@@ -67,12 +62,15 @@ The primary function of a programming language is to allow us to manipulate data
 
 For now, we will distinguish two kinds of data: numerical data and strings.
 
-__Strings__ 
+__Numerical data__ represents any number, integral or not, and is written out directly: `1`, `10.1`, `-56.32`. On them, we can apply any mathematical operation.
 
-To store a piece of data in a variable you can use the `var` keyword:
+__Strings__, on the other end, can be any collection of characters enclosed by single or double quotes. For example, `"Hello, World" and 'Hi!'` are both strings.
+
+Either of these are can be stored in a variable. To do so, you can use the `var` keyword:
 
 ```javascript
 var my_variable = 1821;
+var my_name = "Marc";
 ```
 
 Notice a few things:
@@ -103,12 +101,6 @@ var product = first * second;
 
 Basic arithmetic will apply to any numerical value stored in a variable, and precision will adjust automatically: an expression such as `10 / 2` will produce an integer, while `10 / 3` will produce a floating point value without needing you to intervene.
 
-Variables can also contain __strings__, which are collections of characters that may form words, sentences or longer sequences. A string is defined as __any sequence of characters enclosed by quotation marks__.
-
-```javascript
-var my_name = "Marc";
-```
-
 While most operations are not defined for strings, `+` can be used to __concatenate__ strings together; combining smaller strings (or strings and numerical values) into longer strings:
 
 ```javascript
@@ -117,3 +109,78 @@ var my_age = 27;
 var my_sentence = "My name is " + my_name + " and I am " + my_age + ".";
 ```
 
+<hr>
+
+#### Try it out!
+
+Build a small webpage stub containing a `<script>` tag which links to an external JS file; in this file, declare a handful of variables and play with `console.log()` to print the results of operations in the console. __Make sure that you can use your browser to inspect and see the output of your Javascript code!__
+
+<hr>
+
+<a id="js_pageedit"></a>
+### Basic page modification
+
+To make our variable manipulations, happening behind the scenes, truly interesting, we need a way to connect our Javascript code to the visual representation of the page so that the output of our programs is no longer tucked away in the code inspector.
+
+In the interest of simplicity, we will use jQuery to manipulate our page; jQuery is a Javascript framework that simplifies interactions between our code and what appears on the page. In be able to use it, we need to add a `<script>` tag that includes it at the top of our page, before any scripts that would use jQuery to manipulate the page:
+
+```html
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+```
+
+This tag gets the jQuery library from a _content distribution network__, which we discussed in the very first lesson. Once included in your page, you can use any of [jQuery's functions](http://api.jquery.com/).
+
+In our case, we will start off by manipulating the page, and before we can do so, we need to __access__ page elements. The jQuery convention to do so is as follows:
+
+```javascript
+$(css selector)
+```
+
+Here, `css selector` can be replaced by any __string__ containing a CSS select just like the selectors we used in our stylesheets!
+
+For example, given the following elements:
+
+```html
+<div class="my_block">
+	<p id="first_paragraph">Hello, world!</p>
+	<p id="second_paragraph">Much less important text! :(</p>
+</div>
+```
+
+We can select the `<div>` element by using `$(".my_block")`, the first paragraph with `$("#first_paragraph")` and all `<p>` tags with `$("p")`.
+
+Once selected, you can directly edit these elements on the page using the following functions:
+
+|Function|Effect|Example|
+|---|---|---|
+|`.text(str)`|Replaces the __text__ inside a tag.|`$("#first_paragraph").text("Text!");`|
+|`.html(str)`|Replaces the __html__ inside a tag, allowing you to insert more tags inside.|`$(".my_block").html("<h1>Hey!</h1>");`|
+|`.append(str|element)`|Adds the text/html or jQuery element at the end of the specified tag.|`$(".my_block").append("<h1>Hey!</h1>");`|
+|`.prepend(str|element)`|Adds the text/html or jQuery element at the beginning of the specified tag.|`$(".my_block").append("<h1>Hey!</h1>");`|
+|`.remove()`|Removes the element from the page.|`$("#second_paragraph").remove()`|
+
+More of these functions exist and can be found in the reference material linked earlier; however, these are the ones we will use the most in our practice.
+
+Additionally, you can __create__ new tags and insert them on your page using the `append` and `prepend` functions above by __storing a jQuery selection statement in a variable__:
+
+```javascript
+//This tag only exists in our variable, but not yet on the page!
+var my_new_tag = $("<h1>");
+
+//This adds the new tag to the page by appending it to the <body> tag.
+$("body").append(my_new_tag);
+```
+
+<hr>
+
+#### Try it out!
+
+Using the __Web console__ of your browser (accessed through the _Inspect element_ menu), let's manipulate [Google](http://www.google.ca)'s home page.
+
+- The Google logo has __id__ `hplogo`, can you use jQuery to remove it from the page?
+- Can you add a a sentence anywhere on the page while preserving the content that is already there?
+- Can you replace all the page's content by a __heading tag__ of your choice (use the `.html()` function)?
+- Try adding a tag using `.text()`, what happens then?
+- Can you use the console to create a tag (hint: read the last part of the last section about creating new tags inside variables) and insert it in the page?
+
+</hr>
