@@ -183,4 +183,4 @@ Using the __Web console__ of your browser (accessed through the _Inspect element
 - Try adding a tag using `.text()`, what happens then?
 - Can you use the console to create a tag (hint: read the last part of the last section about creating new tags inside variables) and insert it in the page?
 
-</hr>
+<hr>
