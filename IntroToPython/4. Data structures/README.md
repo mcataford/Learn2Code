@@ -16,9 +16,9 @@ Python provides us with three basic collections: the __list__, the __tuple__ and
 2. [Tuples](#tuples)
 3. [Dictionaries](#dictionaries)
 - [Creating dictionaries](#dicts_create)
-- [Accessing and using dictionaries](#dicts_access)
-- [Dictionary functions](#dicts_functions)
-- [Using dictionaries and loops](#dicts_loops)
+- [Accessing and using dictionaries](#dict_access)
+- [Dictionary functions](#dict_functions)
+- [Using dictionaries and loops](#dict_loops)
  
 
 <a id="lists"></a>
