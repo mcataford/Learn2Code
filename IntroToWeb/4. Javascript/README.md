@@ -13,6 +13,10 @@ Javascript is a simple programming language that __runs in the browser__ (and ou
 - [Producing output in the console](#js_console)
 - [Variables and operations](#js_vars_ops)
 - [Basic page modification](#js_pageedit)
+2. [Javascript programming](#more_js)
+- [Conditional statements](#js_cond)
+- [Loops](#js_loops)
+- [Arrays](#js_arrays)
 
 <a id="js"></a>
 ## 1. Basic Javascript
@@ -184,3 +188,188 @@ Using the __Web console__ of your browser (accessed through the _Inspect element
 - Can you use the console to create a tag (hint: read the last part of the last section about creating new tags inside variables) and insert it in the page?
 
 <hr>
+
+<a id="more_js"></a>
+## 2. Javascript programming
+
+Now that we have introduced __Javascript__ and how it runs in your browser, __variables__ and their associated operations, and how __jQuery__ can be used to modify the content of the page in real-time, it's time we delve further in the built-in features of the Javascript language and how we can use them in conjunction with the functions defined by jQuery.
+
+Our survey of Javascript will cover __control flow elements__ such as __conditional statements__ and __loops__, as well as data structures such as __arrays__ and __objects__.
+
+<hr>
+
+#### Control flow?
+
+__Control flow elements__ are blocks or statements that affect the way your scripts are executed. Normally, our scripts are executed from top to bottom, linearly. However, the Javascript language gives us tools to alter the flow of our scripts and __selectively execute__ certain parts, or __repeat__ others. Whenever we talk about __control flow elements__, we will talk about elements that will break that "linearity." 
+
+<hr>
+
+<a id="js_cond"></a>
+### Conditional statements
+
+__Conditional statements__ are blocks that will __selectively__ execute their contents based on the evaluation of a set of __conditions__. Using those blocks, we will be able to choose when certain parts of our scripts execute; leading to code that is adaptable to user input or two other circumstances related to the browser and the page's rendering.
+
+__Conditions__ are __boolean__ statements that are equivalent to `true` or `false`; as such, they encapsulate all __comparisons__ and other functions that produce boolean values.
+
+The simplest form of __comparison__, and the one we will use the most often, is numerical in nature; you can use any numerical comparison operators you've learned in algebra to build these conditions:
+
+|Operator|Meaning|
+|---|---|
+|`A == B`|A "is equal to" B|
+|`A != B`|A "is not equal to" B|
+|`A > B`|A "is greater than" B|
+|`A < B`|A "is lesser than" B|
+|`A >= B`|A "is greater than or equal to" B|
+|`A <= B`|A "is lesser than or equal to" B|
+
+Using these operators, you can build conditions that compare literal (directly written out) values or variables! You can also combine simpler statements built from the operators above using the connectors below:
+
+|Keyword|Effect|
+|---|---|
+|`A && B`|Both conditions `A` and `B` must be true|
+|`A || B`|Either `A` or `B` must be true|
+
+As such, you can build conditions such as `i >= 10 && i < 100`, which would translate to `this statement is true if and only if 'i' is greater than or equal to 10, and lesser than 100`.
+
+These conditions can be used to build conditional statements:
+
+```javascript
+if(condition1) {
+	//Code executed if condition1 is true.
+} else if(condition2) {
+	//Code executed if condition2 is true, and condition1 false.
+} else {
+	//Code executed if all of the above are false.
+}
+```
+
+In this model, the `if`, `else if` and `else` keywords define blocks to which we can attach a condition and whose contents will only be executed if the condition assigned to it is true.
+
+In this structure, only the `if` is necessary; `else if` and `else` are absolutely optional. Let's look at different forms the model can take:
+
+#### Single `if` statement
+
+A single `if` statement can be inserted in your code; if its condition is true, then the associated contents will be executed before continuing to the code that comes next. If the condition is false, the block is simply skipped.
+
+```javascript
+//Code
+
+if(condition) {
+	//Code executed only if 'condition' is true.
+}
+
+//Code
+```
+
+#### `if`/`else` duo
+
+In the case of a `if`/`else` duo, if the `if` condition is true, its code is executed, otherwise the `else` is executed. This defines an alternate scenario to a satisfied condition that isn't a simple "skip the block."
+
+```javascript
+//Code
+
+if(condition) {
+	//Code executed only if 'condition' is true.
+} else {
+	//Code executed if the condition is false.
+}
+
+//Code
+```
+
+#### `if`/`else if` duo
+
+An `if`/`else if` duo works the same way as the `if`/`else` variety, but doesn't always execute the "fallback" code. It acts as stacked `if` statements: if the first `if` is unsatisfied, the second is looked at and if its condition is true, its content is executed. Note that you can add as many `else if` blocks as you want; the first one to have a satisfied condition is executed. If none are satisfied, the entire construct is skipped.
+
+```javascript
+//Code
+
+if(condition) {
+	//Code executed only if 'condition' is true.
+} else if(condition2) {
+	//Code that is executed only if condition2 is true and condition is false.
+}
+
+//Code
+```
+
+
+#### `if`/`else if`.`else` structure
+
+This structure is the most "complete". Similarly to the previous case, if the `if` condition is satisfied, its associated code runs. Otherwise, the `else if` blocks are looked at sequentially. Finally, if none of the `else if` statements run, the `else` will run.
+
+```javascript
+//Code
+
+if(condition) {
+	//Code executed only if 'condition' is true.
+} else if(condition2) {
+	//Code that is executed only if condition2 is true and condition is false.
+}
+
+//Code
+```
+
+These four structural models can be mixed and matched (and nested) to build complex filters that selectively execute code according to your needs.
+
+<hr>
+
+#### Tip
+
+`console.log` calls are especially useful in the context of conditional statements, as they will easily allow you to track which block is executed. Simply insert such statements in your blocks' code and look at your browser's web console for a detailed trace!
+
+<hr>
+
+<a id="js_loops"></a>
+### Loops
+
+Just like conditional statements, __loops__ also allow you to modify the way your scripts are executed. Rather than allowing you to define code that is only executed in some cases, loops will allow you to __repeat__ code without having to actually have duplicated code. This will be especially useful for code that generates regular and repetitive HTML structures.
+
+We will consider two loops types: `while` and `for` loops. Both of them work roughly the same way and can accomplish the same tasks; the difference is mainly semantic in nature.
+
+__`While` loops__ are described as "code that executes as long as a given condition is true." They have the following structure:
+
+```javascript
+while(condition) {
+	//Code to be repeated
+}
+```
+
+In this case, we must make sure that our condition is __reachable__, lest we produce an infinite loop that can easily make your user's browser unresponsive. Since Javascript runs continuously in the background of browser, an infinite loop could lock up the browser and prevent any further action from taking place, forcing your viewers to forcibly close the page.
+
+A simple example of `while` loop is as follows:
+
+```javascript
+var counter = 0;
+
+while(counter < 10) {
+	console.log(counter);
+	counter = counter + 1;
+}
+```
+
+In this case, the statement `console.log(counter)` would be repeatedly executed, printing the value of the `counter` variable as it increases from its initial `0` value to its maximal value `9`. In the last iteration, `9` is printed, then the counter is incremented, which makes the `counter < 10` loops condition go false, ending the loop.
+
+__`For` loops__ are quite similar to `while` loops: they will also be defined as `execute some code as long as a condition is true`, but will include space to define a counter without needing to define a variable outside the loop and increment it at each cycle.
+
+`For` loops follow the model:
+
+```javascript
+for(counter ; condition ; counter manipulation) {
+	//Code to be repeated.
+}
+```
+
+The middle field `condition` is the same as the `while` loop's ; the remaining two will be filled with the counter variable's creation and initialization, and the counter manipulation that we apply at the end of each cycle.
+
+For example, the loop we wrote earlier would take the `for` form:
+
+```javascript
+for(var counter = 0 ; counter < 10 ; counter = counter + 1) {
+	console.log(counter);
+}
+```
+
+Note that the condition hasn't changed, but the `var counter = 0;` and `counter = counter + 1;` statements were brought together with the condition, producing a more concise loop definition.
+
+The two previous example also show that the same functionality can be implemented using either of the two loop types. The task of choosing which form is appropriate is left to the coder, who will see if a __counter__ is important (leading to `for` loops) or if a condition that isn't necessarily dependent on a counter is central to the loop's function (in which case a `while` loop would be useful).
