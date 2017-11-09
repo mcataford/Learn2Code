@@ -120,6 +120,14 @@ double my_value = giveMeANumber();
 
 When this statement is executed, the method `giveMeANumber()` is executed, and as the `return` keyword is evaluated, the value `6.0` takes the place of the call to `giveMeANumber()` -- storing it in the `my_value` variable. This allows your methods' outputs to be saved and reused later on; your programs can now feature multiple layers of processing on the same data.
 
+<hr>
+
+#### Try it out!
+
+Can you modify the __averaging__ method from the last __Try it out!__ to make it __return__ a value instead of __printing__ it?
+
+<hr>
+
 <a id="objects"></a>
 ## 2. Object-oriented programming
 
