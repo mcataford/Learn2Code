@@ -9,6 +9,7 @@ In this section, we revisit __methods__ and __classes__ to manufacture our own. 
 1. [Methods, revisited](#methods)
 - [The `main` method](#main)
 - [The general method model](#general_model)
+- [The `return` keyword](#return)
 2. [Object-oriented programming](#objects)
 - [Defining classes](#basic_classes)
 - [Defining objects](#basic_objects)
@@ -95,6 +96,29 @@ Once defined, a method can be used anywhere in your code, as long as it is in th
 Try putting together a method that will implement the __average__ computation. You should take in as input an __array__ of values of an appropriate type and output a single value representing the average of the array's values. Feel free to add other inputs as needed.
 
 <hr>
+
+<a id="return"></a>
+### The `return` keyword
+
+We can make use of the `<returntype>` portion of our method definition by using the `return` keyword to produce method output that we can save in variables and reuse for further processing.
+
+At the end of any method, using the `return` keyword will end the method's execution and send an element of data consistent with the method's return type back to the location where the method was called.
+
+For example, let us have the following simplified method:
+
+```java
+public static double giveMeANumber() {
+	return 6.0;
+}
+```
+
+This method has a return type `double`, and uses the `return` keyword to "hand back" the value `6.0`. Since this method returns something we can use it by typing:
+
+```java
+double my_value = giveMeANumber();
+```
+
+When this statement is executed, the method `giveMeANumber()` is executed, and as the `return` keyword is evaluated, the value `6.0` takes the place of the call to `giveMeANumber()` -- storing it in the `my_value` variable. This allows your methods' outputs to be saved and reused later on; your programs can now feature multiple layers of processing on the same data.
 
 <a id="objects"></a>
 ## 2. Object-oriented programming
