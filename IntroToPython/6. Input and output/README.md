@@ -8,6 +8,8 @@
 - [The `input()` function](#input_function)
 - [Parsing input](#parsing_input)
 2. [File input and output](#file_inout)
+- [Reading files](#file_read)
+- [Writing to files](#file_write)
 
 <a id="user_in"></a>
 ## 1. Basic user input
@@ -94,7 +96,7 @@ Of course, our processing `for` loop can do much more than simply print the data
 
 #### Try it out!
 
-Can you use Python to __count__ the number of words present in [this English scrabble dictionary file]()?
+Can you use Python to __count__ the number of words present in [this English scrabble dictionary file](https://github.com/mcataford/Learning/blob/master/IntroToPython/6.%20Input%20and%20output/complementary/englishDictionary.txt)?
 
 <hr>
 
