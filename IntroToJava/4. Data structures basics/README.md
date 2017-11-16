@@ -115,7 +115,7 @@ int[] my_numbers = {1, 2, 3, 4, 5};
 What happens if we try to access `my_numbers[5]`? Since `5` is larger than `length - 1`, we are __out of bounds__ and will trigger an exception letting us know that we have access memory outside of the chunk reserved for the array.
 <hr>
 
-Using this system, we can not store __similar data together__! For example, looking back at our Fahrenheit to Celsius conversion tool, an array would be a convenient way to hold a set of temperatures to convert!
+Using this system, we can now store __similar data together__! For example, looking back at our Fahrenheit to Celsius conversion tool, an array would be a convenient way to hold a set of temperatures to convert!
 
 <hr>
 
