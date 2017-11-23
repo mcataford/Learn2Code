@@ -296,4 +296,3 @@ The ArrayList offers you a handful of [methods](https://docs.oracle.com/javase/7
 |`contains(object)`|Determines whether the list contains an element matching the given element.|`myList.contains("Marc");`|
 
 Using these methods, we can replicate anything we have been doing with normal arrays, but without the size limitation we have experienced earlier.
-

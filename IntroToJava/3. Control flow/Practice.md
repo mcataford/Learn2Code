@@ -66,7 +66,7 @@ For all the programming questions below, feel free to use `while` or `for` loops
 _Note: You should be generating the lines dynamically._
 
 - __(Programming)__ Can you adjust your previous code so that the width of the first line is adjustable? Make it a variable called `width` that you can change. You should see the same pattern no matter the width of the first row.
-- __(Programming)__ Write a program that will compute 10000th Fibonacci number. [Read more about Fibonacci sequences here](https://www.mathsisfun.com/numbers/fibonacci-sequence.html).
+- __(Programming)__ Write a program that will compute 100th Fibonacci number. [Read more about Fibonacci sequences here](https://www.mathsisfun.com/numbers/fibonacci-sequence.html).
 - __(Programming)__ Write a program that will find the 100th prime number. [Read more about prime numbers here](https://www.mathsisfun.com/prime_numbers.html). (Conveniently, this page contains a list of prime numbers that you can use to validate your answers.)
 - __(Programming)__ Generalize the previous program so that you can generate the Nth prime number.
 - __(Programming)__ Write a program that will, given a seed integer N, print all the numbers part of the _Collatz sequence_ starting from N. If you have a current value `n` in your sequence, the next Collatz sequence value is defined by the following relationship:
