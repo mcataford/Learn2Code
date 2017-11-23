@@ -1,6 +1,6 @@
 # Introduction to Java programming
 
-## Data structures basics
+## Data structures
 
 In programming, __data structures__ refer to ways of organizing data or collections of related data in a way that is easy to process and to use by both programs and their developers. Now that we have a working understanding of how we can alter the flow of your programs and how variables work, we will focus on how we can use Java's built-in data structures and elaborate our own so that we can not only adapt our code to the problems we are tackling, but also the way in which we store data.
 
@@ -14,6 +14,10 @@ The main object of this lesson is the most basic data structure offered by Java:
 - [Using arrays](#usingarrays)
 - [Iterating over arrays](#iterate)
 2. [Multidimensional arrays](#multidimensional)
+3. [ArrayLists](#arraylists)
+- [Improvements on the classic array](#al_improvements)
+- [General design](#al_design)
+- [Methods](#al_methods)
 
 <a id="arrays"></a>
 ## 1. Array basics
@@ -247,3 +251,49 @@ Can you craft a __nested loop__ that will replace any __even value__ by 0?
 Finally, try printing out all the values contained in your matrix. You can do so on one line, or on three different lines.
 
 <hr>
+
+<a id="arraylists"></a>
+## 3. ArrayLists
+
+<hr>
+
+#### Attention
+
+This section deals with __objects__. If you haven't read the section on [objects and classes](), you should peek ahead to be able to fully enjoy this part.
+
+<hr>
+
+__Arraylists__ build on top of the general idea of an array, which is just a linear list of elements indexed by position. Just like the array described [earlier](#arrays), __arraylists__ will only store elements that are __similar in type__, and the same principle of addressing will apply (i.e. the first element will have index `0`, and the last, index `length - 1`).
+
+The big difference comes with the content: while our arrays could contain anything, our __arraylists__ will contain __objects__. Not to worry: __object wrappers__ exist for all primitive types allowing you to produce objects that represent primitives.
+
+For example, consider the `Integer` class. `Integer` is the wrapper class for `int` primitives and implements the same kind of operations regular `int` variables have. If you attempt to store a primitive in an ArrayList, the conversion to the wrapper is done automatically, allowing you to use the ArrayList in any context where you would use an array instead.
+
+<a id="al_improvements"></a>
+### Improvements on the classic array
+
+The ArrayList's big advantage over the classic array is its __extensibility__. Remember that when we defined our array structure, we said that it was __static in length__ because of the way memory was allocated. When the array is first initialized, a __contiguous block of memory__ was reserved for it so that all elements could be stored together in a sequential fashion.
+
+The ArrayList will still handle your data using an array, but will abstract away the task of __resizing__ your array such that it has seemingly infinite capacity (as long as your device's memory allows storage, of course).
+
+Being an object itself, the ArrayList will also require its own __methods__ since the square bracket notation we have seen earlier only applies to arrays.
+
+<a id="al_methods"></a>
+### Methods
+
+The ArrayList offers you a handful of [methods](https://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html) by which you can manipulate its contents. The most useful of them are the following:
+
+|Method|Effect|Usage|
+|---|---|---|
+|`ArrayList()`|Creates a new ArrayList, initially empty.|`ArrayList<type> myList = new ArrayList();`|
+|`add(object)`|Appends an item to the list; the item is added at the end.|`myList.add("Marc");|
+|`add(int, object)`|Inserts an item in the list at the specified index.|`myList.add(0, "Marc");`|
+|`clear()`|Removes all the elements from the list.|`myList.clear();`|
+|`get(int)`|Gets a specific item given an index, similar to `arr[index]`.|`myList.get(0);`|
+|`size()`|Calculates the size of the list.|`myList.size();`|
+|`remove(int)`|Removes the item at the given index.|`myList.remove(0);`|
+|`remove(object)`|Removes the first occurrence of the given element.|`myList.remove("Marc");`|
+|`contains(object)`|Determines whether the list contains an element matching the given element.|`myList.contains("Marc");`|
+
+Using these methods, we can replicate anything we have been doing with normal arrays, but without the size limitation we have experienced earlier.
+
