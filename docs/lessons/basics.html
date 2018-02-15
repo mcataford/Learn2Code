@@ -12,13 +12,13 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="In this lesson" />
 <meta property="og:description" content="In this lesson" />
-<link rel="canonical" href="http://localhost:4000/TalkPythonToMe/lessons/2018/02/11/basics.html" />
-<meta property="og:url" content="http://localhost:4000/TalkPythonToMe/lessons/2018/02/11/basics.html" />
+<link rel="canonical" href="http://localhost:4000/TalkPythonToMe/lessons/basics.html" />
+<meta property="og:url" content="http://localhost:4000/TalkPythonToMe/lessons/basics.html" />
 <meta property="og:site_name" content="Learning Python" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-02-11T10:05:23-05:00" />
 <script type="application/ld+json">
-{"description":"In this lesson","@type":"BlogPosting","url":"http://localhost:4000/TalkPythonToMe/lessons/2018/02/11/basics.html","headline":"Python basics","dateModified":"2018-02-11T10:05:23-05:00","datePublished":"2018-02-11T10:05:23-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/TalkPythonToMe/lessons/2018/02/11/basics.html"},"@context":"http://schema.org"}</script>
+{"description":"In this lesson","@type":"BlogPosting","url":"http://localhost:4000/TalkPythonToMe/lessons/basics.html","headline":"Python basics","dateModified":"2018-02-11T10:05:23-05:00","datePublished":"2018-02-11T10:05:23-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/TalkPythonToMe/lessons/basics.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/TalkPythonToMe/assets/main.css">
@@ -79,6 +79,8 @@
   </header>
   <hr>
 
+  
+
   <div class="post-content e-content" itemprop="articleBody">
     <h1 id="in-this-lesson">In this lesson</h1>
 
@@ -101,6 +103,7 @@
   </li>
   <li><a href="#scripts">Writing scripts</a></li>
   <li><a href="#functions">Functions</a></li>
+  <li><a href="#commenting">Comments</a></li>
 </ol>
 
 <hr />
@@ -361,12 +364,52 @@
   <span class="k">return</span> <span class="n">output</span>
 </code></pre></div></div>
 
+<p>A few things to consider:</p>
+
+<ol>
+  <li>The <code class="highlighter-rouge">def</code> keyword indicates that a function is being defined;</li>
+  <li><code class="highlighter-rouge">my_function</code> is the given name of our function, we will use it to call our function later (i.e. <code class="highlighter-rouge">my_function()</code>);</li>
+  <li><code class="highlighter-rouge">input</code> is a <strong>comma-separated list</strong> of items that will act as variables within the function;</li>
+  <li>The <code class="highlighter-rouge">return</code> keyword “hands back” the output of the function to whoever called the function. An example of this is <code class="highlighter-rouge">str(x)</code>, which <em>returns</em> a string made from the value of <code class="highlighter-rouge">x</code>.</li>
+</ol>
+
+<p>Reusing our previous example in which we build a string that introduced us, we could write a function that <em>returns</em> our concatenated string and takes the three elements as input:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">introduce_myself</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+  <span class="n">output</span> <span class="o">=</span> <span class="s">"Hello! My name is "</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">" and I am "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span>  <span class="s">" years old. I am "</span> <span class="o">+</span> <span class="n">height</span> <span class="o">+</span> <span class="s">" centimetres high."</span>
+
+  <span class="k">return</span> <span class="n">output</span>
+</code></pre></div></div>
+
+<p>Once defined, we can use <code class="highlighter-rouge">introduce_myself()</code> anywhere in our script and as long as we give it the right parameters (a string, an integer and a float, in that order), it will produce the right output.</p>
+
+<p>For example, we can use <code class="highlighter-rouge">introduce_myself("Marc", 27, 180.1)</code> and get the same output string as before.</p>
+
+<p><a name="commenting"></a></p>
+<h1 id="5-comments">5. Comments</h1>
+
+<p>You might have noticed sentences embedded in code blocks on lines that start with <code class="highlighter-rouge">#</code>. These are called <strong>comments</strong>. Comments are notes left by the programmer to contextualize code, explain the logic of a certain block or provide guidance on things left to do or fix.</p>
+
+<p>You can add comments to your code two ways:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c"># You can write single-line comments using the hashbang sign before the comment text.</span>
+
+<span class="s">"""
+You can also use three consecutive quotation marks to open a block comment
+that can span over multiple lines. Another set of three quotation marks will
+close the block comment.
+"""</span>
+</code></pre></div></div>
+
+<p>Comments are <strong>ignored</strong> by the interpreter and do not alter the behaviour of your script. You are strongly encouraged to comment your code, as logic that is self-evident today might not remain so through time, and code that you would share might raise questions from other programmers.</p>
+
 
   </div>
 
   
 
-  <a class="u-url" href="/TalkPythonToMe/lessons/2018/02/11/basics.html" hidden></a>
+  <a class="u-url" href="/TalkPythonToMe/lessons/basics.html" hidden></a>
 </article>
       </div>
     </main>
