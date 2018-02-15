@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/Learn2Code/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/Learn2Code/" rel="alternate" type="text/html" /><updated>2018-02-14T19:08:53-05:00</updated><id>http://localhost:4000/Learn2Code/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Getting started</title><link href="http://localhost:4000/Learn2Code/lessons/2018/02/14/getting-started.html" rel="alternate" type="text/html" title="Getting started" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>http://localhost:4000/Learn2Code/lessons/2018/02/14/getting-started</id><content type="html" xml:base="http://localhost:4000/Learn2Code/lessons/2018/02/14/getting-started.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/Learn2Code/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/Learn2Code/" rel="alternate" type="text/html" /><updated>2018-02-14T19:18:18-05:00</updated><id>http://localhost:4000/Learn2Code/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Getting started</title><link href="http://localhost:4000/Learn2Code/lessons/2018/02/14/getting-started.html" rel="alternate" type="text/html" title="Getting started" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>http://localhost:4000/Learn2Code/lessons/2018/02/14/getting-started</id><content type="html" xml:base="http://localhost:4000/Learn2Code/lessons/2018/02/14/getting-started.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we’ll set up our coding environment and talk about the tools that we will use to learn Python. We’ll also have a quick chat about the best strategies to use this course effectively.&lt;/p&gt;
 
@@ -38,7 +38,7 @@
 
 &lt;p&gt;Regardless of which computer model you have, you can download the Python 3.5+ interpreter &lt;a href=&quot;https://www.python.org/downloads/&quot;&gt;here&lt;/a&gt; by clicking on the appropriate button.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/python_int_dl.png&quot; alt=&quot;The Python interpreter download page&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/Learn2Code/assets/python_int_dl.png&quot; alt=&quot;The Python interpreter download page&quot; /&gt;
 &lt;em&gt;The Python interpreter download page&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The installation package not only contains the interpreter, which will read through our code and execute it, but also &lt;a href=&quot;https://docs.python.org/3/library/idle.html&quot;&gt;IDLE&lt;/a&gt;, an easy to use development environment that facilitates writing code and executing it. For the purposes of our course, we will use IDLE as our code editor. If you wish to grow beyond IDLE and use other tools, see &lt;a href=&quot;&quot;&gt;Other editors&lt;/a&gt;.&lt;/p&gt;
@@ -52,7 +52,7 @@
 
 &lt;p&gt;If your interpreter is functional, the interactive console should intialize, showing you which version of Python you are currently using and giving you the opportunity to enter commands.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/python_int_cli.png&quot; alt=&quot;The interactive Python console&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/Learn2Code/assets/python_int_cli.png&quot; alt=&quot;The interactive Python console&quot; /&gt;
 &lt;em&gt;The interactive Python console&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;In here, you are able to type any Python statement and see output directly, much like in R or Matlab. We will discuss its usefulness later. To exit the interactive console, simply type &lt;code class=&quot;highlighter-rouge&quot;&gt;exit()&lt;/code&gt; and press the return key.&lt;/p&gt;
@@ -69,22 +69,22 @@
 
 &lt;p&gt;Creating a Github account is very simple. First, head to &lt;a href=&quot;https//www.github.com&quot;&gt;https//www.github.com&lt;/a&gt; and fill up the sign up form on the front page. Make sure to use a valid email address as you will have to respond to a validation email to complete the setup.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/github_signup_1.png&quot; alt=&quot;Github's signup form&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/Learn2Code/assets/github_signup_1.png&quot; alt=&quot;Github's signup form&quot; /&gt;
 &lt;em&gt;Github’s signup form&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Once you press “Sign up for Github”, you will be taken to the next step: choosing a plan. Github offers paid plans, but for our needs, the free plan is just fine and should be selected by default. If you are currently a student, you most likely quality for the paid version free-of-charge, see the note at the bottom of this page for more details.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/github_signup_2.png&quot; alt=&quot;Choosing a plan&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/Learn2Code/assets/github_signup_2.png&quot; alt=&quot;Choosing a plan&quot; /&gt;
 &lt;em&gt;Choosing a plan&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Once that is done, you should be taken to an optional poll about your programming practice. Feel free to fill it up or to use the “Skip this step” link at the bottom of the form.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/github_signup_3.png&quot; alt=&quot;Github's usage poll&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/Learn2Code/assets/github_signup_3.png&quot; alt=&quot;Github's usage poll&quot; /&gt;
 &lt;em&gt;Github’s usage poll&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Once everything is done, you should receive a &lt;strong&gt;confirmation email&lt;/strong&gt; that will unlock the full potential of your account. Make sure that you click the link that’s on there.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/github_signup_4.png&quot; alt=&quot;You cannot go further without confirming&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/Learn2Code/assets/github_signup_4.png&quot; alt=&quot;You cannot go further without confirming&quot; /&gt;
 &lt;em&gt;You cannot got further without confirming&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&quot;repo&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -92,7 +92,7 @@
 
 &lt;p&gt;&lt;strong&gt;Repositories&lt;/strong&gt; are containers for your projects. They allow you to group code together based on what you are working on. You can have as many repositories as you desire; today, we will initialize the first one so we can store our &lt;strong&gt;course material&lt;/strong&gt; in it. Once your email is verified, head to your profile by clicking on the “+” located on the top right of the screen and select “New repository”.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/github_repo_1.png&quot; alt=&quot;Creating a new repository&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/Learn2Code/assets/github_repo_1.png&quot; alt=&quot;Creating a new repository&quot; /&gt;
 &lt;em&gt;Accessing the repository creation form&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;This will take you to a form defining the basic settings of your repository. Make sure that you do the following:&lt;/p&gt;
@@ -105,12 +105,12 @@
 
 &lt;p&gt;With that done, you can click “Create repository” .&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/github_repo_2.png&quot; alt=&quot;Repository setup&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/Learn2Code/assets/github_repo_2.png&quot; alt=&quot;Repository setup&quot; /&gt;
 &lt;em&gt;Repository setup&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The final step to take on Github’s end is to copy the &lt;strong&gt;repository address&lt;/strong&gt;. This will allow you to create a link between your computer and the repository so you can publish your changes without having to access the website.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/github_repo_3.png&quot; alt=&quot;Repository address&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/Learn2Code/assets/github_repo_3.png&quot; alt=&quot;Repository address&quot; /&gt;
 &lt;em&gt;Repository address&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&quot;setup&quot;&gt;&lt;/a&gt;&lt;/p&gt;
@@ -149,12 +149,12 @@
 
 &lt;p&gt;This will show you the current modifications made to the repository. The report should look somewhat like this:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/github_commit_1.png&quot; alt=&quot;Repository status&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/Learn2Code/assets/github_commit_1.png&quot; alt=&quot;Repository status&quot; /&gt;
 &lt;em&gt;Repository changes&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;You can then use &lt;code class=&quot;highlighter-rouge&quot;&gt;git add .&lt;/code&gt; to add all the files to what you want to synchronize and &lt;code class=&quot;highlighter-rouge&quot;&gt;git commit -m &quot;&amp;lt;message&amp;gt;&quot;&lt;/code&gt; to synchronize. Make sure to replace &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;message&amp;gt;&lt;/code&gt; by something meaningful to describe what you changed! This will be useful later when you’ll need to look back at what you’ve done.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/github_commit_2.png&quot; alt=&quot;Pushing to Github&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/Learn2Code/assets/github_commit_2.png&quot; alt=&quot;Pushing to Github&quot; /&gt;
 &lt;em&gt;Pushing to Github&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;If all goes well, you should see a synchronization report like the one above. This means that you have successfully uploaded your material to Github. If you go back to your repository’s page on Github’s website, you should now see your updated file(s).&lt;/p&gt;
@@ -212,7 +212,7 @@
 
 &lt;p&gt;The most basic thing the interactive console can do it basic arithmetic. If you use any mathematical operation as a statement, you should see the results printed below. All the basic operators taught in algebra are valid. As such, we can experiment and produce the following:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/console-math.png&quot; alt=&quot;Arithmetic in the console&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/Learn2Code/assets/console-math.png&quot; alt=&quot;Arithmetic in the console&quot; /&gt;
 &lt;em&gt;Various arithmetic operations in the console&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Note that just like in classical algebra, you can use parentheses to group operations together, and chained operations such as &lt;code class=&quot;highlighter-rouge&quot;&gt;(1 + 1) * (12 * 50)&lt;/code&gt; can be composed from simpler ones.&lt;/p&gt;
@@ -279,7 +279,7 @@
 
 &lt;p&gt;All of the arithmetic operations we have experimented with in the [first section] of this lesson are applicable to any primitive. In the case of &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt; values), those will be interpreted as &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; respectively. As such, the following is possible:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/python_int_cli_2.png&quot; alt=&quot;Arithmetic in the console&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/Learn2Code/assets/python_int_cli_2.png&quot; alt=&quot;Arithmetic in the console&quot; /&gt;
 &lt;em&gt;Arithmetic using boolean values&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;This outlines what we said earlier: &lt;strong&gt;any primitive value can be represented as a number&lt;/strong&gt;.&lt;/p&gt;
@@ -311,7 +311,7 @@
 
 &lt;p&gt;The first operation, concatenation, allows you to make longer strings out of shorter ones. This means that given three strings, we can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; operator to form a new longer one that represents the sum of the three:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/console-string.png&quot; alt=&quot;Concatenation&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/Learn2Code/assets/console-string.png&quot; alt=&quot;Concatenation&quot; /&gt;
 &lt;em&gt;Concatenating strings&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;The same way, using the &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; operator will duplicate and concatenate strings. For example, typing &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;hello&quot; * 2&lt;/code&gt; would result in the string &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;hellohello&quot;&lt;/code&gt;; the initial string would be repeated twice, and the repetitions concatenated.&lt;/p&gt;
@@ -352,7 +352,7 @@
 
 &lt;p&gt;Without the type conversion, an error would occur:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/console-string2.png&quot; alt=&quot;TypeError during concatenation&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/Learn2Code/assets/console-string2.png&quot; alt=&quot;TypeError during concatenation&quot; /&gt;
 &lt;em&gt;TypeError during concatenation&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&quot;creating&quot;&gt;&lt;/a&gt;&lt;/p&gt;
