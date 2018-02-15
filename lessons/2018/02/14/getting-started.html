@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Getting started | Learning Python</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="Getting started" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In this lesson" />
+<meta property="og:description" content="In this lesson" />
+<link rel="canonical" href="http://localhost:4000/Learn2Code/lessons/2018/02/14/getting-started.html" />
+<meta property="og:url" content="http://localhost:4000/Learn2Code/lessons/2018/02/14/getting-started.html" />
+<meta property="og:site_name" content="Learning Python" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-14T10:05:23-05:00" />
+<script type="application/ld+json">
+{"description":"In this lesson","@type":"BlogPosting","url":"http://localhost:4000/Learn2Code/lessons/2018/02/14/getting-started.html","headline":"Getting started","dateModified":"2018-02-14T10:05:23-05:00","datePublished":"2018-02-14T10:05:23-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Learn2Code/lessons/2018/02/14/getting-started.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/Learn2Code/assets/main.css">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/Learn2Code/feed.xml" title="Learning Python" />
+  
+</head>
+
+
+  <body>
+
+    <html>
+
+  <head>
+    <title></title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="http://localhost:4000//Learn2Code/css/base.css" rel="stylesheet"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    
+  </head>
+
+  <body>
+
+    <header class="page-header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Learn Python</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="http://localhost:4000//Learn2Code/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:4000//Learn2Code/#lessons">Main course</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:4000//Learn2Code/#workshops">Workshops</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:4000//Learn2Code/#resources">Resources</a>
+            </li>
+          </ul>
+          <span class="navbar-text"></span>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Getting started</h1>
+    <h3 class="p-name">Setting up your environment</h3>
+    <p class="post-meta">
+  </header>
+  <hr>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="in-this-lesson">In this lesson</h1>
+
+<p>In this lesson, we’ll set up our coding environment and talk about the tools that we will use to learn Python. We’ll also have a quick chat about the best strategies to use this course effectively.</p>
+
+<ol>
+  <li><a href="#tools">Tools overview</a>
+    <ol>
+      <li><a href="#python">The Python interpreter and IDLE</a></li>
+      <li><a href="#git">Git and Github</a>
+        <ol>
+          <li><a href="#account">Creating an account</a></li>
+          <li><a href="#repo">Creating a repository</a></li>
+          <li><a href="#setup">Setting up Git on your computer to access the repository</a></li>
+          <li><a href="#using-git">Using Git and Github</a></li>
+        </ol>
+      </li>
+      <li><a href="#editors">Other editors</a></li>
+    </ol>
+  </li>
+  <li><a href="#app">Appendix</a>
+    <ol>
+      <li><a href="#github-education">Github Education</a></li>
+    </ol>
+  </li>
+</ol>
+
+<hr />
+
+<p><a name="tools"></a></p>
+<h1 id="1-tools-overview">1. Tools overview</h1>
+
+<p>Python doesn’t require much supporting software: the two things we absolutely need are the <strong>Python interpreter</strong> and a <strong>code editor you are comfortable with</strong>.</p>
+
+<p><a name="python"></a></p>
+<h2 id="11-the-python-interpreter-and-idle">1.1 The Python interpreter and IDLE</h2>
+
+<p>This courses uses <strong>Python 3.5.x</strong>. While you can use previous versions of Python to learn about the language, keep in mind that if you do, syntactic differences will appear along the way that will require you to correct some of the examples. When we will start using third-party modules, the Python version you use will become even more important as different features and module versions are supported by Python 2.7.x and 3.5+. As such, <strong>it is strongly recommended to stick with the recommended version</strong>.</p>
+
+<p>Regardless of which computer model you have, you can download the Python 3.5+ interpreter <a href="https://www.python.org/downloads/">here</a> by clicking on the appropriate button.</p>
+
+<p><img src="http://localhost:4000/Learn2Code/assets/python_int_dl.png" alt="The Python interpreter download page" />
+<em>The Python interpreter download page</em></p>
+
+<p>The installation package not only contains the interpreter, which will read through our code and execute it, but also <a href="https://docs.python.org/3/library/idle.html">IDLE</a>, an easy to use development environment that facilitates writing code and executing it. For the purposes of our course, we will use IDLE as our code editor. If you wish to grow beyond IDLE and use other tools, see <a href="">Other editors</a>.</p>
+
+<p>No matter the editor you choose to use, once the interpreter is installed, you have access to the <strong>interactive Python console</strong>. To verify that everything is in working order, you should do the following:</p>
+
+<p>First, open up a <strong>command prompt window</strong>. If you are running any iteration of Windows, you will find it by looking for <strong>Command Prompt</strong>, and you can look for <strong>Terminal</strong> on both OSX and Linux. Once your Command Prompt/Terminal window is open, type in the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python
+</code></pre></div></div>
+
+<p>If your interpreter is functional, the interactive console should intialize, showing you which version of Python you are currently using and giving you the opportunity to enter commands.</p>
+
+<p><img src="http://localhost:4000/Learn2Code/assets/python_int_cli.png" alt="The interactive Python console" />
+<em>The interactive Python console</em></p>
+
+<p>In here, you are able to type any Python statement and see output directly, much like in R or Matlab. We will discuss its usefulness later. To exit the interactive console, simply type <code class="highlighter-rouge">exit()</code> and press the return key.</p>
+
+<p><a name="git"></a></p>
+<h2 id="12-git-and-github">1.2 Git and Github</h2>
+
+<p>To keep our code organized, we will use <strong>Git</strong>. Git is a free and opensource <strong>version control system</strong> that keeps sharing and keeping track of our projects simple. You can opt to organize your code on your computer as you see fit, but if you choose to use Git, install <a href="https://git-scm.com/downloads">Git</a> and follow the steps below to create an account and link it to your computer.</p>
+
+<p>We will use Git through the Github, a free service that takes care of maintaining a server on which we can archive our code. To use the service, we will need to create a free account.</p>
+
+<p><a name="account"></a></p>
+<h3 id="121-creating-an-account">1.2.1 Creating an account</h3>
+
+<p>Creating a Github account is very simple. First, head to <a href="https//www.github.com">https//www.github.com</a> and fill up the sign up form on the front page. Make sure to use a valid email address as you will have to respond to a validation email to complete the setup.</p>
+
+<p><img src="http://localhost:4000/Learn2Code/assets/github_signup_1.png" alt="Github's signup form" />
+<em>Github’s signup form</em></p>
+
+<p>Once you press “Sign up for Github”, you will be taken to the next step: choosing a plan. Github offers paid plans, but for our needs, the free plan is just fine and should be selected by default. If you are currently a student, you most likely quality for the paid version free-of-charge, see the note at the bottom of this page for more details.</p>
+
+<p><img src="http://localhost:4000/Learn2Code/assets/github_signup_2.png" alt="Choosing a plan" />
+<em>Choosing a plan</em></p>
+
+<p>Once that is done, you should be taken to an optional poll about your programming practice. Feel free to fill it up or to use the “Skip this step” link at the bottom of the form.</p>
+
+<p><img src="http://localhost:4000/Learn2Code/assets/github_signup_3.png" alt="Github's usage poll" />
+<em>Github’s usage poll</em></p>
+
+<p>Once everything is done, you should receive a <strong>confirmation email</strong> that will unlock the full potential of your account. Make sure that you click the link that’s on there.</p>
+
+<p><img src="http://localhost:4000/Learn2Code/assets/github_signup_4.png" alt="You cannot go further without confirming" />
+<em>You cannot got further without confirming</em></p>
+
+<p><a name="repo"></a></p>
+<h3 id="122-creating-repositories">1.2.2 Creating repositories</h3>
+
+<p><strong>Repositories</strong> are containers for your projects. They allow you to group code together based on what you are working on. You can have as many repositories as you desire; today, we will initialize the first one so we can store our <strong>course material</strong> in it. Once your email is verified, head to your profile by clicking on the “+” located on the top right of the screen and select “New repository”.</p>
+
+<p><img src="http://localhost:4000/Learn2Code/assets/github_repo_1.png" alt="Creating a new repository" />
+<em>Accessing the repository creation form</em></p>
+
+<p>This will take you to a form defining the basic settings of your repository. Make sure that you do the following:</p>
+
+<ol>
+  <li>Choose a meaningful name for your repository (this will be how others and yourself will see it online);</li>
+  <li>Tick the “Initialize this repository with a README”;</li>
+  <li>Choose a <code class="highlighter-rouge">.gitignore</code> file using the “Add .gitignore” button, you can simply type in <code class="highlighter-rouge">Python</code> and use the prebuilt one;</li>
+</ol>
+
+<p>With that done, you can click “Create repository” .</p>
+
+<p><img src="http://localhost:4000/Learn2Code/assets/github_repo_2.png" alt="Repository setup" />
+<em>Repository setup</em></p>
+
+<p>The final step to take on Github’s end is to copy the <strong>repository address</strong>. This will allow you to create a link between your computer and the repository so you can publish your changes without having to access the website.</p>
+
+<p><img src="http://localhost:4000/Learn2Code/assets/github_repo_3.png" alt="Repository address" />
+<em>Repository address</em></p>
+
+<p><a name="setup"></a></p>
+<h2 id="123-setting-up-git-on-your-computer-to-access-the-repository">1.2.3 Setting up Git on your computer to access the repository</h2>
+
+<p>Back on Command Prompt or Terminal, you should first type the following to make sure that Git is properly installed:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git --version
+</code></pre></div></div>
+
+<p>If everything is set up correctly, this should display the current version of Git.</p>
+
+<p>You should then navigate to a convenient location to put your Python projects (in this example, we’ll use the My Documents folder):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd C:\Users\&lt;username&gt;\Documents
+</code></pre></div></div>
+
+<p><em>Note: On OSX and Linux, this path will be different: <code class="highlighter-rouge">/Users/&lt;username&gt;/Documents/</code> should be equivalent for OSX and <code class="highlighter-rouge">/home/&lt;username&gt;/</code> should be equivalent for Linux</em></p>
+
+<p>From there, you can <strong>clone</strong> the repository you created on Github, thereby creating a directory on your computer which is a copy of the Github-hosted version. This is where we’ll store the code we write so we can synchronize the directory with Github’s servers.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone &lt;repository address&gt;
+</code></pre></div></div>
+
+<p>Here, <code class="highlighter-rouge">&lt;repository address&gt;</code> should have the form <code class="highlighter-rouge">https://github.com/&lt;username&gt;/&lt;repository&gt;.git</code>. In the previous examples, the link copied from Github was <code class="highlighter-rouge">https://github.com/pythonisbae/firstproject.git</code>.</p>
+
+<p>This will create a directory with the same name as your repository containing your files. You can then access it using <code class="highlighter-rouge">cd</code>.</p>
+
+<p><a name="using-git"></a></p>
+<h2 id="124-using-git-and-github">1.2.4 Using Git and Github</h2>
+
+<p>At this point, you are ready to use Github! You can test your Git setup by modifying any file in the directory you just created (you can open the <code class="highlighter-rouge">README.md</code> file, for example), going back to the Command Prompt/Terminal and using the following commands:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p>This will show you the current modifications made to the repository. The report should look somewhat like this:</p>
+
+<p><img src="http://localhost:4000/Learn2Code/assets/github_commit_1.png" alt="Repository status" />
+<em>Repository changes</em></p>
+
+<p>You can then use <code class="highlighter-rouge">git add .</code> to add all the files to what you want to synchronize and <code class="highlighter-rouge">git commit -m "&lt;message&gt;"</code> to synchronize. Make sure to replace <code class="highlighter-rouge">&lt;message&gt;</code> by something meaningful to describe what you changed! This will be useful later when you’ll need to look back at what you’ve done.</p>
+
+<p><img src="http://localhost:4000/Learn2Code/assets/github_commit_2.png" alt="Pushing to Github" />
+<em>Pushing to Github</em></p>
+
+<p>If all goes well, you should see a synchronization report like the one above. This means that you have successfully uploaded your material to Github. If you go back to your repository’s page on Github’s website, you should now see your updated file(s).</p>
+
+<p><a name="editors"></a></p>
+<h2 id="13-other-editors">1.3 Other editors</h2>
+
+<p>If you want to explore the other editors available on the web and use something else than IDLE, you should check out the editors below. All of them are free and have a rich set of features.</p>
+
+<ul>
+  <li><a href="https://atom.io/">Atom</a></li>
+  <li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+  <li><a href="https://www.jetbrains.com/pycharm/">PyCharm Community Edition</a></li>
+</ul>
+
+<p><a name="app"></a></p>
+<h1 id="appendix">Appendix</h1>
+
+<p><a name="github-education"></a></p>
+<h2 id="github-education">Github Education</h2>
+
+<p>If you are enrolled as a student, you qualify for Github’s education package. Simply sign up <a href="https://education.github.com/pack/join">here</a> and enjoy a set of free code-related perks!</p>
+
+  </div>
+
+  
+
+  <a class="u-url" href="/Learn2Code/lessons/2018/02/14/getting-started.html" hidden></a>
+</article>
+      </div>
+    </main>
+
+    
+  <footer>
+  </footer>
+  
+  </body>
+</html>
+
+  </body>
+
+</html>

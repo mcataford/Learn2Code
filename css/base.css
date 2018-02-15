@@ -1,0 +1,13 @@
+header.page-header nav {
+  display: flex; }
+  header.page-header nav span {
+    flex: 0 1 auto; }
+  header.page-header nav ul {
+    flex: 1 0 auto; }
+
+main .lesson-box h6
+p.mb-1 {
+  font-style: italic;
+  font-size: 0.9em; }
+main article p img {
+  width: 100%; }
