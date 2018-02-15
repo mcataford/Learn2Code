@@ -74,7 +74,7 @@
 
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">Python basics</h1>
-    <h3 class="p-name">Variables, methods and basic programs</h3>
+    <h3 class="p-name">Variables, functions and basic programs</h3>
     <p class="post-meta">
   </header>
   <hr>
@@ -82,7 +82,7 @@
   <div class="post-content e-content" itemprop="articleBody">
     <h1 id="in-this-lesson">In this lesson</h1>
 
-<p>In this lesson, we will look at the <strong>interactive Python console</strong>. We will explore the notion of <strong>variables</strong> and <strong>methods</strong>, and review definitions that will follow us for the rest of our adventure.</p>
+<p>In this lesson, we will look at the <strong>interactive Python console</strong>. We will explore the notion of <strong>variables</strong> and <strong>functions</strong>, and review definitions that will follow us for the rest of our adventure.</p>
 
 <ol>
   <li><a href="#ic">Using the interactive console</a>
@@ -99,6 +99,8 @@
       <li><a href="#creating">Creating and modifying variables</a></li>
     </ol>
   </li>
+  <li><a href="#scripts">Writing scripts</a></li>
+  <li><a href="#functions">Functions</a></li>
 </ol>
 
 <hr />
@@ -111,7 +113,7 @@
 <p>Before we get started, consider a few things about the interactive console:</p>
 
 <ol>
-  <li>It has <strong>memory</strong>. Any variable or method defined in the console will exist and be accessible until the console is terminated. This allows us to type long scripts one statement at a time and keep the results of each statement at hand for the next;</li>
+  <li>It has <strong>memory</strong>. Any variable or function defined in the console will exist and be accessible until the console is terminated. This allows us to type long scripts one statement at a time and keep the results of each statement at hand for the next;</li>
   <li>It can be terminated at any time by using the exit statement <code class="highlighter-rouge">exit()</code>;</li>
   <li>If the console is busy with a task, you can force termination using the Control/Command key and C, this is called a <em>keyboard interrupt</em>;</li>
   <li>Any statement that produces output will print out its output on the line following a statement;</li>
@@ -232,12 +234,12 @@
 <p><a name="operations-data-types"></a></p>
 <h2 id="24-operations-and-data-types">2.4 Operations and data types</h2>
 
-<p>The operations defined earlier only apply between items of the same type (either primitive or object). As such, while you can add a <code class="highlighter-rouge">float</code> to an <code class="highlighter-rouge">int</code>, you cannot concatenate a string to a number directly as either element has a different definition of what the operation <code class="highlighter-rouge">+</code> should do. To solve this issue, you can <strong>convert</strong> one data type to the other, when possible. To do so, we will introduce three functions (also called methods):</p>
+<p>The operations defined earlier only apply between items of the same type (either primitive or object). As such, while you can add a <code class="highlighter-rouge">float</code> to an <code class="highlighter-rouge">int</code>, you cannot concatenate a string to a number directly as either element has a different definition of what the operation <code class="highlighter-rouge">+</code> should do. To solve this issue, you can <strong>convert</strong> one data type to the other, when possible. To do so, we will introduce three functions (also called functions):</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center">Method</th>
+      <th style="text-align: center">Function</th>
       <th style="text-align: center">Definition</th>
     </tr>
   </thead>
@@ -283,8 +285,8 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">age</span> <span class="o">=</span> <span class="mi">27</span>
 <span class="n">height</span> <span class="o">=</span> <span class="mf">180.1</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s">"Marc</span><span class="err">
-</span></code></pre></div></div>
+<span class="n">name</span> <span class="o">=</span> <span class="s">"Marc"</span>
+</code></pre></div></div>
 
 <p>Since variables are symbolic replacements, we can then use those variables by inserting their names, <code class="highlighter-rouge">age</code>, <code class="highlighter-rouge">height</code> and <code class="highlighter-rouge">name</code> where appropriate. We could make use of concatenation with all three to produce a sentence with embedded data:</p>
 
@@ -292,6 +294,73 @@
 </code></pre></div></div>
 
 <p>As we’ve seen before, the calls to <code class="highlighter-rouge">str(x)</code> will convert <code class="highlighter-rouge">age</code> and <code class="highlighter-rouge">height</code> from their respective primitive types to strings, then the <code class="highlighter-rouge">+</code> will concatenate all those strings together into <code class="highlighter-rouge">Hello! My name is Marc and I am 27 years old. I am 180.1 centimetres high.</code></p>
+
+<p><a name="scripts"></a></p>
+<h1 id="3-writing-scripts">3. Writing scripts</h1>
+
+<p>To progress further and to start building any sort of project, we will need to be able to execute a multitude of statements at once. To accomplish this, we will write <strong>scripts</strong>, or sequences of statements that will be executed all at once instead of one-by-one as we did so far in the interactive console.</p>
+
+<p>To write a script, simply save a sequence of statements, one per line, in a file bearing the extension <code class="highlighter-rouge">.py</code>. This will be called a <strong>Python script file</strong>. To execute it all at once, we will not use the interactive console, as it is meant for line-by-line execution. We will turn out attention to IDLE.</p>
+
+<p>Using IDLE, you can create a new script file through the <em>File</em> menu. This opens up a new window in which you can type your script. Just like any other text file, you can save and open scripts using IDLE; this way, you can revisit them later as needed. Once your script file contains statements and is saved, the <em>Run</em> menu will allow you to execute your script file (<em>Run module</em>).</p>
+
+<p>For example, consider the follow sample script: it contains our last experiment with concatenation:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">age</span> <span class="o">=</span> <span class="mi">27</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mf">180.1</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s">"Marc"</span>
+
+<span class="n">sentence</span> <span class="o">=</span> <span class="s">"Hello! My name is "</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">" and I am "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span> <span class="s">" years old. I am "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">height</span><span class="p">)</span> <span class="o">+</span> <span class="s">" centimetres high."</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>When executing your script, the interpreter will work its way from the top to the bottom and execute your statements one at a time. Since the interpreter is never aware of the whole file, it will only raise an error if it tries to execute a faulty statement.</p>
+
+<p>Notice the use of <code class="highlighter-rouge">print(x)</code>. Since we are no longer in the interactive console, output is not longer automatically printed to the screen. The print function <code class="highlighter-rouge">print(x)</code> will solve that issue by printing the string or variable given to it as parameter.</p>
+
+<p><a name="functions"></a></p>
+<h1 id="4-functions">4. Functions</h1>
+
+<p>Functions are meant to be <strong>blocks of code you can reuse</strong>. Just like functions in mathematics, they can accept input and produce output. Python has dozens of built-in functions, a few of which we’ve seen previously:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Function</th>
+      <th style="text-align: center">Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">str(x)</code></td>
+      <td style="text-align: center">If possible, converts the value <code class="highlighter-rouge">x</code> to a string. This would, for example, convert the integer <code class="highlighter-rouge">1</code> to the string <code class="highlighter-rouge">"1"</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">int(x)</code></td>
+      <td style="text-align: center">If possible, converts the value <code class="highlighter-rouge">x</code> to an integer.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">float(x)</code></td>
+      <td style="text-align: center">If possible, convers the value <code class="highlighter-rouge">x</code> to a float.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">print(x)</code></td>
+      <td style="text-align: center">Prints the value of <code class="highlighter-rouge">x</code> to the screen.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As we go forward, we will add more functions to this list, but the most important part about Python functions isn’t that the language offers a lot of them out-of-the-box but rather than you can make your own.</p>
+
+<p>The basic model to <strong>define</strong> a function introduces the <code class="highlighter-rouge">def</code> keyword:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+  <span class="c">#Code that is executed when the function is called.</span>
+
+  <span class="k">return</span> <span class="n">output</span>
+</code></pre></div></div>
+
 
   </div>
 

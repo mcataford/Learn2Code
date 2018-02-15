@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-02-14T20:59:20-05:00</updated><id>http://localhost:4000/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="http://localhost:4000/TalkPythonToMe/lessons/2018/02/14/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>http://localhost:4000/TalkPythonToMe/lessons/2018/02/14/objects</id><content type="html" xml:base="http://localhost:4000/TalkPythonToMe/lessons/2018/02/14/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-02-14T22:47:58-05:00</updated><id>http://localhost:4000/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="http://localhost:4000/TalkPythonToMe/lessons/2018/02/14/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>http://localhost:4000/TalkPythonToMe/lessons/2018/02/14/objects</id><content type="html" xml:base="http://localhost:4000/TalkPythonToMe/lessons/2018/02/14/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we will look at the &lt;strong&gt;interactive Python console&lt;/strong&gt;. We will explore the notion of &lt;strong&gt;variables&lt;/strong&gt; and &lt;strong&gt;methods&lt;/strong&gt;, and review definitions that will follow us for the rest of our adventure.&lt;/p&gt;
 
@@ -1136,7 +1136,7 @@
 
 &lt;p&gt;As we’ve seen before, the calls to &lt;code class=&quot;highlighter-rouge&quot;&gt;str(x)&lt;/code&gt; will convert &lt;code class=&quot;highlighter-rouge&quot;&gt;age&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;height&lt;/code&gt; from their respective primitive types to strings, then the &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; will concatenate all those strings together into &lt;code class=&quot;highlighter-rouge&quot;&gt;Hello! My name is Marc and I am 27 years old. I am 180.1 centimetres high.&lt;/code&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Python basics</title><link href="http://localhost:4000/TalkPythonToMe/lessons/2018/02/11/basics.html" rel="alternate" type="text/html" title="Python basics" /><published>2018-02-11T10:05:23-05:00</published><updated>2018-02-11T10:05:23-05:00</updated><id>http://localhost:4000/TalkPythonToMe/lessons/2018/02/11/basics</id><content type="html" xml:base="http://localhost:4000/TalkPythonToMe/lessons/2018/02/11/basics.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
-&lt;p&gt;In this lesson, we will look at the &lt;strong&gt;interactive Python console&lt;/strong&gt;. We will explore the notion of &lt;strong&gt;variables&lt;/strong&gt; and &lt;strong&gt;methods&lt;/strong&gt;, and review definitions that will follow us for the rest of our adventure.&lt;/p&gt;
+&lt;p&gt;In this lesson, we will look at the &lt;strong&gt;interactive Python console&lt;/strong&gt;. We will explore the notion of &lt;strong&gt;variables&lt;/strong&gt; and &lt;strong&gt;functions&lt;/strong&gt;, and review definitions that will follow us for the rest of our adventure.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;#ic&quot;&gt;Using the interactive console&lt;/a&gt;
@@ -1153,6 +1153,8 @@
       &lt;li&gt;&lt;a href=&quot;#creating&quot;&gt;Creating and modifying variables&lt;/a&gt;&lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#scripts&quot;&gt;Writing scripts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#functions&quot;&gt;Functions&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr /&gt;
@@ -1165,7 +1167,7 @@
 &lt;p&gt;Before we get started, consider a few things about the interactive console:&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;It has &lt;strong&gt;memory&lt;/strong&gt;. Any variable or method defined in the console will exist and be accessible until the console is terminated. This allows us to type long scripts one statement at a time and keep the results of each statement at hand for the next;&lt;/li&gt;
+  &lt;li&gt;It has &lt;strong&gt;memory&lt;/strong&gt;. Any variable or function defined in the console will exist and be accessible until the console is terminated. This allows us to type long scripts one statement at a time and keep the results of each statement at hand for the next;&lt;/li&gt;
   &lt;li&gt;It can be terminated at any time by using the exit statement &lt;code class=&quot;highlighter-rouge&quot;&gt;exit()&lt;/code&gt;;&lt;/li&gt;
   &lt;li&gt;If the console is busy with a task, you can force termination using the Control/Command key and C, this is called a &lt;em&gt;keyboard interrupt&lt;/em&gt;;&lt;/li&gt;
   &lt;li&gt;Any statement that produces output will print out its output on the line following a statement;&lt;/li&gt;
@@ -1286,12 +1288,12 @@
 &lt;p&gt;&lt;a name=&quot;operations-data-types&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;24-operations-and-data-types&quot;&gt;2.4 Operations and data types&lt;/h2&gt;
 
-&lt;p&gt;The operations defined earlier only apply between items of the same type (either primitive or object). As such, while you can add a &lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; to an &lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt;, you cannot concatenate a string to a number directly as either element has a different definition of what the operation &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; should do. To solve this issue, you can &lt;strong&gt;convert&lt;/strong&gt; one data type to the other, when possible. To do so, we will introduce three functions (also called methods):&lt;/p&gt;
+&lt;p&gt;The operations defined earlier only apply between items of the same type (either primitive or object). As such, while you can add a &lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; to an &lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt;, you cannot concatenate a string to a number directly as either element has a different definition of what the operation &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; should do. To solve this issue, you can &lt;strong&gt;convert&lt;/strong&gt; one data type to the other, when possible. To do so, we will introduce three functions (also called functions):&lt;/p&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Method&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Function&lt;/th&gt;
       &lt;th style=&quot;text-align: center&quot;&gt;Definition&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
@@ -1337,15 +1339,81 @@
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;27&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;180.1&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Marc&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Marc&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Since variables are symbolic replacements, we can then use those variables by inserting their names, &lt;code class=&quot;highlighter-rouge&quot;&gt;age&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;height&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt; where appropriate. We could make use of concatenation with all three to produce a sentence with embedded data:&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello! My name is &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; and I am &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; years old. I am &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; centimetres high.&quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;As we’ve seen before, the calls to &lt;code class=&quot;highlighter-rouge&quot;&gt;str(x)&lt;/code&gt; will convert &lt;code class=&quot;highlighter-rouge&quot;&gt;age&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;height&lt;/code&gt; from their respective primitive types to strings, then the &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; will concatenate all those strings together into &lt;code class=&quot;highlighter-rouge&quot;&gt;Hello! My name is Marc and I am 27 years old. I am 180.1 centimetres high.&lt;/code&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Getting started</title><link href="http://localhost:4000/TalkPythonToMe/lessons/2018/02/10/getting-started.html" rel="alternate" type="text/html" title="Getting started" /><published>2018-02-10T10:05:23-05:00</published><updated>2018-02-10T10:05:23-05:00</updated><id>http://localhost:4000/TalkPythonToMe/lessons/2018/02/10/getting-started</id><content type="html" xml:base="http://localhost:4000/TalkPythonToMe/lessons/2018/02/10/getting-started.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+&lt;p&gt;As we’ve seen before, the calls to &lt;code class=&quot;highlighter-rouge&quot;&gt;str(x)&lt;/code&gt; will convert &lt;code class=&quot;highlighter-rouge&quot;&gt;age&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;height&lt;/code&gt; from their respective primitive types to strings, then the &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; will concatenate all those strings together into &lt;code class=&quot;highlighter-rouge&quot;&gt;Hello! My name is Marc and I am 27 years old. I am 180.1 centimetres high.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;scripts&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;3-writing-scripts&quot;&gt;3. Writing scripts&lt;/h1&gt;
+
+&lt;p&gt;To progress further and to start building any sort of project, we will need to be able to execute a multitude of statements at once. To accomplish this, we will write &lt;strong&gt;scripts&lt;/strong&gt;, or sequences of statements that will be executed all at once instead of one-by-one as we did so far in the interactive console.&lt;/p&gt;
+
+&lt;p&gt;To write a script, simply save a sequence of statements, one per line, in a file bearing the extension &lt;code class=&quot;highlighter-rouge&quot;&gt;.py&lt;/code&gt;. This will be called a &lt;strong&gt;Python script file&lt;/strong&gt;. To execute it all at once, we will not use the interactive console, as it is meant for line-by-line execution. We will turn out attention to IDLE.&lt;/p&gt;
+
+&lt;p&gt;Using IDLE, you can create a new script file through the &lt;em&gt;File&lt;/em&gt; menu. This opens up a new window in which you can type your script. Just like any other text file, you can save and open scripts using IDLE; this way, you can revisit them later as needed. Once your script file contains statements and is saved, the &lt;em&gt;Run&lt;/em&gt; menu will allow you to execute your script file (&lt;em&gt;Run module&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;For example, consider the follow sample script: it contains our last experiment with concatenation:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;27&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;180.1&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Marc&quot;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hello! My name is &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; and I am &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; years old. I am &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; centimetres high.&quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When executing your script, the interpreter will work its way from the top to the bottom and execute your statements one at a time. Since the interpreter is never aware of the whole file, it will only raise an error if it tries to execute a faulty statement.&lt;/p&gt;
+
+&lt;p&gt;Notice the use of &lt;code class=&quot;highlighter-rouge&quot;&gt;print(x)&lt;/code&gt;. Since we are no longer in the interactive console, output is not longer automatically printed to the screen. The print function &lt;code class=&quot;highlighter-rouge&quot;&gt;print(x)&lt;/code&gt; will solve that issue by printing the string or variable given to it as parameter.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;functions&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;4-functions&quot;&gt;4. Functions&lt;/h1&gt;
+
+&lt;p&gt;Functions are meant to be &lt;strong&gt;blocks of code you can reuse&lt;/strong&gt;. Just like functions in mathematics, they can accept input and produce output. Python has dozens of built-in functions, a few of which we’ve seen previously:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Function&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Definition&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;str(x)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;If possible, converts the value &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; to a string. This would, for example, convert the integer &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt; to the string &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;1&quot;&lt;/code&gt;.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;int(x)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;If possible, converts the value &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; to an integer.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;float(x)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;If possible, convers the value &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; to a float.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;print(x)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Prints the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; to the screen.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;As we go forward, we will add more functions to this list, but the most important part about Python functions isn’t that the language offers a lot of them out-of-the-box but rather than you can make your own.&lt;/p&gt;
+
+&lt;p&gt;The basic model to &lt;strong&gt;define&lt;/strong&gt; a function introduces the &lt;code class=&quot;highlighter-rouge&quot;&gt;def&lt;/code&gt; keyword:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;my_function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#Code that is executed when the function is called.&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Getting started</title><link href="http://localhost:4000/TalkPythonToMe/lessons/2018/02/10/getting-started.html" rel="alternate" type="text/html" title="Getting started" /><published>2018-02-10T10:05:23-05:00</published><updated>2018-02-10T10:05:23-05:00</updated><id>http://localhost:4000/TalkPythonToMe/lessons/2018/02/10/getting-started</id><content type="html" xml:base="http://localhost:4000/TalkPythonToMe/lessons/2018/02/10/getting-started.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we’ll set up our coding environment and talk about the tools that we will use to learn Python. We’ll also have a quick chat about the best strategies to use this course effectively.&lt;/p&gt;
 
