@@ -10,15 +10,15 @@
 <meta name="generator" content="Jekyll v3.7.2" />
 <meta property="og:title" content="Python basics" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="In this lesson" />
-<meta property="og:description" content="In this lesson" />
+<meta name="description" content="True/False questions" />
+<meta property="og:description" content="True/False questions" />
 <link rel="canonical" href="http://localhost:4000/TalkPythonToMe/problems/basics-problems.html" />
 <meta property="og:url" content="http://localhost:4000/TalkPythonToMe/problems/basics-problems.html" />
 <meta property="og:site_name" content="Learning Python" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-02-11T10:05:23-05:00" />
 <script type="application/ld+json">
-{"description":"In this lesson","@type":"BlogPosting","url":"http://localhost:4000/TalkPythonToMe/problems/basics-problems.html","headline":"Python basics","dateModified":"2018-02-11T10:05:23-05:00","datePublished":"2018-02-11T10:05:23-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/TalkPythonToMe/problems/basics-problems.html"},"@context":"http://schema.org"}</script>
+{"description":"True/False questions","@type":"BlogPosting","url":"http://localhost:4000/TalkPythonToMe/problems/basics-problems.html","headline":"Python basics","dateModified":"2018-02-11T10:05:23-05:00","datePublished":"2018-02-11T10:05:23-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/TalkPythonToMe/problems/basics-problems.html"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
   <link rel="stylesheet" href="/TalkPythonToMe/assets/main.css">
@@ -82,7 +82,68 @@
   
 
   <div class="post-content e-content" itemprop="articleBody">
-    <h1 id="in-this-lesson">In this lesson</h1>
+    <h1 id="truefalse-questions">True/False questions</h1>
+
+<ol>
+  <li>The <strong>interactive Python console</strong> prints the output of an operation automatically.</li>
+  <li>The <code class="highlighter-rouge">**</code> operator implements two consecutive products such that <code class="highlighter-rouge">a**b = a * b * b</code>.</li>
+  <li><strong>Primitive data types</strong> are types of data that can be represented as one or several numbers.</li>
+  <li>A <strong>string</strong> is an example of a primitive type because each character of a string can be mapped to a number via the <a href="">ASCII table</a>.</li>
+  <li><strong>Boolean values</strong> can be represented as numbers.</li>
+  <li>A <strong>string</strong> is represented by a collection of characters surrounded by <strong>double quotes</strong>.</li>
+  <li><code class="highlighter-rouge">+</code> and <code class="highlighter-rouge">*</code> are two operators defined for <strong>strings</strong>; other operators are not defined and will raise an error if used with string operands.</li>
+  <li>To concatenate two values, you must first convert them using <code class="highlighter-rouge">string(x)</code>.</li>
+  <li>You can only concatenate two values at a time.</li>
+  <li>When defining variables, the <strong>data type</strong> must be mentioned as well as the name and initial value.</li>
+  <li>Any statement that can be written in the interactive Python console can also be written in a script file.</li>
+  <li>Outside of the interactive console,  <code class="highlighter-rouge">print(x)</code> will allow you to print output to the screen.</li>
+  <li><strong>Functions</strong> are defined using the <code class="highlighter-rouge">define</code> keyword.</li>
+  <li><strong>Comments</strong> are ignored by the interpreter, as such, you can include as many as you wish.</li>
+  <li>A script file can contain both space and tab <strong>indentation</strong>.</li>
+</ol>
+
+<h1 id="short-answer-questions">Short answer questions</h1>
+
+<ol>
+  <li>What is <strong>concatenation</strong>?</li>
+  <li>What does the <code class="highlighter-rouge">*</code> operator do on <strong>strings</strong>?</li>
+  <li>What are two ways of adding <strong>comments</strong> to your scripts?</li>
+  <li>What does the <code class="highlighter-rouge">return</code> keyword do?</li>
+  <li>What is the point of separating code into <strong>functions</strong>?</li>
+</ol>
+
+<h1 id="programming-questions">Programming questions</h1>
+
+<p><em>For each of the following tasks, you should produce a separate script. Do not hesitate to use comments to document your design process and how your solutions work.</em></p>
+
+<ol>
+  <li>
+    <p>Write a Celsius-to-Fahrenheit conversion script. Your final solution should implement the conversion as a <strong>function</strong> which takes in a temperature in Celsius degrees and outputs a temperature in Fahrenheit degrees. You script should make use of your function and demonstrate the conversion with at least three values. <em>Make sure that your script outputs the results as part of a sentence in which numbers are embedded.</em></p>
+  </li>
+  <li>
+    <p>In the script of Question 1, add a function that does the opposite conversion. Verify that any Celsius value can be converted to Fahrenheit and then back to Celsius without significant loss of precision.</p>
+  </li>
+  <li>
+    <p>Given a number such as <code class="highlighter-rouge">1.1234</code>, write a script implementing a function that extracts the <em>fractional part</em> of the number. You can use the function stub below:</p>
+  </li>
+</ol>
+
+<p><em>Hint: Think of what type conversion does to a number.</em></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">extract_fractional</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+  <span class="c">#Your code</span>
+
+  <span class="c">#Make sure to store your result in a variable and pass that variable to return.</span>
+  <span class="k">return</span> <span class="n">output</span>
+
+<span class="s">"""
+Your function should be able to accept the following input and produce the output:
+
+1.1234 -&gt; 0.1234
+0 -&gt; 0.0
+1.0 -&gt; 0.0
+"""</span>
+</code></pre></div></div>
 
   </div>
 
