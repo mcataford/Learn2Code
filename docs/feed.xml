@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-02-15T23:25:46-05:00</updated><id>http://localhost:4000/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="http://localhost:4000/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>http://localhost:4000/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="http://localhost:4000/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-02-15T23:28:07-05:00</updated><id>http://localhost:4000/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="http://localhost:4000/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>http://localhost:4000/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="http://localhost:4000/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we will look at the &lt;strong&gt;interactive Python console&lt;/strong&gt;. We will explore the notion of &lt;strong&gt;variables&lt;/strong&gt; and &lt;strong&gt;methods&lt;/strong&gt;, and review definitions that will follow us for the rest of our adventure.&lt;/p&gt;
 
@@ -1497,39 +1497,37 @@ close the block comment.
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Given a number such as &lt;code class=&quot;highlighter-rouge&quot;&gt;1.1234&lt;/code&gt;, write a script implementing a function that extracts the &lt;em&gt;fractional part&lt;/em&gt; of the number. You can use the function stub below:&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;Hint: Think of what type conversion does to a number.&lt;/em&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;extract_fractional&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+   &lt;span class=&quot;c&quot;&gt;#Your code&lt;/span&gt;
+
+   &lt;span class=&quot;c&quot;&gt;#Make sure to store your result in a variable and pass that variable to return.&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;
+
+ &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+ Your function should be able to accept the following input and produce the output:
+
+ 1.1234 -&amp;gt; 0.1234
+ 0 -&amp;gt; 0.0
+ 1.0 -&amp;gt; 0.0
+ &quot;&quot;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-&lt;/ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Write a function that &lt;strong&gt;prints&lt;/strong&gt; the following shape:&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Hint: Think of what type conversion does to a number.&lt;/em&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;extract_fractional&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#Your code&lt;/span&gt;
-
-  &lt;span class=&quot;c&quot;&gt;#Make sure to store your result in a variable and pass that variable to return.&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-Your function should be able to accept the following input and produce the output:
-
-1.1234 -&amp;gt; 0.1234
-0 -&amp;gt; 0.0
-1.0 -&amp;gt; 0.0
-&quot;&quot;&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Write a function that &lt;strong&gt;prints&lt;/strong&gt; the following shape:&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;++++++++++&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;++++++++++&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Can you modify the function in &lt;em&gt;4&lt;/em&gt; to allow the caller to give as input a parameter &lt;code class=&quot;highlighter-rouge&quot;&gt;width&lt;/code&gt;? You can leave the height of your shape constant such that the shape is a rectangle of variable width.&lt;/li&gt;
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;o&quot;&gt;++++++++++&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
+ &lt;span class=&quot;o&quot;&gt;++++++++++&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Can you modify the function in &lt;em&gt;4&lt;/em&gt; to allow the caller to give as input a parameter &lt;code class=&quot;highlighter-rouge&quot;&gt;width&lt;/code&gt;? You can leave the height of your shape constant such that the shape is a rectangle of variable width.&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;</content><author><name></name></author><summary type="html">True/False questions</summary></entry><entry><title type="html">Getting started</title><link href="http://localhost:4000/TalkPythonToMe/lessons/getting-started.html" rel="alternate" type="text/html" title="Getting started" /><published>2018-02-10T10:05:23-05:00</published><updated>2018-02-10T10:05:23-05:00</updated><id>http://localhost:4000/TalkPythonToMe/lessons/getting-started</id><content type="html" xml:base="http://localhost:4000/TalkPythonToMe/lessons/getting-started.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we’ll set up our coding environment and talk about the tools that we will use to learn Python. We’ll also have a quick chat about the best strategies to use this course effectively.&lt;/p&gt;
