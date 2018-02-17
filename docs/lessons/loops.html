@@ -164,6 +164,24 @@
 <p><a name="for"></a></p>
 <h2 id="22-for-loops">2.2 <code class="highlighter-rouge">for</code> loops</h2>
 
+<p>Much like their <code class="highlighter-rouge">while</code> counterpart, <code class="highlighter-rouge">for</code> loops will repeat the code that they contain. The major difference between the two is, again, <em>semantic</em>: a <code class="highlighter-rouge">for</code> loop will repeat an operation <em>over a collection</em> rather than until a certain condition is met. They will repeat a certain operation “for all items in a given set of items”:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">collection</span><span class="p">:</span>
+  <span class="c">#Code that manipulates the item</span>
+</code></pre></div></div>
+
+<p>We will discuss collections in the next lesson, but for now, let’s consider <strong>strings</strong>, which are essentially collections of characters. If we apply the previous model to a string, we would then get a <code class="highlighter-rouge">for</code> loop structure like the following:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="s">"Hello, World!"</span><span class="p">:</span>
+  <span class="c">#Do something with each character</span>
+</code></pre></div></div>
+
+<p>As the loop “walks through” the string <code class="highlighter-rouge">"Hello, World!"</code>, each character is plucked from it and stored temporarily in <code class="highlighter-rouge">character</code>. From there, each character can be manipulated individually. We could, for instance, choose to print each character on a line:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="s">"Hello, World!"</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">character</span><span class="p">)</span>
+</code></pre></div></div>
+
 
   </div>
 
