@@ -95,192 +95,74 @@
   <div class="post-content e-content" itemprop="articleBody">
     <h1 id="in-this-lesson">In this lesson</h1>
 
-<p>In this lesson, we will look at the <strong>interactive Python console</strong>. We will explore the notion of <strong>variables</strong> and <strong>methods</strong>, and review definitions that will follow us for the rest of our adventure.</p>
+<p>In this lesson, we discuss <strong>iteration</strong> and <strong>iterative structures</strong>. These structures will allow us to repeat operations without having to duplicate code. Ultimately, this will also facilitate data processing by allowing us to “walk” through certain bundles of data.</p>
 
 <ol>
-  <li><a href="#ic">Using the interactive console</a></li>
-  <li><a href="#variables">Variables</a>
+  <li><a href="#iteration">The value of iteration</a></li>
+  <li><a href="#loops">Loop structures</a>
     <ol>
-      <li><a href="#primobj">Primitives and Objects</a></li>
-      <li><a href="#creating">Creating and modifying variables</a></li>
+      <li><a href="#while"><code class="highlighter-rouge">while</code> loops</a></li>
+      <li><a href="#for"><code class="highlighter-rouge">for</code> loops</a></li>
+      <li><a href="#convert">Converting <code class="highlighter-rouge">while</code> to <code class="highlighter-rouge">for</code> and back</a></li>
     </ol>
   </li>
+  <li><a href="#examples">Concrete examples</a></li>
 </ol>
 
 <hr />
 
-<p><a name="ic"></a></p>
-<h1 id="1-using-the-interactive-console">1. Using the interactive console</h1>
+<p><a name="iteration"></a></p>
+<h1 id="1-the-value-of-iteration">1. The value of iteration</h1>
 
-<p>For the first part of this lesson, you can use the interactive console through a Command Prompt/Terminal (by opening a Command Prompt/Terminal and typing <code class="highlighter-rouge">python</code>) or through IDLE. Since IDLE’s interactive console is just a graphical interface wrapped around the regular Python console, you shouldn’t see any difference in function.</p>
+<p><strong>Iterative structures</strong> are all about repetition. One of the main perks of harnessing Python’s power to do various tasks is its ability to <em>repeat</em> operations very fast, effectively taking care of well-defined processing jobs as fast as possible. Whether the goal is to sort a collection of items, to find the solution to a Sudoku puzzle or to calculate the interest you might gain from future savings, the idea of repeating a set of statements a certain number of times or until a certain state is reached is usually part of the solution.</p>
 
-<p>Before we get started, consider a few things about the interactive console:</p>
+<p>In Python, <strong>loops</strong> will allow us to repeat blocks of code at will. This will, amongst other things, allow us to avoid repeating similar sets of statements, kind of like how we captured simple sequences in <a href="https://mcataford.github.io/TalkPythonToMe/lessons/basics.html#functions">functions</a>. They will also allow us to repeat parts of our scripts until certain conditions are met; in the case of user input, for example, we could choose to ask the question again and again, until the answer is satisfactory.</p>
+
+<p><a name="loops"></a></p>
+<h1 id="2-loop-structures">2. Loop structures</h1>
+
+<p>Python gives us two categories of loops: <code class="highlighter-rouge">while</code> and <code class="highlighter-rouge">for</code> loops. The difference between the two is purely semantic and everything that can be done with one can be done with the other, albeit with different syntax.</p>
+
+<p><a name="while"></a></p>
+<h2 id="21-while-loops">2.1 <code class="highlighter-rouge">while</code> loops</h2>
+
+<p><code class="highlighter-rouge">while</code> loops implement the function “repeat <em>x</em> as long as <em>condition</em> holds”, which makes them very similar with <a href="https://mcataford.github.io/TalkPythonToMe/lessons/conditions.html">conditional statements</a>. In fact, they will share a structure almost identical to the <code class="highlighter-rouge">if</code> block:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">while</span> <span class="n">condition</span><span class="p">:</span>
+  <span class="c">#This code is repeated as long as "condition" is True</span>
+</code></pre></div></div>
+
+<p>By design, <code class="highlighter-rouge">while</code> loops are centred around the idea of operating until a certain goal is met. For example, this could be adding up numbers until a certain value is reached, or a certain number of times if a counter variable is used.</p>
+
+<p>Let’s look at a concrete example:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#A counter variable</span>
+<span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c">#While the counter is lesser than 10, repeat...</span>
+<span class="k">while</span> <span class="n">counter</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+  <span class="c">#Print the value</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
+  <span class="c">#Increment the counter</span>
+  <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p>In this case, we are presented with a simple loop that prints numbers from an initial value of <code class="highlighter-rouge">0</code> to a maximal value of <code class="highlighter-rouge">9</code>. Note that the condition is formatted the same way as it was in conditional statements: in all cases, those conditions are boolean expressions and are bound by the same rules. This means that you can use any of the <a href="https://mcataford.github.io/TalkPythonToMe/lessons/conditionals.html#comparison-ops">operators</a> we discussed to put together <code class="highlighter-rouge">while</code> loop conditions that fit your needs.</p>
+
+<p>Also note the last statement of the loop body: <code class="highlighter-rouge">counter = counter + 1</code>. Consider what happens if this statement wouldn’t be present:</p>
 
 <ol>
-  <li>It has <strong>memory</strong>. Any variable or method defined in the console will exist and be accessible until the console is terminated. This allows us to type long scripts one statement at a time and keep the results of each statement at hand for the next;</li>
-  <li>It can be terminated at any time by using the exit statement <code class="highlighter-rouge">exit()</code>;</li>
-  <li>If the console is busy with a task, you can force termination using the Control/Command key and C, this is called a <em>keyboard interrupt</em>;</li>
-  <li>Any statement that produces output will print out its output on the line following a statement;</li>
-  <li>You can view the contents of a variable at any time by using its name as a statement.</li>
+  <li>Set counter to 0</li>
+  <li>Check if counter is lesser than 10</li>
+  <li>Print current counter</li>
+  <li><del>Increment counter</del></li>
+  <li>Go back to <em>1.</em></li>
 </ol>
 
-<p><a name="ic-math"></a></p>
-<h2 id="11-mathematical-operations">1.1 Mathematical operations</h2>
+<p>In this scenario, the loop never ends as the condition <code class="highlighter-rouge">counter &lt; 10</code> is never broken! This is an <strong>infinite loop</strong> and will cause your script to run until manually terminated. Because it’s neither a syntax or language-related error, no formal exception will be raised by the interpreter. In fact, in some cases, this sort of infinite loop behaviour might even be desirable (but we’ll talk about it later)! In general, however, this is to be avoided as most scripts are meant to have a beginning and an end.</p>
 
-<p>The most basic thing the interactive console can do it basic arithmetic. If you use any mathematical operation as a statement, you should see the results printed below. All the basic operators taught in algebra are valid. As such, we can experiment and produce the following:</p>
-
-<p><img src="https://mcataford.github.io/TalkPythonToMe/assets/console-math.png" alt="Arithmetic in the console" />
-<em>Various arithmetic operations in the console</em></p>
-
-<p>Note that just like in classical algebra, you can use parentheses to group operations together, and chained operations such as <code class="highlighter-rouge">(1 + 1) * (12 * 50)</code> can be composed from simpler ones.</p>
-
-<p><a name="variables"></a></p>
-<h1 id="2-variables">2. Variables</h1>
-
-<p>What differentiates the interactive console from a simple pocket calculator is its ability to store and manipulate different kinds of data. To achieve this, we will use <strong>variables</strong>. Variables in Python are no different from their algebraic counterparts: they act as a <strong>symbolic replacement for data</strong>. This means that once defined, a variable can be inserted in other operations and behave as if you had inserted the data is contains.</p>
-
-<p>Before we create our own, however, we should define a few basic <strong>data types</strong> available in Python: these data types will determine what kind of data is stored in a variable and what sort of operations we can apply on said variable.</p>
-
-<p><a name="primobj"></a></p>
-<h2 id="21-primitives-and-objects">2.1 Primitives and Objects</h2>
-
-<p>Python data types can be separated into two classes: <strong>primitives</strong> and <strong>objects</strong>. The separating criterion is fairly simple: primitives can be represented by a <strong>single numerical value</strong> while objects require a bigger structure stored in memory, to which the variable points. Below are the three main primitive types we will be using most of the time:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">Data type</th>
-      <th style="text-align: center">Definition</th>
-      <th style="text-align: center">Example values</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">int</code></td>
-      <td style="text-align: center">Integer values</td>
-      <td style="text-align: center"><code class="highlighter-rouge">1</code>, <code class="highlighter-rouge">-1</code>, <code class="highlighter-rouge">2000000</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">float</code></td>
-      <td style="text-align: center">Floating-point values</td>
-      <td style="text-align: center"><code class="highlighter-rouge">1.1</code>, <code class="highlighter-rouge">-1.5</code></td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">boolean</code></td>
-      <td style="text-align: center">True or false binary values</td>
-      <td style="text-align: center"><code class="highlighter-rouge">True</code>, <code class="highlighter-rouge">False</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<p>In addition to these types, we need to define at least one object type: the <strong>string</strong>. Strings are collections of characters and can contain single characters, words, sentences and even entire books.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">Data type</th>
-      <th style="text-align: center">Definition</th>
-      <th style="text-align: center">Example values</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">str</code></td>
-      <td style="text-align: center">Strings, any set of character surrounded by single or double quotation marks</td>
-      <td style="text-align: center"><code class="highlighter-rouge">"Hello, world!"</code>, <code class="highlighter-rouge">"A"</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="22-operations-on-primitives">2.2 Operations on primitives</h2>
-
-<p>All of the arithmetic operations we have experimented with in the [first section] of this lesson are applicable to any primitive. In the case of <code class="highlighter-rouge">True</code> and <code class="highlighter-rouge">False</code> (<code class="highlighter-rouge">boolean</code> values), those will be interpreted as <code class="highlighter-rouge">1</code> and <code class="highlighter-rouge">0</code> respectively. As such, the following is possible:</p>
-
-<p><img src="https://mcataford.github.io/TalkPythonToMe/assets/python_int_cli_2.png" alt="Arithmetic in the console" />
-<em>Arithmetic using boolean values</em></p>
-
-<p>This outlines what we said earlier: <strong>any primitive value can be represented as a number</strong>.</p>
-
-<h2 id="23-operations-on-objects">2.3 Operations on objects</h2>
-
-<p>Operations on objects are a bit trickier. Because objects are complex structures, no two object types have the same operations! Because object operations are defined on a case by case basis, we’ll look at the one object we considered so far: the string.</p>
-
-<p>While strings cannot be divided or subtracted from one another, two operations exist:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">Operation</th>
-      <th style="text-align: center">Definition</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">+</code></td>
-      <td style="text-align: center"><strong>Concatenation</strong>, or the union of two or more strings</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">*</code></td>
-      <td style="text-align: center"><strong>Multiplication</strong>, or the act of repeating strings</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The first operation, concatenation, allows you to make longer strings out of shorter ones. This means that given three strings, we can use the <code class="highlighter-rouge">+</code> operator to form a new longer one that represents the sum of the three:</p>
-
-<p><img src="https://mcataford.github.io/TalkPythonToMe/assets/console-string.png" alt="Concatenation" />
-<em>Concatenating strings</em></p>
-
-<p>The same way, using the <code class="highlighter-rouge">*</code> operator will duplicate and concatenate strings. For example, typing <code class="highlighter-rouge">"hello" * 2</code> would result in the string <code class="highlighter-rouge">"hellohello"</code>; the initial string would be repeated twice, and the repetitions concatenated.</p>
-
-<h2 id="24-operations-and-data-types">2.4 Operations and data types</h2>
-
-<p>The operations defined earlier only apply between items of the same type (either primitive or object). As such, while you can add a <code class="highlighter-rouge">float</code> to an <code class="highlighter-rouge">int</code>, you cannot concatenate a string to a number directly as either element has a different definition of what the operation <code class="highlighter-rouge">+</code> should do. To solve this issue, you can <strong>convert</strong> one data type to the other, when possible. To do so, we will introduce three functions (also called methods):</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">Method</th>
-      <th style="text-align: center">Definition</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">str(x)</code></td>
-      <td style="text-align: center">If possible, converts the value <code class="highlighter-rouge">x</code> to a string. This would, for example, convert the integer <code class="highlighter-rouge">1</code> to the string <code class="highlighter-rouge">"1"</code>.</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">int(x)</code></td>
-      <td style="text-align: center">If possible, converts the value <code class="highlighter-rouge">x</code> to an integer.</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">float(x)</code></td>
-      <td style="text-align: center">If possible, convers the value <code class="highlighter-rouge">x</code> to a float.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>These conversions are limited: only strings representing numbers can be converted to proper numbers using <code class="highlighter-rouge">float(x)</code> and <code class="highlighter-rouge">int(x)</code>, but any float, integer or boolean can be converted to a string using <code class="highlighter-rouge">str(x)</code>.</p>
-
-<p>We can use these functions to combine data of different types. Using this, we could write the following statement:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"Hello! I am "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">27</span><span class="p">)</span> <span class="o">+</span> <span class="s">" and I like Python."</span>
-</code></pre></div></div>
-
-<p>Without the type conversion, an error would occur:</p>
-
-<p><img src="https://mcataford.github.io/TalkPythonToMe/assets/console-string2.png" alt="TypeError during concatenation" />
-<em>TypeError during concatenation</em></p>
-
-<p><a name="creating"></a></p>
-<h2 id="22-creating-and-modifying-variables">2.2 Creating and modifying variables</h2>
-
-<p>As we’ve seen in the previous sections, we can easily manipulate raw data in the interactive console. However, one large issue that stops us from going forward is <strong>data persistence</strong>. While we can apply operations on numbers and strings, we have yet to <em>save</em> anything to memory! This is where <strong>variables</strong> come in. As we said earlier, variables are <strong>symbolic replacements for data</strong>. Once defined, a variable and the data is contains can be substituted in any other statement.</p>
-
-<p>Python being a <strong>soft-typed</strong> language, we do not need to handle which data type each variable stores; the interpreter will handle that seamlessly as we use our variables. This results in a very simple model for the definition of variables:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_variable</span> <span class="o">=</span> <span class="n">some_value</span>
-</code></pre></div></div>
+<p><a name="for"></a></p>
+<h2 id="22-for-loops">2.2 <code class="highlighter-rouge">for</code> loops</h2>
 
 
   </div>
