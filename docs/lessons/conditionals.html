@@ -95,191 +95,259 @@
   <div class="post-content e-content" itemprop="articleBody">
     <h1 id="in-this-lesson">In this lesson</h1>
 
-<p>In this lesson, we will look at the <strong>interactive Python console</strong>. We will explore the notion of <strong>variables</strong> and <strong>methods</strong>, and review definitions that will follow us for the rest of our adventure.</p>
+<p>In this lesson, we discuss how <strong>boolean values</strong> can be used as <strong>conditions</strong>, and how structures called <strong>conditional statements</strong> can help you add depth in your scripts’ behaviour by selectively executing statements based on parameters of your choosing.</p>
 
 <ol>
-  <li><a href="#ic">Using the interactive console</a></li>
-  <li><a href="#variables">Variables</a>
+  <li><a href="#boolean-exp">Boolean expressions</a>
     <ol>
-      <li><a href="#primobj">Primitives and Objects</a></li>
-      <li><a href="#creating">Creating and modifying variables</a></li>
+      <li><a href="#comparison-ops">Comparison operators</a></li>
+      <li><a href="#composite-statements">Composite statements</a></li>
+      <li><a href="#variables-exp">Variables in boolean expressions</a></li>
     </ol>
   </li>
+  <li><a href="#conditionals">Conditional statements</a>
+    <ol>
+      <li><a href="#if"><code class="highlighter-rouge">if</code> blocks</a></li>
+      <li><a href="#elif"><code class="highlighter-rouge">elif</code> blocks</a></li>
+      <li><a href="#else"><code class="highlighter-rouge">else</code> blocks</a></li>
+      <li><a href="#complete-model">A complete model</a></li>
+    </ol>
+  </li>
+  <li><a href="#concrete-example">A concrete example</a></li>
 </ol>
 
 <hr />
 
-<p><a name="ic"></a></p>
-<h1 id="1-using-the-interactive-console">1. Using the interactive console</h1>
+<p><a name="boolean-exp"></a></p>
+<h1 id="1-boolean-expressions">1. Boolean expressions</h1>
 
-<p>For the first part of this lesson, you can use the interactive console through a Command Prompt/Terminal (by opening a Command Prompt/Terminal and typing <code class="highlighter-rouge">python</code>) or through IDLE. Since IDLE’s interactive console is just a graphical interface wrapped around the regular Python console, you shouldn’t see any difference in function.</p>
+<p>In the <a href="https://mcataford.github.io/TalkPythonToMe/lessons/conditionals.html#primobj">previous lesson</a>, we mentioned how the <code class="highlighter-rouge">boolean</code> datatype was used to represent values that are either true or false. By themselves, these values aren’t very useful: their true purpose is to be the result of <strong>boolean expressions</strong> that compare values of other types together.</p>
 
-<p>Before we get started, consider a few things about the interactive console:</p>
+<p><a name="comparison-ops"></a></p>
+<h2 id="11-comparison-operators">1.1 Comparison operators</h2>
 
-<ol>
-  <li>It has <strong>memory</strong>. Any variable or method defined in the console will exist and be accessible until the console is terminated. This allows us to type long scripts one statement at a time and keep the results of each statement at hand for the next;</li>
-  <li>It can be terminated at any time by using the exit statement <code class="highlighter-rouge">exit()</code>;</li>
-  <li>If the console is busy with a task, you can force termination using the Control/Command key and C, this is called a <em>keyboard interrupt</em>;</li>
-  <li>Any statement that produces output will print out its output on the line following a statement;</li>
-  <li>You can view the contents of a variable at any time by using its name as a statement.</li>
-</ol>
-
-<p><a name="ic-math"></a></p>
-<h2 id="11-mathematical-operations">1.1 Mathematical operations</h2>
-
-<p>The most basic thing the interactive console can do it basic arithmetic. If you use any mathematical operation as a statement, you should see the results printed below. All the basic operators taught in algebra are valid. As such, we can experiment and produce the following:</p>
-
-<p><img src="https://mcataford.github.io/TalkPythonToMe/assets/console-math.png" alt="Arithmetic in the console" />
-<em>Various arithmetic operations in the console</em></p>
-
-<p>Note that just like in classical algebra, you can use parentheses to group operations together, and chained operations such as <code class="highlighter-rouge">(1 + 1) * (12 * 50)</code> can be composed from simpler ones.</p>
-
-<p><a name="variables"></a></p>
-<h1 id="2-variables">2. Variables</h1>
-
-<p>What differentiates the interactive console from a simple pocket calculator is its ability to store and manipulate different kinds of data. To achieve this, we will use <strong>variables</strong>. Variables in Python are no different from their algebraic counterparts: they act as a <strong>symbolic replacement for data</strong>. This means that once defined, a variable can be inserted in other operations and behave as if you had inserted the data is contains.</p>
-
-<p>Before we create our own, however, we should define a few basic <strong>data types</strong> available in Python: these data types will determine what kind of data is stored in a variable and what sort of operations we can apply on said variable.</p>
-
-<p><a name="primobj"></a></p>
-<h2 id="21-primitives-and-objects">2.1 Primitives and Objects</h2>
-
-<p>Python data types can be separated into two classes: <strong>primitives</strong> and <strong>objects</strong>. The separating criterion is fairly simple: primitives can be represented by a <strong>single numerical value</strong> while objects require a bigger structure stored in memory, to which the variable points. Below are the three main primitive types we will be using most of the time:</p>
+<p>The same way that we can use arithmetic operators on numerical values to produce other numerical values (see <a href="https://mcataford.github.io/TalkPythonToMe/lessons/basics.html#ic-math">Mathematical operations</a>), Python includes a number of <strong>comparison operators</strong> taken from algebraic inequations. The table below is a collection of such operators:</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center">Data type</th>
-      <th style="text-align: center">Definition</th>
-      <th style="text-align: center">Example values</th>
+      <th style="text-align: center">Operator</th>
+      <th style="text-align: center">Significance</th>
+      <th style="text-align: center">Example</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">int</code></td>
-      <td style="text-align: center">Integer values</td>
-      <td style="text-align: center"><code class="highlighter-rouge">1</code>, <code class="highlighter-rouge">-1</code>, <code class="highlighter-rouge">2000000</code></td>
+      <td style="text-align: center"><code class="highlighter-rouge">&gt;</code></td>
+      <td style="text-align: center">Greater than</td>
+      <td style="text-align: center"><code class="highlighter-rouge">2 &gt; 1</code></td>
     </tr>
     <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">float</code></td>
-      <td style="text-align: center">Floating-point values</td>
-      <td style="text-align: center"><code class="highlighter-rouge">1.1</code>, <code class="highlighter-rouge">-1.5</code></td>
+      <td style="text-align: center"><code class="highlighter-rouge">&lt;</code></td>
+      <td style="text-align: center">Lesser than</td>
+      <td style="text-align: center"><code class="highlighter-rouge">1 &lt; 2</code></td>
     </tr>
     <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">boolean</code></td>
-      <td style="text-align: center">True or false binary values</td>
-      <td style="text-align: center"><code class="highlighter-rouge">True</code>, <code class="highlighter-rouge">False</code></td>
+      <td style="text-align: center"><code class="highlighter-rouge">&gt;=</code></td>
+      <td style="text-align: center">Greater or equal to</td>
+      <td style="text-align: center"><code class="highlighter-rouge">5 &gt;= 1</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">&lt;=</code></td>
+      <td style="text-align: center">Lesser or equal to</td>
+      <td style="text-align: center"><code class="highlighter-rouge">1 &lt;= 5</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">==</code></td>
+      <td style="text-align: center">Equal to</td>
+      <td style="text-align: center"><code class="highlighter-rouge">1 == 1</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">!=</code></td>
+      <td style="text-align: center">Not equal to</td>
+      <td style="text-align: center"><code class="highlighter-rouge">1 != 2</code></td>
     </tr>
   </tbody>
 </table>
 
-<p>In addition to these types, we need to define at least one object type: the <strong>string</strong>. Strings are collections of characters and can contain single characters, words, sentences and even entire books.</p>
+<p>As an experiment, you can use the <strong>interactive Python console</strong> and enter the statements in the <em>Example</em> column of the last table: you should see that all of them evaluate to <code class="highlighter-rouge">True</code>. Similarly, you could modify those statements such that they result in <code class="highlighter-rouge">False</code>. These are called <strong>boolean expressions</strong>.</p>
+
+<p>Note that there also exist operators that do not deal with numbers. For example, <code class="highlighter-rouge">==</code> can be used between two strings (i.e. <code class="highlighter-rouge">"Marc" != "marc"</code>) to compare their contents and <code class="highlighter-rouge">in</code> can be used to verify if an element is present in a collection (i.e. <code class="highlighter-rouge">"a" in "Marc"</code>).</p>
+
+<p>Finally, any expression can be <strong>negated</strong> using <code class="highlighter-rouge">not</code>: <code class="highlighter-rouge">"d" not in "Marc"</code>.</p>
+
+<p><a name="composite-statements"></a></p>
+<h2 id="12-composite-statements">1.2 Composite statements</h2>
+
+<p>When we talked about <a href="https://mcataford.github.io/TalkPythonToMe/lessons/basics.html#ic-math">mathematical operations</a>), we mentioned that simple 2-operand mathematical statements can be combined into bigger, richer expressions. We could take <code class="highlighter-rouge">1 + 1</code> and combine it with <code class="highlighter-rouge">2 * 8</code> to obtain <code class="highlighter-rouge">(1 + 1) + (2 * 8)</code> using parentheses, for example.</p>
+
+<p>This usage of parentheses to combine simple statements into more complex ones also applies to boolean expressions, which can be connected together using <code class="highlighter-rouge">and</code> or <code class="highlighter-rouge">or</code>.</p>
+
+<p>As their names imply, these operators will allow you to specify whether both or either conditions involved in a combination need to be true for the whole expression to be true. Here are a few examples of <code class="highlighter-rouge">and</code> and <code class="highlighter-rouge">or</code> in action:</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: center">Data type</th>
-      <th style="text-align: center">Definition</th>
-      <th style="text-align: center">Example values</th>
+      <th style="text-align: center">Statement</th>
+      <th style="text-align: center">Evaluates to</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">str</code></td>
-      <td style="text-align: center">Strings, any set of character surrounded by single or double quotation marks</td>
-      <td style="text-align: center"><code class="highlighter-rouge">"Hello, world!"</code>, <code class="highlighter-rouge">"A"</code></td>
+      <td style="text-align: center"><code class="highlighter-rouge">(1 &gt; 2) or (2 &gt; 0)</code></td>
+      <td style="text-align: center"><code class="highlighter-rouge">True</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">(1 &gt; 2) an (2 &gt; 0)</code></td>
+      <td style="text-align: center"><code class="highlighter-rouge">False</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">((1 &gt; 0) and (2 &gt; 0)) or (1 &lt; 0)</code></td>
+      <td style="text-align: center"><code class="highlighter-rouge">True</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">((1 &gt; 0) and (2 &gt; 0)) and (1 &lt; 0)</code></td>
+      <td style="text-align: center"><code class="highlighter-rouge">False</code></td>
     </tr>
   </tbody>
 </table>
 
-<h2 id="22-operations-on-primitives">2.2 Operations on primitives</h2>
+<p>Of course, any of the operators we mentioned before can be used to make up the simple expressions that are combined using <code class="highlighter-rouge">or</code> and <code class="highlighter-rouge">and</code>.</p>
 
-<p>All of the arithmetic operations we have experimented with in the [first section] of this lesson are applicable to any primitive. In the case of <code class="highlighter-rouge">True</code> and <code class="highlighter-rouge">False</code> (<code class="highlighter-rouge">boolean</code> values), those will be interpreted as <code class="highlighter-rouge">1</code> and <code class="highlighter-rouge">0</code> respectively. As such, the following is possible:</p>
+<p><a name="variable-exp"></a></p>
+<h2 id="13-variables-in-boolean-expressions">1.3 Variables in boolean expressions</h2>
 
-<p><img src="https://mcataford.github.io/TalkPythonToMe/assets/python_int_cli_2.png" alt="Arithmetic in the console" />
-<em>Arithmetic using boolean values</em></p>
+<p>In the previous slew of examples, we used literal values to make up our expressions. This kind of expression is, evidently, not that interesting since it never changes. When we discussed <a href="https://mcataford.github.io/TalkPythonToMe/lessons/basics.html">variables</a>, we mentioned that they were <strong>symbolic replacements</strong> for data: this means that you can use variables anywhere in boolean expressions - your expressions can now change based on variables that you set.</p>
 
-<p>This outlines what we said earlier: <strong>any primitive value can be represented as a number</strong>.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your age"</span><span class="p">)</span>
+<span class="n">is_old</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">my_age</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">40</span>
 
-<h2 id="23-operations-on-objects">2.3 Operations on objects</h2>
-
-<p>Operations on objects are a bit trickier. Because objects are complex structures, no two object types have the same operations! Because object operations are defined on a case by case basis, we’ll look at the one object we considered so far: the string.</p>
-
-<p>While strings cannot be divided or subtracted from one another, two operations exist:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">Operation</th>
-      <th style="text-align: center">Definition</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">+</code></td>
-      <td style="text-align: center"><strong>Concatenation</strong>, or the union of two or more strings</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">*</code></td>
-      <td style="text-align: center"><strong>Multiplication</strong>, or the act of repeating strings</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>The first operation, concatenation, allows you to make longer strings out of shorter ones. This means that given three strings, we can use the <code class="highlighter-rouge">+</code> operator to form a new longer one that represents the sum of the three:</p>
-
-<p><img src="https://mcataford.github.io/TalkPythonToMe/assets/console-string.png" alt="Concatenation" />
-<em>Concatenating strings</em></p>
-
-<p>The same way, using the <code class="highlighter-rouge">*</code> operator will duplicate and concatenate strings. For example, typing <code class="highlighter-rouge">"hello" * 2</code> would result in the string <code class="highlighter-rouge">"hellohello"</code>; the initial string would be repeated twice, and the repetitions concatenated.</p>
-
-<h2 id="24-operations-and-data-types">2.4 Operations and data types</h2>
-
-<p>The operations defined earlier only apply between items of the same type (either primitive or object). As such, while you can add a <code class="highlighter-rouge">float</code> to an <code class="highlighter-rouge">int</code>, you cannot concatenate a string to a number directly as either element has a different definition of what the operation <code class="highlighter-rouge">+</code> should do. To solve this issue, you can <strong>convert</strong> one data type to the other, when possible. To do so, we will introduce three functions (also called methods):</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">Method</th>
-      <th style="text-align: center">Definition</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">str(x)</code></td>
-      <td style="text-align: center">If possible, converts the value <code class="highlighter-rouge">x</code> to a string. This would, for example, convert the integer <code class="highlighter-rouge">1</code> to the string <code class="highlighter-rouge">"1"</code>.</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">int(x)</code></td>
-      <td style="text-align: center">If possible, converts the value <code class="highlighter-rouge">x</code> to an integer.</td>
-    </tr>
-    <tr>
-      <td style="text-align: center"><code class="highlighter-rouge">float(x)</code></td>
-      <td style="text-align: center">If possible, convers the value <code class="highlighter-rouge">x</code> to a float.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>These conversions are limited: only strings representing numbers can be converted to proper numbers using <code class="highlighter-rouge">float(x)</code> and <code class="highlighter-rouge">int(x)</code>, but any float, integer or boolean can be converted to a string using <code class="highlighter-rouge">str(x)</code>.</p>
-
-<p>We can use these functions to combine data of different types. Using this, we could write the following statement:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"Hello! I am "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mi">27</span><span class="p">)</span> <span class="o">+</span> <span class="s">" and I like Python."</span>
+<span class="k">print</span><span class="p">(</span><span class="n">is_old</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Without the type conversion, an error would occur:</p>
+<p>In the present example, if the variable <code class="highlighter-rouge">my_age</code> is a number over 40, we will print the value <code class="highlighter-rouge">True</code>, otherwise we will print <code class="highlighter-rouge">False</code>. If you are puzzled by <code class="highlighter-rouge">input()</code>, take a look at the <a href="https://mcataford.github.io/TalkPythonToMe/quiz/basics-quiz.html">previous lesson’s quiz, where <code class="highlighter-rouge">input(x)</code> was introduced.</a></p>
 
-<p><img src="https://mcataford.github.io/TalkPythonToMe/assets/console-string2.png" alt="TypeError during concatenation" />
-<em>TypeError during concatenation</em></p>
+<p><a name="conditionals"></a></p>
+<h1 id="2-conditional-statements">2. Conditional statements</h1>
 
-<p><a name="creating"></a></p>
-<h2 id="22-creating-and-modifying-variables">2.2 Creating and modifying variables</h2>
+<p>Now that we have established that we can use <a href="#comparison-ops">certain operators</a> to obtain boolean values from the data we are manipulating, we can use the outcome of these expressions to guide which statements get executed and which do not. By using boolean expressions as <strong>conditions</strong>, we can build blocks, called <strong>conditional blocks</strong>, that will depend on their given condition(s) to be executed.</p>
 
-<p>As we’ve seen in the previous sections, we can easily manipulate raw data in the interactive console. However, one large issue that stops us from going forward is <strong>data persistence</strong>. While we can apply operations on numbers and strings, we have yet to <em>save</em> anything to memory! This is where <strong>variables</strong> come in. As we said earlier, variables are <strong>symbolic replacements for data</strong>. Once defined, a variable and the data is contains can be substituted in any other statement.</p>
+<p><a name="if"></a></p>
+<h2 id="21-if-blocks">2.1 <code class="highlighter-rouge">if</code> blocks</h2>
 
-<p>Python being a <strong>soft-typed</strong> language, we do not need to handle which data type each variable stores; the interpreter will handle that seamlessly as we use our variables. This results in a very simple model for the definition of variables:</p>
+<p>The simplest conditional blocks are composed of one single unit: the <code class="highlighter-rouge">if</code> block. <code class="highlighter-rouge">if</code> blocks have a singular mission: to execute the code they contain <em>if and only if</em> the condition that defines them evaluates to <code class="highlighter-rouge">True</code>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_variable</span> <span class="o">=</span> <span class="n">some_value</span>
+<p>Their general form is as follows:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Any code here is executed before the if block.</span>
+
+<span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+  <span class="c">#Code that gets executed if 'condition' is True</span>
+
+<span class="c">#Any code here is executed after the if block.</span>
+</code></pre></div></div>
+
+<p>In the event where the condition given to the <code class="highlighter-rouge">if</code> block is <code class="highlighter-rouge">False</code>, the block is simply skipped. For example, we could selectively print a message based on a number input by the user:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"Enter a number: "</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"The number you entered was bigger than 10!"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In the previous snippet, the <code class="highlighter-rouge">print()</code> call is only executed <em>if</em> the number <code class="highlighter-rouge">number</code> satisfies the <code class="highlighter-rouge">if</code> block’s condition, which is <code class="highlighter-rouge">number &gt; 10</code>. Any number that doesn’t meet this criterion will cause the condition to be <code class="highlighter-rouge">False</code> and the <code class="highlighter-rouge">if</code> block to be skipped entirely.</p>
+
+<p><a name="elif"></a></p>
+<h2 id="22-elif-blocks">2.2 <code class="highlighter-rouge">elif</code> blocks</h2>
+
+<p>Sometimes, the <code class="highlighter-rouge">if</code> block alone isn’t enough to describe the behaviour that we want to implement. Since <code class="highlighter-rouge">if</code> is skipped if its condition is <code class="highlighter-rouge">False</code>, multiple <code class="highlighter-rouge">if</code> blocks could be used in chain to implement the behaviour “if not the first, check another condition”:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">condition1</span><span class="p">:</span>
+  <span class="c">#Code that is executed if condition1 == True</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">condition1</span> <span class="ow">and</span> <span class="n">condition2</span><span class="p">:</span>
+  <span class="c">#Code that is executed if the first "if" failed but condition2 is True</span>
+</code></pre></div></div>
+
+<p>This form however gets cumbersome very quickly if you have a series of other conditions to check because you always need to ensure that all the previous conditions are <code class="highlighter-rouge">False</code>; since the <code class="highlighter-rouge">if</code> blocks are independent from each other, a faulty set of conditions could potentially allow them both to be executed one after the other.</p>
+
+<p>To solve this issue and to simplify the implementation of that sort of behaviour, we introduce the <code class="highlighter-rouge">elif</code> statement. <code class="highlighter-rouge">elif</code> is functionally the same as <code class="highlighter-rouge">if</code>, but stands for “else if”. In combination with an <code class="highlighter-rouge">if</code>, an <code class="highlighter-rouge">elif</code> will only be executed if the <code class="highlighter-rouge">if</code> it’s attached to is skipped. We could rewrite the previous block of code as:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">condition1</span><span class="p">:</span>
+  <span class="c">#Code that is executed if condition1 == True</span>
+<span class="k">elif</span> <span class="n">condition2</span><span class="p">:</span>
+  <span class="c">#"elif" implies that condition1  was False and checks condition2</span>
+</code></pre></div></div>
+
+<p>This syntax really shines when you consider cases where you have multiple <code class="highlighter-rouge">elif</code> blocks:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">condition1</span><span class="p">:</span>
+  <span class="c">#Code that is executed if condition1 == True</span>
+<span class="k">elif</span> <span class="n">condition2</span><span class="p">:</span>
+  <span class="c">#"elif" implies that condition1  was False and checks condition2</span>
+<span class="k">elif</span> <span class="n">condition3</span><span class="p">:</span>
+  <span class="c">#"elif" implies that condition1 and condition2 were False and checks condition3</span>
+<span class="k">elif</span> <span class="n">condition4</span><span class="p">:</span>
+  <span class="c">#"elif" implies that condition1, condition2 and condition3  was False and checks condition4</span>
+</code></pre></div></div>
+
+<p>If we opted to use a contraption of <code class="highlighter-rouge">if</code> blocks alone, we would have to ensure that previous conditions did indeed fail before checking if the new condition is <code class="highlighter-rouge">True</code>.</p>
+
+<p><a name="else"></a></p>
+<h2 id="23-else-blocks">2.3 <code class="highlighter-rouge">else</code> blocks</h2>
+
+<p>THe <code class="highlighter-rouge">else</code> blocks complements the <code class="highlighter-rouge">if</code> and <code class="highlighter-rouge">elif</code> blocks by providing a “catch-all” scenario. Whenever an <code class="highlighter-rouge">else</code> is present following a combination of <code class="highlighter-rouge">if</code> and <code class="highlighter-rouge">elif</code> blocks, it is executed <em>if and only if</em> all the previous conditional blocks fail. This means that all the blocks that have conditions will be skipped and that the <code class="highlighter-rouge">else</code> block will be executed before the script can move on.</p>
+
+<p>The <code class="highlighter-rouge">else</code> requires no condition by definition: its condition could be expressed as “none of the previous conditions were true”.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">condition1</span><span class="p">:</span>
+  <span class="c">#Code executed if condition1 is true</span>
+<span class="k">elif</span> <span class="n">condition2</span><span class="p">:</span>
+  <span class="c">#Code executed if condition2 is true but condition1 is false</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="c">#If all else fails and both conditions are false, this is executed</span>
+</code></pre></div></div>
+
+<p><a name="complete-model"></a></p>
+<h2 id="24-a-complete-model">2.4 A complete model</h2>
+
+<p>Combining all three conditional blocks, we can produce a general model for conditional elements. Any valid conditional structure should…</p>
+
+<ul>
+  <li>…be opened by an <code class="highlighter-rouge">if</code> block;
+  <em>Note: Semantically, it wouldn’t make sense to open with an <code class="highlighter-rouge">elif</code> or an <code class="highlighter-rouge">else</code> since these both depend on a previous element being false.</em></li>
+  <li>…feature zero or more <code class="highlighter-rouge">elif</code> block, as needed;</li>
+  <li>…feature zero or one <code class="highlighter-rouge">else</code> block, as needed.</li>
+</ul>
+
+<p>The combination of blocks that will make up your conditional statements will depend on the behaviour you are trying to implement. As such, not all blocks are relevant to all conditional statements: sometimes, a simple <code class="highlighter-rouge">if</code> is enough, but in other cases, several <code class="highlighter-rouge">elif</code> blocks are needed to get it right.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">condition1</span><span class="p">:</span>
+  <span class="s">"""
+  Mandatory block for any conditional statement.
+  """</span>
+<span class="k">elif</span> <span class="n">condition2</span><span class="p">:</span>
+  <span class="s">"""
+  Optional block, can be present in multiples, as needed.
+  """</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="s">"""
+  Optional block, can only be present once in a statement.
+  """</span>
+</code></pre></div></div>
+
+<p><a name="concrete-example"></a></p>
+<h1 id="3-a-concrete-example">3. A concrete example</h1>
+
+<p>In the <a href="https://mcataford.github.io/TalkPythonToMe/problems/basics-problems.html">previous lesson’s problem set</a>, we introduced a temperature conversion problem. If you experimented with different input values for your conversion process, you probably noticed that not all values are valid.</p>
+
+<p>For example, the absolute zero for Celsius degrees is -273.15C, which means that any value below that shouldn’t be converted and should be flagged as invalid. With conditional statements, input given to the conversion function (or collected from the user via <code class="highlighter-rouge">input()</code>) can be <em>validated</em> such that only values within a valid range are considered.</p>
+
+<p>We could then add a conditional statement such as this one to ensure the validity of conversion results:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">temperature</span> <span class="o">&lt;</span> <span class="mf">273.15</span><span class="p">:</span>
+  <span class="c">#Return the minimal Fahrenheit value, or an error code.</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="c">#Compute the conversion as usual</span>
 </code></pre></div></div>
 
 
