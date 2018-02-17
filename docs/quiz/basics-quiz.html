@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Python basics | Learning Python</title>
+<meta name="generator" content="Jekyll v3.7.2" />
+<meta property="og:title" content="Python basics" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In the problem set, you implemented a function that prints a rectangle of variable width. Add another parameter to the function such that the user can also choose the height of the rectangle. Hint: This can be entirely implemented using the right operator and that the \n character will insert a newline in a string, which may solve a lot of problems." />
+<meta property="og:description" content="In the problem set, you implemented a function that prints a rectangle of variable width. Add another parameter to the function such that the user can also choose the height of the rectangle. Hint: This can be entirely implemented using the right operator and that the \n character will insert a newline in a string, which may solve a lot of problems." />
+<link rel="canonical" href="https://mcataford.github.io/TalkPythonToMe/quiz/basics-quiz.html" />
+<meta property="og:url" content="https://mcataford.github.io/TalkPythonToMe/quiz/basics-quiz.html" />
+<meta property="og:site_name" content="Learning Python" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-02-11T10:05:23-05:00" />
+<script type="application/ld+json">
+{"description":"In the problem set, you implemented a function that prints a rectangle of variable width. Add another parameter to the function such that the user can also choose the height of the rectangle. Hint: This can be entirely implemented using the right operator and that the \\n character will insert a newline in a string, which may solve a lot of problems.","@type":"BlogPosting","url":"https://mcataford.github.io/TalkPythonToMe/quiz/basics-quiz.html","headline":"Python basics","dateModified":"2018-02-11T10:05:23-05:00","datePublished":"2018-02-11T10:05:23-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://mcataford.github.io/TalkPythonToMe/quiz/basics-quiz.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <link rel="stylesheet" href="/TalkPythonToMe/assets/main.css">
+  <link type="application/atom+xml" rel="alternate" href="https://mcataford.github.io/TalkPythonToMe/feed.xml" title="Learning Python" />
+  
+</head>
+
+
+  <body>
+
+    <html>
+
+  <head>
+    <title></title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://mcataford.github.io//TalkPythonToMe/css/base.css" rel="stylesheet"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39212350-4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-39212350-4');
+    </script>
+
+    
+  </head>
+
+  <body>
+
+    <header class="page-header">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Learn Python</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="https://mcataford.github.io//TalkPythonToMe/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://mcataford.github.io//TalkPythonToMe/#lessons">Main course</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://mcataford.github.io//TalkPythonToMe/#workshops">Workshops</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://mcataford.github.io//TalkPythonToMe/#resources">Resources</a>
+            </li>
+          </ul>
+          <span class="navbar-text"></span>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Python basics</h1>
+    <h3 class="p-name">Variables, functions and basic programs</h3>
+    <p class="post-meta">
+  </header>
+  <hr>
+
+  
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ol>
+  <li>
+    <p>In the <a href="https://mcataford.github.io/TalkPythonToMe/lessons/basics.html">problem set</a>, you implemented a function that prints a rectangle of variable width. Add another parameter to the function such that the user can also choose the <em>height</em> of the rectangle.</p>
+
+    <p><em>Hint: This can be entirely implemented using the right operator and that the <code class="highlighter-rouge">\n</code> character will insert a newline in a string, which may solve a lot of problems.</em></p>
+  </li>
+  <li>
+    <p>The <code class="highlighter-rouge">input()</code> function allows you to query the user for information. Any parameter that is given to it will be printed as a prompt before the script stops to wait for the user to type in something. Using <code class="highlighter-rouge">input()</code>, can you modify your solution to <em>1.</em> further such that it <em>asks</em> the user which width and height to use to generate the rectangle? You should also have your function <em>print</em> a sentence containing the width and height that were used.</p>
+
+    <p>__Note: here is an example of how <code class="highlighter-rouge">input()</code> can be used based on the <code class="highlighter-rouge">introduce_myself</code> function we implemented before:</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c">#This function is taken from the Python basics lesson text, under section 4 (Functions)</span>
+ <span class="k">def</span> <span class="nf">introduce_myself</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">height</span><span class="p">):</span>
+   <span class="n">output</span> <span class="o">=</span> <span class="s">"Hello! My name is "</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">" and I am "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="o">+</span>  <span class="s">" years old. I am "</span> <span class="o">+</span> <span class="n">height</span> <span class="o">+</span> <span class="s">" centimetres high."</span>
+
+   <span class="k">return</span> <span class="n">output</span>
+
+ <span class="s">"""
+ We can query the user for each of the three values we need. Each time,
+ we use an appropriate prompt for the user.
+
+ Note that the same function is used to capture any of the values! We'll discuss this again later.
+ """</span>
+ <span class="n">user_name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"What is your name?"</span><span class="p">)</span>
+ <span class="n">user_age</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"How old are you?"</span><span class="p">)</span>
+ <span class="n">user_height</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"How tall are you?"</span><span class="p">)</span>
+
+ <span class="n">sentence</span> <span class="o">=</span> <span class="n">introduce_myself</span><span class="p">(</span><span class="n">user_name</span><span class="p">,</span> <span class="n">user_age</span><span class="p">,</span> <span class="n">user_height</span><span class="p">)</span>
+
+ <span class="k">print</span><span class="p">(</span><span class="n">sentence</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+
+  </div>
+
+  
+
+  <a class="u-url" href="/TalkPythonToMe/quiz/basics-quiz.html" hidden></a>
+</article>
+      </div>
+    </main>
+
+    
+  <footer>
+  </footer>
+  
+  </body>
+</html>
+
+  </body>
+
+</html>
