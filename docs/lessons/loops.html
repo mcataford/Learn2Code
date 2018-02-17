@@ -71,7 +71,7 @@
               <a class="nav-link" href="https://mcataford.github.io//TalkPythonToMe/#workshops">Workshops</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="https://mcataford.github.io//TalkPythonToMe/#resources">Resources</a>
+              <a class="nav-link disabled" href="https://mcataford.github.io//TalkPythonToMe/#resources">Resources</a>
             </li>
           </ul>
           <span class="navbar-text"></span>
@@ -215,6 +215,136 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="s">"Hello, World!"</span><span class="p">:</span>
   <span class="k">print</span><span class="p">(</span><span class="n">character</span><span class="p">)</span>
 </code></pre></div></div>
+
+<p>Collections can also be a <strong>range of numbers</strong> generated using the <code class="highlighter-rouge">range(min, max, step)</code> function, which accepts three input parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Input</th>
+      <th style="text-align: center">Required</th>
+      <th style="text-align: center">Effect</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">min</code></td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">Sets the range minimum (inclusive)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">max</code></td>
+      <td style="text-align: center">Yes</td>
+      <td style="text-align: center">Sets the range maximum (exclusive)</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">step</code></td>
+      <td style="text-align: center">No</td>
+      <td style="text-align: center">Sets the jump between each number in the range</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Since only the <code class="highlighter-rouge">max</code> parameter is required, any single parameter given to <code class="highlighter-rouge">range()</code> will be used as a maximum. However, if you choose to give <code class="highlighter-rouge">range()</code> multiple parameters, you need to ensure the order in which they are supplied. Enter the following statements in the interactive Python console to see their effect firsthand:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Produces the range [0, 1, 2, 3, 4]</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c">#Produces the range [2, 3, 4]</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c">#Produces the range [0, 2, 4]</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p><em>Note: we had to wrap our calls to <code class="highlighter-rouge">range()</code> in a <code class="highlighter-rouge">list()</code> function to convert each range to a list that we can view. If you choose to use a range in a <code class="highlighter-rouge">for</code> loop, you do not need to add this extra step.</em></p>
+
+<p>Since the <code class="highlighter-rouge">min</code> parameter has to come first in any multi-parameter usage of <code class="highlighter-rouge">range()</code>, to set the <code class="highlighter-rouge">step</code> parameter you will also have to explicitly set <code class="highlighter-rouge">min</code>, even if it means using the default value (<code class="highlighter-rouge">0</code>).</p>
+
+<p>Combining the <code class="highlighter-rouge">range()</code> function with our previously defined <code class="highlighter-rouge">for</code> loop, we can produce a loop that will process each number individually:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"""
+Prints each number in the given range.
+Our range parameters are min=0, max=10, step=2
+Our range is [0, 2, 4, 6, 8]
+"""</span>
+<span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="err">`</span>
+</code></pre></div></div>
+
+<p><a name="convert"></a></p>
+<h2 id="23-converting-while-to-for-and-back">2.3 Converting <code class="highlighter-rouge">while</code> to <code class="highlighter-rouge">for</code> and back</h2>
+
+<p>As we mentioned earlier, the main difference between <code class="highlighter-rouge">while</code> and <code class="highlighter-rouge">for</code> loops was how the iterative process was phrased. In the former, we repeat an operation <em>as long as a condition is true</em> and in the latter, we repeat an operation <em>over a range of values or items in a set</em>. Since the difference isn’t functional, we can often rewrite a <code class="highlighter-rouge">while</code> loop into a <code class="highlighter-rouge">for</code> loop and vice-versa.</p>
+
+<p>Let’s take for example our previous loop example, which prints each number in the range <code class="highlighter-rouge">[0, 2, 4, 6, 8]</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span><span class="err">`</span>
+</code></pre></div></div>
+
+<p>To convert this to a <code class="highlighter-rouge">while</code> loop, we first need to establish which steps our new structure should go through:</p>
+
+<ol>
+  <li>Initially, <code class="highlighter-rouge">number = 0</code>;</li>
+  <li>If <code class="highlighter-rouge">number &lt; 10</code>;
+    <ol>
+      <li>Print <code class="highlighter-rouge">number</code>;</li>
+      <li>Increment <code class="highlighter-rouge">number</code> by 2 such that we skip the odd values</li>
+      <li>Back to <em>2.</em></li>
+    </ol>
+  </li>
+  <li>Terminate script</li>
+</ol>
+
+<p>We notice that the condition is essentially phrased as <em>have we reached the value <code class="highlighter-rouge">max</code> yet?</em>, the <code class="highlighter-rouge">min</code> became the initial condition for <code class="highlighter-rouge">number</code> and the <code class="highlighter-rouge">step</code> has been converted to a statement which increments the value of <code class="highlighter-rouge">number</code> by 2.</p>
+
+<p>Using the list of steps above, we can write down the <code class="highlighter-rouge">while</code> implementation:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+  <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<p>Note that while both loops are written differently, they are <em>functionality</em> the same.</p>
+
+<p>This sort of conversion has one major advantage: as you can see from the examples above, in some cases, a <code class="highlighter-rouge">while</code> formulation is more concise, whereas in others, <code class="highlighter-rouge">for</code> loops will produce shorter scripts. It’s also a matter of preference: if you are struggling to write a <code class="highlighter-rouge">while</code> loop for a certain task, a <code class="highlighter-rouge">for</code> loop might offer a simpler alternative.</p>
+
+<p><a name="examples"></a></p>
+<h1 id="3-concrete-examples">3. Concrete examples</h1>
+
+<p>Now that we know about loops and conditions, which essentially allow us to repeat tasks and to selectively execute code, we can implement complex behaviour in our scripts. Let’s look at some examples that could be made more interesting using a combination of iteration and conditional execution.</p>
+
+<p><a name="temperature"></a></p>
+<h2 id="31-temperature-conversion">3.1 Temperature conversion</h2>
+
+<p>Earlier, we discussed the idea of using conditionals as <em>validation</em> to ensure that a user cannot proceed with operations before submitting valid input. In this case, this could take the form of a loop that can only be exited <em>if</em> the entered input is a valid number:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Give an initial value to the variable that will contain our user input</span>
+<span class="n">user_in</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c">#Repeat forever</span>
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+  <span class="c">#Grab user input</span>
+  <span class="n">user_in</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter a temperature in Celsius to convert to Kelvin: "</span><span class="p">)</span>
+
+  <span class="c">#If the temperature is higher than the absolute minimum for Celsius, exit the loop</span>
+  <span class="k">if</span> <span class="nb">float</span><span class="p">(</span><span class="n">user_in</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="o">-</span><span class="mf">273.15</span><span class="p">:</span>
+    <span class="k">break</span>
+  <span class="c">#Otherwise, print error message</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Invalid value!"</span><span class="p">)</span>
+
+<span class="c">#Once our, convert the temperature, assumed to be valid</span>
+<span class="n">kelvin_temp</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">user_in</span><span class="p">)</span> <span class="o">+</span> <span class="mf">273.15</span>
+
+<span class="c">#Print the results</span>
+<span class="k">print</span><span class="p">(</span><span class="n">user_in</span> <span class="o">+</span> <span class="s">" degrees Celsius is equivalent to "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">kelvin_temp</span><span class="p">)</span> <span class="o">+</span> <span class="s">" degrees Kelvin."</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>By using an <strong>infinite loop</strong> that is manually exited if the entered value is valid, we can force the user to continuously enter values until a satisfactory temperature is given. In this case, the <code class="highlighter-rouge">while</code> traps the user until the <code class="highlighter-rouge">if</code> condition, which validates the input, is satisfied.</p>
 
 
   </div>
