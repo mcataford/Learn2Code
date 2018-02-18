@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-02-18T18:03:35-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-02-18T18:41:26-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we will look at the &lt;strong&gt;interactive Python console&lt;/strong&gt;. We will explore the notion of &lt;strong&gt;variables&lt;/strong&gt; and &lt;strong&gt;methods&lt;/strong&gt;, and review definitions that will follow us for the rest of our adventure.&lt;/p&gt;
 
@@ -1253,6 +1253,7 @@ Our range is [0, 2, 4, 6, 8]
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#scripts&quot;&gt;Writing scripts&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#functions&quot;&gt;Functions&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#indentation&quot;&gt;Indentation&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#commenting&quot;&gt;Comments&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -1534,6 +1535,25 @@ Our range is [0, 2, 4, 6, 8]
 &lt;p&gt;Once defined, we can use &lt;code class=&quot;highlighter-rouge&quot;&gt;introduce_myself()&lt;/code&gt; anywhere in our script and as long as we give it the right parameters (a string, an integer and a float, in that order), it will produce the right output.&lt;/p&gt;
 
 &lt;p&gt;For example, we can use &lt;code class=&quot;highlighter-rouge&quot;&gt;introduce_myself(&quot;Marc&quot;, 27, 180.1)&lt;/code&gt; and get the same output string as before.&lt;/p&gt;
+
+&lt;p&gt;&lt;a name=&quot;indentation&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;41-indentation&quot;&gt;4.1 Indentation&lt;/h2&gt;
+
+&lt;p&gt;You might have noticed that not all lines are on the same level in the previous example. This is not for looks: it’s by design. Blocks of code such as functions use &lt;strong&gt;indentation&lt;/strong&gt; as delimiters in Python, each level being the equivalent of “brackets” that contain the block’s body.&lt;/p&gt;
+
+&lt;p&gt;Every time we will declare a block (such as the &lt;code class=&quot;highlighter-rouge&quot;&gt;def&lt;/code&gt; statement in the previous example), we will give any following statement that is part of the block one extra level of indentation. As such, we will obtain a layout such as the following:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;my_function1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#Code that is in the function &quot;my_function1&quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;my_function2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#Code that is in the function &quot;my_function2&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Code that is not in any of the function but that is in the file.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#Any code at this level is executed if you run your script.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that any code that is at the “base” level of your script is executed when your script is run.&lt;/p&gt;
 
 &lt;p&gt;&lt;a name=&quot;commenting&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;5-comments&quot;&gt;5. Comments&lt;/h1&gt;

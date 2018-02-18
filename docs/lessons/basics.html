@@ -161,6 +161,7 @@
   </li>
   <li><a href="#scripts">Writing scripts</a></li>
   <li><a href="#functions">Functions</a></li>
+  <li><a href="#indentation">Indentation</a></li>
   <li><a href="#commenting">Comments</a></li>
 </ol>
 
@@ -442,6 +443,25 @@
 <p>Once defined, we can use <code class="highlighter-rouge">introduce_myself()</code> anywhere in our script and as long as we give it the right parameters (a string, an integer and a float, in that order), it will produce the right output.</p>
 
 <p>For example, we can use <code class="highlighter-rouge">introduce_myself("Marc", 27, 180.1)</code> and get the same output string as before.</p>
+
+<p><a name="indentation"></a></p>
+<h2 id="41-indentation">4.1 Indentation</h2>
+
+<p>You might have noticed that not all lines are on the same level in the previous example. This is not for looks: it’s by design. Blocks of code such as functions use <strong>indentation</strong> as delimiters in Python, each level being the equivalent of “brackets” that contain the block’s body.</p>
+
+<p>Every time we will declare a block (such as the <code class="highlighter-rouge">def</code> statement in the previous example), we will give any following statement that is part of the block one extra level of indentation. As such, we will obtain a layout such as the following:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">my_function1</span><span class="p">():</span>
+  <span class="c">#Code that is in the function "my_function1"</span>
+
+<span class="k">def</span> <span class="nf">my_function2</span><span class="p">():</span>
+  <span class="c">#Code that is in the function "my_function2"</span>
+
+<span class="c">#Code that is not in any of the function but that is in the file.</span>
+<span class="c">#Any code at this level is executed if you run your script.</span>
+</code></pre></div></div>
+
+<p>Note that any code that is at the “base” level of your script is executed when your script is run.</p>
 
 <p><a name="commenting"></a></p>
 <h1 id="5-comments">5. Comments</h1>
