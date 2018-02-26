@@ -150,6 +150,7 @@
     </ol>
   </li>
   <li><a href="#concrete-example">A concrete example</a></li>
+  <li><a href="#basic-input">EXTRA: Basic user input</a></li>
 </ol>
 
 <hr />
@@ -385,6 +386,34 @@
 <span class="k">else</span><span class="p">:</span>
   <span class="c">#Compute the conversion as usual</span>
 </code></pre></div></div>
+
+<p><a name="user-input"></a></p>
+<h1 id="4-extra-basic-user-input">4. EXTRA: Basic user input</h1>
+
+<p>The topic of user input was briefly discussed in the last <a href="https://mcataford.github.io/TalkPythonToMe/problems/basics-problems.html">problem set</a> and left to experimentation. In Python, user input can be gathered using the <code class="highlighter-rouge">input(x)</code> function, which takes in a parameter, <code class="highlighter-rouge">x</code>, that is printed as a prompt before the user gets to type in something and returns the user’s input.</p>
+
+<p>This kind of user input is called <strong>blocking</strong> because the script will stop and wait after printing the prompt (<code class="highlighter-rouge">x</code>), only to resume when the user presses the return key.</p>
+
+<p>Because it is hard to predict exactly what he user will enter, user input is always considered to be a <strong>string</strong>, this means that depending on what you are capturing, you might have to use the <a href="https://mcataford.github.io/TalkPythonToMe/lessons/basics.html#operations-data-types">conversion functions</a> we have discussed earlier to adjust the datatype of the user’s input to your needs.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">"Enter a number: "</span><span class="p">)</span>
+
+<span class="s">"""
+Here, we convert our string to an integer to be able to 
+compare it to other numbers.
+"""</span>
+
+<span class="n">user_input_num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">user_input</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">user_input_num</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"The number you entered was negative!"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">user_input_num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"The number was positive!"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="s">"You entered 0."</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Later, we will cover the scenario where we expect the user to enter a number and a non-numerical value is entered. This will be covered by <strong>exception-handling</strong>. For now, we can simply assume that the user always answers our queries with the appropriate data.</p>
 
 
   </div>
