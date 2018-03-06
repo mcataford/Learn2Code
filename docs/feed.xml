@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-03-06T17:53:10-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-03-06T18:06:21-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we will look at the &lt;strong&gt;interactive Python console&lt;/strong&gt;. We will explore the notion of &lt;strong&gt;variables&lt;/strong&gt; and &lt;strong&gt;methods&lt;/strong&gt;, and review definitions that will follow us for the rest of our adventure.&lt;/p&gt;
 
@@ -698,6 +698,10 @@ Our range is [0, 2, 4, 6, 8]
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;third&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
+&lt;h3 id=&quot;be-careful&quot;&gt;Be careful&lt;/h3&gt;
+
+&lt;p&gt;Using indices that are outside of the valid range for a certain collection will cause errors. For instance, in our previous &lt;code class=&quot;highlighter-rouge&quot;&gt;numbers&lt;/code&gt; tuple, attempting to access &lt;code class=&quot;highlighter-rouge&quot;&gt;numbers[10]&lt;/code&gt; will raise an error and halt the execution of your script because the index you are trying to access is considered unsafe.&lt;/p&gt;
+
 &lt;p&gt;&lt;a id=&quot;length&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;23-the-length-of-collections&quot;&gt;2.3 The length of collections&lt;/h2&gt;
 
@@ -888,6 +892,10 @@ Our range is [0, 2, 4, 6, 8]
 
 &lt;p&gt;Once the statement above is executed, the key &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Orange&quot;&lt;/code&gt; no longer is in the dictionary &lt;code class=&quot;highlighter-rouge&quot;&gt;foods&lt;/code&gt;. This also removes the value associated with the key.&lt;/p&gt;
 
+&lt;h3 id=&quot;be-careful-1&quot;&gt;Be careful&lt;/h3&gt;
+
+&lt;p&gt;Accessing a dictionary using a key that doesn’t exist but without assigning a new value will cause an error, much like accessing an index that is out of bounds. To avoid this problem, you can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;get(x)&lt;/code&gt; function mentioned in the following section.&lt;/p&gt;
+
 &lt;p&gt;&lt;a id=&quot;functions-dict&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;43-dictionary-functions&quot;&gt;4.3 Dictionary functions&lt;/h2&gt;
 
@@ -977,7 +985,11 @@ Our range is [0, 2, 4, 6, 8]
   &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;food&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foods&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;food&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Here, we go through all the available keys (&lt;code class=&quot;highlighter-rouge&quot;&gt;for food in foods&lt;/code&gt;), and at each step, we print both the key (&lt;code class=&quot;highlighter-rouge&quot;&gt;food&lt;/code&gt;) and the value (&lt;code class=&quot;highlighter-rouge&quot;&gt;foods[food]&lt;/code&gt;).&lt;/p&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Control flow</title><link href="https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems.html" rel="alternate" type="text/html" title="Control flow" /><published>2018-02-12T10:05:23-05:00</published><updated>2018-02-12T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems.html">&lt;h1 id=&quot;truefalse-questions&quot;&gt;True/False questions&lt;/h1&gt;
+&lt;p&gt;Here, we go through all the available keys (&lt;code class=&quot;highlighter-rouge&quot;&gt;for food in foods&lt;/code&gt;), and at each step, we print both the key (&lt;code class=&quot;highlighter-rouge&quot;&gt;food&lt;/code&gt;) and the value (&lt;code class=&quot;highlighter-rouge&quot;&gt;foods[food]&lt;/code&gt;).&lt;/p&gt;
+
+&lt;h3 id=&quot;be-careful-2&quot;&gt;Be careful&lt;/h3&gt;
+
+&lt;p&gt;You should always be wary of &lt;strong&gt;altering collections&lt;/strong&gt; while iterating over them. For example, a loop in which you &lt;em&gt;append&lt;/em&gt; items to a list might never end if your frame of reference is “until the end of the list”, and one in which you alter the indices might not work very well if you rely on indices to access data.&lt;/p&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Control flow</title><link href="https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems.html" rel="alternate" type="text/html" title="Control flow" /><published>2018-02-12T10:05:23-05:00</published><updated>2018-02-12T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems.html">&lt;h1 id=&quot;truefalse-questions&quot;&gt;True/False questions&lt;/h1&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt; variables can have three values: &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Undefined&lt;/code&gt;.&lt;/li&gt;

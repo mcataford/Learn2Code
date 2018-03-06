@@ -238,6 +238,10 @@
 <span class="k">print</span><span class="p">(</span><span class="n">third</span><span class="p">)</span>
 </code></pre></div></div>
 
+<h3 id="be-careful">Be careful</h3>
+
+<p>Using indices that are outside of the valid range for a certain collection will cause errors. For instance, in our previous <code class="highlighter-rouge">numbers</code> tuple, attempting to access <code class="highlighter-rouge">numbers[10]</code> will raise an error and halt the execution of your script because the index you are trying to access is considered unsafe.</p>
+
 <p><a id="length"></a></p>
 <h2 id="23-the-length-of-collections">2.3 The length of collections</h2>
 
@@ -428,6 +432,10 @@
 
 <p>Once the statement above is executed, the key <code class="highlighter-rouge">"Orange"</code> no longer is in the dictionary <code class="highlighter-rouge">foods</code>. This also removes the value associated with the key.</p>
 
+<h3 id="be-careful-1">Be careful</h3>
+
+<p>Accessing a dictionary using a key that doesn’t exist but without assigning a new value will cause an error, much like accessing an index that is out of bounds. To avoid this problem, you can use the <code class="highlighter-rouge">get(x)</code> function mentioned in the following section.</p>
+
 <p><a id="functions-dict"></a></p>
 <h2 id="43-dictionary-functions">4.3 Dictionary functions</h2>
 
@@ -518,6 +526,10 @@
 </code></pre></div></div>
 
 <p>Here, we go through all the available keys (<code class="highlighter-rouge">for food in foods</code>), and at each step, we print both the key (<code class="highlighter-rouge">food</code>) and the value (<code class="highlighter-rouge">foods[food]</code>).</p>
+
+<h3 id="be-careful-2">Be careful</h3>
+
+<p>You should always be wary of <strong>altering collections</strong> while iterating over them. For example, a loop in which you <em>append</em> items to a list might never end if your frame of reference is “until the end of the list”, and one in which you alter the indices might not work very well if you rely on indices to access data.</p>
 
   </div>
 
