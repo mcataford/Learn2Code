@@ -137,80 +137,229 @@
   <li><a href="#dt">Data structures</a></li>
   <li><a href="#tuples">Tuples</a>
     <ol>
-      <li><a href="#indices">Indexing</a></li>
+      <li><a href="#create-tuples">Creating tuples</a></li>
+      <li><a href="#access-tuples">Accessing tuples</a></li>
+      <li><a href="#length">The length of collections</a></li>
     </ol>
   </li>
-  <li><a href="#lists">Lists</a></li>
-  <li><a href="#dict">Dictionaries</a></li>
+  <li><a href="#lists">Lists</a>
+    <ol>
+      <li><a href="#create-lists">Creating lists</a></li>
+      <li><a href="#access-lists">Accessing and editing lists</a></li>
+      <li><a href="#growshrink-lists">Growing and shrinking lists</a></li>
+    </ol>
+  </li>
+  <li><a href="#dictionaries">Dictionaries</a>
+    <ol>
+      <li><a href="#create-dict">Creating dictionaries</a></li>
+      <li><a href="#access-dict">Accessing and editing dictionaries</a></li>
+      <li><a href="#functions-dict">Dictionary functions</a></li>
+    </ol>
+  </li>
 </ol>
 
 <hr />
 
-<p><a name="dt"></a></p>
+<p><a id="dt"></a></p>
 <h1 id="1-data-structures">1. Data structures</h1>
 
-<p>So far, we have been storing data in <strong>variables</strong>. This allowed us to save partial results, keep data ready for use later and simplify the implementation of otherwise complex operations. The way we have been using variables so far however raised a problem: if we wanted to store a series of data, say 10 observations of a single phenomenon, we would need en equal number of variables. This quickly becomes problematic as the quantity of data we want to store grows: a program with 100s of variables would quickly become unreadable.</p>
+<p>Until now, we have stored single pieces of data in <strong>variables</strong>. This allowed us to add persistence to our calculations and use the results from previous operations as input for the next. While useful for datum that stands on its own, using variables in the way we have been quickly becomes impractical if we have <strong>collections</strong> of data that are related in some way.</p>
 
-<p>To work around this, we can use <strong>data structures</strong> which permit the <strong>common storage of multiple elements under one variable</strong>. Using these constructs, we will be able to store more than a single piece of data in each variable, which in turn provides us with a way to collect related data together.</p>
+<p>To illustrate this limit to single-value variables, imagine an experiment where 100 different measurements were collected. Using what we know, storing this data would require the creationg of 100 different variables, producing scripts that quickly become hard to manage, if manageable at all. As we will see later in this lesson, storing these datapoints in separate variables also prevents us from using what we know of <a href="">loops</a> to iteratively repeat operations on all the data collected.</p>
 
-<p>Python defines three main data structures for us: the <strong>tuple</strong>, the <strong>list</strong> and the <strong>dictionary</strong>. We will divide them in two categories: <strong>ordered collections</strong> (such as tuples and lists, which can be sorted), and <strong>unordered collections</strong> (which cannot be sorted).</p>
+<p>This is where <strong>data structures</strong> come in. Python provides us with three primary structures which will allow us to store large amounts of data in an organized fashion that is compatible with loops: <a href="">tuples</a>, <a href="">lists</a> and <a href="">dictionaries</a>. These structures will still be expressed as <strong>variables</strong>, but will no longer contain single datum. Instead, they will contain a collection of data accessible through <strong>indices</strong> or <strong>keys</strong>.</p>
 
-<p><a name="tuples"></a></p>
+<p>In the discussion that follows, we will call our structures <strong>collections</strong>, as the next lesson will reveal that we can build our own data structures whose goal isn’t to store large amounts of data at once but to store data in a specific way depending on our needs.</p>
+
+<p><a id="tuples"></a></p>
 <h1 id="2-tuples">2. Tuples</h1>
 
-<p><strong>Tuples</strong> are the simplest form of paired data defined by Python. They represent <strong>immutable vectors</strong>, in other words, groupings of data that cannot be changed once created.</p>
+<p><strong>Tuples</strong> are the simplest type of collection available in Python. They represent <strong>vectors</strong> and are used to create “bundles” of closely-related data that aren’t meant to be edited. For example, we might want to store <em>coordinates</em>, <em>measurement/readings</em> and <em>grouped return values</em> with tuples as none of these are meant to be directly edited; the data they contain is however used in further operations.</p>
 
-<p>Tuples can store any number of elements of any type, and can be created using the following syntax:</p>
+<p><a id="create-tuples"></a></p>
+<h2 id="21-creating-tuples">2.1 Creating tuples</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="s">"Marc"</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mf">180.1</span><span class="p">)</span>
+<p>Creating tuples can be done in a handful of ways:</p>
+
+<h3 id="using-a-constructor">Using a constructor</h3>
+
+<p>Constructors are <strong>functions</strong> that can generate objects. In the present case, they will generate a <em>default tuple</em>, which is empty. While the read-only nature of tuples makes the constructor useless on its own, its main use will be <strong>conversion</strong>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Creating an empty tuple using the tuple() constructor</span>
+<span class="n">my_tuple</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>Note that our tuple is defined using a <strong>comma-separated list of element between parentheses</strong>. The list in question can be of any length necessary.</p>
+<p>In the example above, printing the value of <code class="highlighter-rouge">my_tuple</code> is <code class="highlighter-rouge">()</code>, which represents an empty tuple.</p>
 
-<p>Once a tuple is created, individual elements can be accessed using <strong>indices</strong>.</p>
+<p>Giving any <strong>iterable</strong> to our constructor will <strong>convert</strong> it to a tuple, separating its parts into a list of comma separated elements:</p>
 
-<p><a name="indices"></a></p>
-<h2 id="21-indexing">2.1 Indexing</h2>
-
-<p><strong>Indices</strong> represent the positions of elements within a collection. In Python, indexing is done using a <strong>zero base</strong>, which means that the first element of an <strong>ordered collection</strong> is always <code class="highlighter-rouge">0</code> and the last one, <code class="highlighter-rouge">length - 1</code>. To use indices, we can use the following syntax:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Prints the first element of the tuple 'my_tuple'</span>
-<span class="k">print</span><span class="p">(</span><span class="n">my_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Splitting a string into a tuple of characters</span>
+<span class="n">my_chars</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Because tuples are immutable, we can access elements as we would any other variable, but we cannot use the assignment operator <code class="highlighter-rouge">=</code>. In fact, any statement of the form <code class="highlighter-rouge">collection[index]</code> will act exactly as the variables we have seen before.</p>
+<p>Once converted, <code class="highlighter-rouge">my_chars</code> contains <code class="highlighter-rouge">("H", "e", "l", "l", "o")</code>, which is the tuple containing all the iterable elements of the string <code class="highlighter-rouge">"Hello"</code>.</p>
 
-<p>Since the <strong>length</strong> of a collection may not always be known (such as in the case where a function receives a tuple as parameter, for example), we can use the <code class="highlighter-rouge">len(x)</code> function to find out the length of any collection.</p>
+<p>From this, we can notice a pattern: tuples are <strong>comma-separated lists of items surrounded by parentheses.</strong></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+<h3 id="using-values-directly">Using values directly</h3>
 
-<span class="c">#Prints 5</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">my_tuple</span><span class="p">))</span>
+<p>We can also create tuples by feeding values directly into a variable as a comma-separated list:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span>
+<span class="n">numbers2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Based on this, the last element of any ordered collection is always <code class="highlighter-rouge">len(collection) - 1</code>.</p>
+<p>In the above case, whether you surround your list by parentheses or not, the result will be the same: a tuple containing the values is created and printing either variables will result in <code class="highlighter-rouge">(1, 2, 3, 4, 5)</code>.</p>
 
-<p><a name="lists"></a></p>
+<p><a id="access-tuples"></a></p>
+<h2 id="22-accessing-tuples">2.2 Accessing tuples</h2>
+
+<p>Tuples are classified as <strong>ordered collections</strong>: elements within tuples have a set <strong>position</strong> that represents where they are in the structure. We can exploit this property to access single elements.</p>
+
+<p>The position of elements inside of ordered collections like the tuple is represented by the element’s <strong>index</strong>. Indices are integers ranging from 0 to <code class="highlighter-rouge">len(collection) - 1</code>, as such, the first index is 0 and the last is the length of the collection minus 1.</p>
+
+<p>Consider the following tuple, which we created earlier:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span>
+</code></pre></div></div>
+
+<p>Accessing any of the elements using indices can be done using the model <code class="highlighter-rouge">collection[index]</code>. As such, <code class="highlighter-rouge">numbers[0]</code> would pull the first element off the <code class="highlighter-rouge">numbers</code> tuple, while <code class="highlighter-rouge">numbers[5]</code> would pull the last (since the length of our collection is <code class="highlighter-rouge">6</code>, the maximal index is <code class="highlighter-rouge">6 - 1 = 5</code>).</p>
+
+<p>Values pulled from collections can be used just like any other variables would (as long as you do not attempt to edit a value stored in a tuple directly, since tuples are read-only):</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Print the sum of the first two items of the tuple</span>
+<span class="k">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">numbers</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c">#Store a copy of the third value in a variable that you can edit</span>
+<span class="n">third</span> <span class="o">=</span> <span class="n">numbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="c">#Here, you can edit `third` because the variable `third` contains a copy of the read-only value. The copy can be edited.</span>
+<span class="n">third</span> <span class="o">=</span> <span class="n">third</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">third</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><a id="length"></a></p>
+<h2 id="23-the-length-of-collections">2.3 The length of collections</h2>
+
+<p>Just like in the case of strings, the length of any collection can be obtained using <code class="highlighter-rouge">len()</code>. In this case, calling <code class="highlighter-rouge">len(numbers)</code> will return an integer representing the length of the collection <code class="highlighter-rouge">numbers</code>.</p>
+
+<p>As such, accessing the last element of a collection, no matter what its length is, can be achieved by using <code class="highlighter-rouge">collection[len(collection) - 1]</code> (or <em>access the element of <code class="highlighter-rouge">collection</code> that is at index <code class="highlighter-rouge">len(collection) - 1</code></em>).</p>
+
+<p><a id="lists"></a></p>
 <h1 id="3-lists">3. Lists</h1>
 
-<p><strong>Lists</strong> are extremely similar to tuples, with the added benefit of being <strong>mutable</strong>. Just like tuples, they can contain data of differing types (although this is generally discourages for reasons we will discuss in a later section of this lesson), use a <strong>zero-based indexing system</strong> and can be accessed using the syntax <code class="highlighter-rouge">collection[index]</code>. However, since lists are more complex than tuples, the syntax to create them and to manipulate them will be slightly different:</p>
+<p><strong>Lists</strong> are another type of <strong>ordered collection</strong>. Just like <strong>tuples</strong>, they can contain pieces of data indexed by position. However, contrarily to tuples, lists can be edited – as such, they can grow or shrink depending on your needs.</p>
 
-<p><a name="lists-new"></a></p>
+<p>Because they are not read-only, lists will also possess a certain number of <strong>functions</strong> that will help you manipulate them.</p>
+
+<p><a id="create-lists"></a></p>
 <h2 id="31-creating-lists">3.1 Creating lists</h2>
 
-<p>We can create lists using the same kind of statement as with tuples:</p>
+<p>Lists can be created using the two standard methods outlined in <a href="#create-tuples">Creating tuples</a>:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<h3 id="using-a-constructor-1">Using a constructor</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Create an empty list that can be expanded later</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+
+<span class="c">#Create a list from another iterable</span>
+<span class="n">letters</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Note that we use the square brackets instead of parentheses to encapsulate the comma separated list of values.</p>
+<p>Note that we can also convert a <strong>tuple</strong> to a <strong>list</strong> to make it editable. We can use the <code class="highlighter-rouge">list()</code> constructor to do so by passing a tuple to it as a parameter:</p>
 
-<p>We can also create an <strong>empty list</strong> using <code class="highlighter-rouge">list()</code>:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_empty_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_tuple</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">my_tuple</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Since we can <strong>edit</strong> the list later on, creating empty lists might be quite useful depending on what functions we are trying to implement.</p>
+<p>While <code class="highlighter-rouge">my_tuple</code> is read-only, <code class="highlighter-rouge">my_list</code> is not and contains the same values as <code class="highlighter-rouge">my_tuple</code>. Of course, the opposite can also be achieved: the <code class="highlighter-rouge">tuple()</code> constructor can convert a list back into a tuple.</p>
+
+<h3 id="using-values">Using values</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Note that we used the square brackets <code class="highlighter-rouge">[]</code> instead of parentheses. This is what differentiates the list from the tuple when declaring using values.</p>
+
+<p><a id="access-lists"></a></p>
+<h2 id="32-accessing-and-editing-lists">3.2 Accessing and editing lists</h2>
+
+<p>Using the same indexing scheme as with the tuples, we can access elements from a list:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+
+<span class="c">#Prints 1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c">#Prints 6</span>
+<span class="k">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Because our lists are <strong>editable</strong>, however, we can now use the <strong>assignment operator</strong> <code class="highlighter-rouge">=</code> to replace existing values:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Replace the first value of the list with 99</span>
+<span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
+<span class="c">#[99, 2, 3, 4, 5, 6]</span>
+</code></pre></div></div>
+
+<p><em>This only allows you to edit existing elements of a list, the next section will cover growing or shrinking a list.</em></p>
+
+<p><a id="growshrink-lists"></a></p>
+<h2 id="33-growing-and-shrinking-lists">3.3 Growing and shrinking lists</h2>
+
+<p>The previous usage of indices only covered indices within the bounds <code class="highlighter-rouge">[0, len(collection) - 1]</code>. As such, we cannot use it to <strong>append new items to a list</strong> or otherwise alter the list in a way that would change its length.</p>
+
+<p>This is where the <strong>List functions</strong> come into play. Just like you might’ve seen with strings, lists have a certain number of functions that can be used to alter their contents.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Function</th>
+      <th style="text-align: center">Effects</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">append(item)</code></td>
+      <td style="text-align: center">Adds <code class="highlighter-rouge">item</code> to the end of the list, growing it.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">insert(index, item)</code></td>
+      <td style="text-align: center">Inserts <code class="highlighter-rouge">item</code> at index <code class="highlighter-rouge">index</code>, provided the index exists in the list.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">remove(item)</code></td>
+      <td style="text-align: center">Removes the first occurrence of <code class="highlighter-rouge">item</code> in the list</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">pop(index)</code></td>
+      <td style="text-align: center">Removes the item at index <code class="highlighter-rouge">index</code> from the list. If no index is given, removes the last item.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Any of the above functions will alter the list in a way that either grows or shrinks it. The usage model is always the same: <code class="highlighter-rouge">collection.function()</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="n">my_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> 
+<span class="c">#[1, 2, 3, 4, 5, 6]</span>
+
+<span class="n">my_list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="c">#[1, 2, 2, 3, 4, 5, 6]</span>
+
+<span class="n">my_list</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="c">#[1, 2, 2, 3, 5, 6]</span>
+
+<span class="n">my_list</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c">#[1, 2, 3, 5, 6]</span>
+</code></pre></div></div>
+
+<p>Notice that any of the above functions will change the length of the list. As such, when using lists, it becomes increasingly important to use <code class="highlighter-rouge">len(x)</code> when referring to the collection’s length. This way, you can ensure that no matter what the condition of the list is, the maximal index is known.</p>
+
+<p><a id="dictionaries"></a></p>
+<h1 id="4-dictionaries">4. Dictionaries</h1>
 
   </div>
 

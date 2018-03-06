@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-02-26T17:17:40-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-03-06T16:16:28-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we will look at the &lt;strong&gt;interactive Python console&lt;/strong&gt;. We will explore the notion of &lt;strong&gt;variables&lt;/strong&gt; and &lt;strong&gt;methods&lt;/strong&gt;, and review definitions that will follow us for the rest of our adventure.&lt;/p&gt;
 
@@ -597,80 +597,229 @@ Our range is [0, 2, 4, 6, 8]
   &lt;li&gt;&lt;a href=&quot;#dt&quot;&gt;Data structures&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#tuples&quot;&gt;Tuples&lt;/a&gt;
     &lt;ol&gt;
-      &lt;li&gt;&lt;a href=&quot;#indices&quot;&gt;Indexing&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#create-tuples&quot;&gt;Creating tuples&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#access-tuples&quot;&gt;Accessing tuples&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#length&quot;&gt;The length of collections&lt;/a&gt;&lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#lists&quot;&gt;Lists&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#dict&quot;&gt;Dictionaries&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#lists&quot;&gt;Lists&lt;/a&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#create-lists&quot;&gt;Creating lists&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#access-lists&quot;&gt;Accessing and editing lists&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#growshrink-lists&quot;&gt;Growing and shrinking lists&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#dictionaries&quot;&gt;Dictionaries&lt;/a&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#create-dict&quot;&gt;Creating dictionaries&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#access-dict&quot;&gt;Accessing and editing dictionaries&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#functions-dict&quot;&gt;Dictionary functions&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;a name=&quot;dt&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&quot;dt&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;1-data-structures&quot;&gt;1. Data structures&lt;/h1&gt;
 
-&lt;p&gt;So far, we have been storing data in &lt;strong&gt;variables&lt;/strong&gt;. This allowed us to save partial results, keep data ready for use later and simplify the implementation of otherwise complex operations. The way we have been using variables so far however raised a problem: if we wanted to store a series of data, say 10 observations of a single phenomenon, we would need en equal number of variables. This quickly becomes problematic as the quantity of data we want to store grows: a program with 100s of variables would quickly become unreadable.&lt;/p&gt;
+&lt;p&gt;Until now, we have stored single pieces of data in &lt;strong&gt;variables&lt;/strong&gt;. This allowed us to add persistence to our calculations and use the results from previous operations as input for the next. While useful for datum that stands on its own, using variables in the way we have been quickly becomes impractical if we have &lt;strong&gt;collections&lt;/strong&gt; of data that are related in some way.&lt;/p&gt;
 
-&lt;p&gt;To work around this, we can use &lt;strong&gt;data structures&lt;/strong&gt; which permit the &lt;strong&gt;common storage of multiple elements under one variable&lt;/strong&gt;. Using these constructs, we will be able to store more than a single piece of data in each variable, which in turn provides us with a way to collect related data together.&lt;/p&gt;
+&lt;p&gt;To illustrate this limit to single-value variables, imagine an experiment where 100 different measurements were collected. Using what we know, storing this data would require the creationg of 100 different variables, producing scripts that quickly become hard to manage, if manageable at all. As we will see later in this lesson, storing these datapoints in separate variables also prevents us from using what we know of &lt;a href=&quot;&quot;&gt;loops&lt;/a&gt; to iteratively repeat operations on all the data collected.&lt;/p&gt;
 
-&lt;p&gt;Python defines three main data structures for us: the &lt;strong&gt;tuple&lt;/strong&gt;, the &lt;strong&gt;list&lt;/strong&gt; and the &lt;strong&gt;dictionary&lt;/strong&gt;. We will divide them in two categories: &lt;strong&gt;ordered collections&lt;/strong&gt; (such as tuples and lists, which can be sorted), and &lt;strong&gt;unordered collections&lt;/strong&gt; (which cannot be sorted).&lt;/p&gt;
+&lt;p&gt;This is where &lt;strong&gt;data structures&lt;/strong&gt; come in. Python provides us with three primary structures which will allow us to store large amounts of data in an organized fashion that is compatible with loops: &lt;a href=&quot;&quot;&gt;tuples&lt;/a&gt;, &lt;a href=&quot;&quot;&gt;lists&lt;/a&gt; and &lt;a href=&quot;&quot;&gt;dictionaries&lt;/a&gt;. These structures will still be expressed as &lt;strong&gt;variables&lt;/strong&gt;, but will no longer contain single datum. Instead, they will contain a collection of data accessible through &lt;strong&gt;indices&lt;/strong&gt; or &lt;strong&gt;keys&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;a name=&quot;tuples&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In the discussion that follows, we will call our structures &lt;strong&gt;collections&lt;/strong&gt;, as the next lesson will reveal that we can build our own data structures whose goal isn’t to store large amounts of data at once but to store data in a specific way depending on our needs.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;tuples&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;2-tuples&quot;&gt;2. Tuples&lt;/h1&gt;
 
-&lt;p&gt;&lt;strong&gt;Tuples&lt;/strong&gt; are the simplest form of paired data defined by Python. They represent &lt;strong&gt;immutable vectors&lt;/strong&gt;, in other words, groupings of data that cannot be changed once created.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tuples&lt;/strong&gt; are the simplest type of collection available in Python. They represent &lt;strong&gt;vectors&lt;/strong&gt; and are used to create “bundles” of closely-related data that aren’t meant to be edited. For example, we might want to store &lt;em&gt;coordinates&lt;/em&gt;, &lt;em&gt;measurement/readings&lt;/em&gt; and &lt;em&gt;grouped return values&lt;/em&gt; with tuples as none of these are meant to be directly edited; the data they contain is however used in further operations.&lt;/p&gt;
 
-&lt;p&gt;Tuples can store any number of elements of any type, and can be created using the following syntax:&lt;/p&gt;
+&lt;p&gt;&lt;a id=&quot;create-tuples&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;21-creating-tuples&quot;&gt;2.1 Creating tuples&lt;/h2&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_tuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Marc&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;27&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;180.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;p&gt;Creating tuples can be done in a handful of ways:&lt;/p&gt;
+
+&lt;h3 id=&quot;using-a-constructor&quot;&gt;Using a constructor&lt;/h3&gt;
+
+&lt;p&gt;Constructors are &lt;strong&gt;functions&lt;/strong&gt; that can generate objects. In the present case, they will generate a &lt;em&gt;default tuple&lt;/em&gt;, which is empty. While the read-only nature of tuples makes the constructor useless on its own, its main use will be &lt;strong&gt;conversion&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Creating an empty tuple using the tuple() constructor&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;my_tuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tuple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Note that our tuple is defined using a &lt;strong&gt;comma-separated list of element between parentheses&lt;/strong&gt;. The list in question can be of any length necessary.&lt;/p&gt;
+&lt;p&gt;In the example above, printing the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;my_tuple&lt;/code&gt; is &lt;code class=&quot;highlighter-rouge&quot;&gt;()&lt;/code&gt;, which represents an empty tuple.&lt;/p&gt;
 
-&lt;p&gt;Once a tuple is created, individual elements can be accessed using &lt;strong&gt;indices&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Giving any &lt;strong&gt;iterable&lt;/strong&gt; to our constructor will &lt;strong&gt;convert&lt;/strong&gt; it to a tuple, separating its parts into a list of comma separated elements:&lt;/p&gt;
 
-&lt;p&gt;&lt;a name=&quot;indices&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;21-indexing&quot;&gt;2.1 Indexing&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Indices&lt;/strong&gt; represent the positions of elements within a collection. In Python, indexing is done using a &lt;strong&gt;zero base&lt;/strong&gt;, which means that the first element of an &lt;strong&gt;ordered collection&lt;/strong&gt; is always &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; and the last one, &lt;code class=&quot;highlighter-rouge&quot;&gt;length - 1&lt;/code&gt;. To use indices, we can use the following syntax:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Prints the first element of the tuple 'my_tuple'&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_tuple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Splitting a string into a tuple of characters&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;my_chars&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;tuple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Because tuples are immutable, we can access elements as we would any other variable, but we cannot use the assignment operator &lt;code class=&quot;highlighter-rouge&quot;&gt;=&lt;/code&gt;. In fact, any statement of the form &lt;code class=&quot;highlighter-rouge&quot;&gt;collection[index]&lt;/code&gt; will act exactly as the variables we have seen before.&lt;/p&gt;
+&lt;p&gt;Once converted, &lt;code class=&quot;highlighter-rouge&quot;&gt;my_chars&lt;/code&gt; contains &lt;code class=&quot;highlighter-rouge&quot;&gt;(&quot;H&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot;)&lt;/code&gt;, which is the tuple containing all the iterable elements of the string &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Hello&quot;&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Since the &lt;strong&gt;length&lt;/strong&gt; of a collection may not always be known (such as in the case where a function receives a tuple as parameter, for example), we can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;len(x)&lt;/code&gt; function to find out the length of any collection.&lt;/p&gt;
+&lt;p&gt;From this, we can notice a pattern: tuples are &lt;strong&gt;comma-separated lists of items surrounded by parentheses.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_tuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;h3 id=&quot;using-values-directly&quot;&gt;Using values directly&lt;/h3&gt;
 
-&lt;span class=&quot;c&quot;&gt;#Prints 5&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_tuple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;p&gt;We can also create tuples by feeding values directly into a variable as a comma-separated list:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;numbers2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Based on this, the last element of any ordered collection is always &lt;code class=&quot;highlighter-rouge&quot;&gt;len(collection) - 1&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In the above case, whether you surround your list by parentheses or not, the result will be the same: a tuple containing the values is created and printing either variables will result in &lt;code class=&quot;highlighter-rouge&quot;&gt;(1, 2, 3, 4, 5)&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;a name=&quot;lists&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&quot;access-tuples&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;22-accessing-tuples&quot;&gt;2.2 Accessing tuples&lt;/h2&gt;
+
+&lt;p&gt;Tuples are classified as &lt;strong&gt;ordered collections&lt;/strong&gt;: elements within tuples have a set &lt;strong&gt;position&lt;/strong&gt; that represents where they are in the structure. We can exploit this property to access single elements.&lt;/p&gt;
+
+&lt;p&gt;The position of elements inside of ordered collections like the tuple is represented by the element’s &lt;strong&gt;index&lt;/strong&gt;. Indices are integers ranging from 0 to &lt;code class=&quot;highlighter-rouge&quot;&gt;len(collection) - 1&lt;/code&gt;, as such, the first index is 0 and the last is the length of the collection minus 1.&lt;/p&gt;
+
+&lt;p&gt;Consider the following tuple, which we created earlier:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Accessing any of the elements using indices can be done using the model &lt;code class=&quot;highlighter-rouge&quot;&gt;collection[index]&lt;/code&gt;. As such, &lt;code class=&quot;highlighter-rouge&quot;&gt;numbers[0]&lt;/code&gt; would pull the first element off the &lt;code class=&quot;highlighter-rouge&quot;&gt;numbers&lt;/code&gt; tuple, while &lt;code class=&quot;highlighter-rouge&quot;&gt;numbers[5]&lt;/code&gt; would pull the last (since the length of our collection is &lt;code class=&quot;highlighter-rouge&quot;&gt;6&lt;/code&gt;, the maximal index is &lt;code class=&quot;highlighter-rouge&quot;&gt;6 - 1 = 5&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Values pulled from collections can be used just like any other variables would (as long as you do not attempt to edit a value stored in a tuple directly, since tuples are read-only):&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Print the sum of the first two items of the tuple&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Store a copy of the third value in a variable that you can edit&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;third&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#Here, you can edit `third` because the variable `third` contains a copy of the read-only value. The copy can be edited.&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;third&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;third&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;third&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;a id=&quot;length&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;23-the-length-of-collections&quot;&gt;2.3 The length of collections&lt;/h2&gt;
+
+&lt;p&gt;Just like in the case of strings, the length of any collection can be obtained using &lt;code class=&quot;highlighter-rouge&quot;&gt;len()&lt;/code&gt;. In this case, calling &lt;code class=&quot;highlighter-rouge&quot;&gt;len(numbers)&lt;/code&gt; will return an integer representing the length of the collection &lt;code class=&quot;highlighter-rouge&quot;&gt;numbers&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;As such, accessing the last element of a collection, no matter what its length is, can be achieved by using &lt;code class=&quot;highlighter-rouge&quot;&gt;collection[len(collection) - 1]&lt;/code&gt; (or &lt;em&gt;access the element of &lt;code class=&quot;highlighter-rouge&quot;&gt;collection&lt;/code&gt; that is at index &lt;code class=&quot;highlighter-rouge&quot;&gt;len(collection) - 1&lt;/code&gt;&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;lists&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&quot;3-lists&quot;&gt;3. Lists&lt;/h1&gt;
 
-&lt;p&gt;&lt;strong&gt;Lists&lt;/strong&gt; are extremely similar to tuples, with the added benefit of being &lt;strong&gt;mutable&lt;/strong&gt;. Just like tuples, they can contain data of differing types (although this is generally discourages for reasons we will discuss in a later section of this lesson), use a &lt;strong&gt;zero-based indexing system&lt;/strong&gt; and can be accessed using the syntax &lt;code class=&quot;highlighter-rouge&quot;&gt;collection[index]&lt;/code&gt;. However, since lists are more complex than tuples, the syntax to create them and to manipulate them will be slightly different:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Lists&lt;/strong&gt; are another type of &lt;strong&gt;ordered collection&lt;/strong&gt;. Just like &lt;strong&gt;tuples&lt;/strong&gt;, they can contain pieces of data indexed by position. However, contrarily to tuples, lists can be edited – as such, they can grow or shrink depending on your needs.&lt;/p&gt;
 
-&lt;p&gt;&lt;a name=&quot;lists-new&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Because they are not read-only, lists will also possess a certain number of &lt;strong&gt;functions&lt;/strong&gt; that will help you manipulate them.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;create-lists&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;31-creating-lists&quot;&gt;3.1 Creating lists&lt;/h2&gt;
 
-&lt;p&gt;We can create lists using the same kind of statement as with tuples:&lt;/p&gt;
+&lt;p&gt;Lists can be created using the two standard methods outlined in &lt;a href=&quot;#create-tuples&quot;&gt;Creating tuples&lt;/a&gt;:&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;h3 id=&quot;using-a-constructor-1&quot;&gt;Using a constructor&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Create an empty list that can be expanded later&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Create a list from another iterable&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;letters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Note that we use the square brackets instead of parentheses to encapsulate the comma separated list of values.&lt;/p&gt;
+&lt;p&gt;Note that we can also convert a &lt;strong&gt;tuple&lt;/strong&gt; to a &lt;strong&gt;list&lt;/strong&gt; to make it editable. We can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;list()&lt;/code&gt; constructor to do so by passing a tuple to it as a parameter:&lt;/p&gt;
 
-&lt;p&gt;We can also create an &lt;strong&gt;empty list&lt;/strong&gt; using &lt;code class=&quot;highlighter-rouge&quot;&gt;list()&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_empty_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_tuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_tuple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Since we can &lt;strong&gt;edit&lt;/strong&gt; the list later on, creating empty lists might be quite useful depending on what functions we are trying to implement.&lt;/p&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Control flow</title><link href="https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems.html" rel="alternate" type="text/html" title="Control flow" /><published>2018-02-12T10:05:23-05:00</published><updated>2018-02-12T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems.html">&lt;h1 id=&quot;truefalse-questions&quot;&gt;True/False questions&lt;/h1&gt;
+&lt;p&gt;While &lt;code class=&quot;highlighter-rouge&quot;&gt;my_tuple&lt;/code&gt; is read-only, &lt;code class=&quot;highlighter-rouge&quot;&gt;my_list&lt;/code&gt; is not and contains the same values as &lt;code class=&quot;highlighter-rouge&quot;&gt;my_tuple&lt;/code&gt;. Of course, the opposite can also be achieved: the &lt;code class=&quot;highlighter-rouge&quot;&gt;tuple()&lt;/code&gt; constructor can convert a list back into a tuple.&lt;/p&gt;
+
+&lt;h3 id=&quot;using-values&quot;&gt;Using values&lt;/h3&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_numbers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that we used the square brackets &lt;code class=&quot;highlighter-rouge&quot;&gt;[]&lt;/code&gt; instead of parentheses. This is what differentiates the list from the tuple when declaring using values.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;access-lists&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;32-accessing-and-editing-lists&quot;&gt;3.2 Accessing and editing lists&lt;/h2&gt;
+
+&lt;p&gt;Using the same indexing scheme as with the tuples, we can access elements from a list:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Prints 1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Prints 6&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Because our lists are &lt;strong&gt;editable&lt;/strong&gt;, however, we can now use the &lt;strong&gt;assignment operator&lt;/strong&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;=&lt;/code&gt; to replace existing values:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Replace the first value of the list with 99&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;99&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#[99, 2, 3, 4, 5, 6]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;This only allows you to edit existing elements of a list, the next section will cover growing or shrinking a list.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;growshrink-lists&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;33-growing-and-shrinking-lists&quot;&gt;3.3 Growing and shrinking lists&lt;/h2&gt;
+
+&lt;p&gt;The previous usage of indices only covered indices within the bounds &lt;code class=&quot;highlighter-rouge&quot;&gt;[0, len(collection) - 1]&lt;/code&gt;. As such, we cannot use it to &lt;strong&gt;append new items to a list&lt;/strong&gt; or otherwise alter the list in a way that would change its length.&lt;/p&gt;
+
+&lt;p&gt;This is where the &lt;strong&gt;List functions&lt;/strong&gt; come into play. Just like you might’ve seen with strings, lists have a certain number of functions that can be used to alter their contents.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Function&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Effects&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;append(item)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Adds &lt;code class=&quot;highlighter-rouge&quot;&gt;item&lt;/code&gt; to the end of the list, growing it.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;insert(index, item)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Inserts &lt;code class=&quot;highlighter-rouge&quot;&gt;item&lt;/code&gt; at index &lt;code class=&quot;highlighter-rouge&quot;&gt;index&lt;/code&gt;, provided the index exists in the list.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;remove(item)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Removes the first occurrence of &lt;code class=&quot;highlighter-rouge&quot;&gt;item&lt;/code&gt; in the list&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pop(index)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Removes the item at index &lt;code class=&quot;highlighter-rouge&quot;&gt;index&lt;/code&gt; from the list. If no index is given, removes the last item.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Any of the above functions will alter the list in a way that either grows or shrinks it. The usage model is always the same: &lt;code class=&quot;highlighter-rouge&quot;&gt;collection.function()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+&lt;span class=&quot;c&quot;&gt;#[1, 2, 3, 4, 5, 6]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;insert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#[1, 2, 2, 3, 4, 5, 6]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;remove&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#[1, 2, 2, 3, 5, 6]&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;my_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#[1, 2, 3, 5, 6]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Notice that any of the above functions will change the length of the list. As such, when using lists, it becomes increasingly important to use &lt;code class=&quot;highlighter-rouge&quot;&gt;len(x)&lt;/code&gt; when referring to the collection’s length. This way, you can ensure that no matter what the condition of the list is, the maximal index is known.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;dictionaries&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;4-dictionaries&quot;&gt;4. Dictionaries&lt;/h1&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Control flow</title><link href="https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems.html" rel="alternate" type="text/html" title="Control flow" /><published>2018-02-12T10:05:23-05:00</published><updated>2018-02-12T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems.html">&lt;h1 id=&quot;truefalse-questions&quot;&gt;True/False questions&lt;/h1&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt; variables can have three values: &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Undefined&lt;/code&gt;.&lt;/li&gt;
