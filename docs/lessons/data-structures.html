@@ -156,6 +156,7 @@
       <li><a href="#functions-dict">Dictionary functions</a></li>
     </ol>
   </li>
+  <li><a href="#loops">Collections and loops</a></li>
 </ol>
 
 <hr />
@@ -412,6 +413,111 @@
 <span class="c">#Changes the value associated with the key "Orange"</span>
 <span class="n">foods</span><span class="p">[</span><span class="s">"Orange"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"A yummy snack"</span>
 </code></pre></div></div>
+
+<p>Moreover, because we are dealing with keys instead of indices, insertion can be done by specifying a key that isn’t already in the dictionary and assigning a value to it:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">foods</span><span class="p">[</span><span class="s">"Hamburger"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"Patties on a bun"</span>
+</code></pre></div></div>
+
+<p>In this case, the <code class="highlighter-rouge">foods</code> dictionary is grown by one key/value pair.</p>
+
+<p>To achieve the opposite, you can use the <code class="highlighter-rouge">del</code> keyword:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">del</span> <span class="n">foods</span><span class="p">[</span><span class="s">"Orange"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Once the statement above is executed, the key <code class="highlighter-rouge">"Orange"</code> no longer is in the dictionary <code class="highlighter-rouge">foods</code>. This also removes the value associated with the key.</p>
+
+<p><a id="functions-dict"></a></p>
+<h2 id="43-dictionary-functions">4.3 Dictionary functions</h2>
+
+<p>Much like lists, dictionaries have a handful of functions that you can use on them:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Function</th>
+      <th style="text-align: center">Effect</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">get(x)</code></td>
+      <td style="text-align: center">Returns the value associated with the key <code class="highlighter-rouge">x</code> or <code class="highlighter-rouge">None</code> is <code class="highlighter-rouge">x</code> doesn’t exist.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">values()</code></td>
+      <td style="text-align: center">Returns a <code class="highlighter-rouge">list</code> of all the values present in the dictionary.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">keys()</code></td>
+      <td style="text-align: center">Returns a <code class="highlighter-rouge">list</code> of all the keys present in the dictionary.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">items()</code></td>
+      <td style="text-align: center">Returns a <code class="highlighter-rouge">list</code> of <code class="highlighter-rouge">tuples</code> representing all the key/value pairs.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">update(x)</code></td>
+      <td style="text-align: center">Merges the current dictionary with the dictionary <code class="highlighter-rouge">x</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You can use these functions the same way you would use list functions:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">foods</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Orange"</span><span class="p">:</span> <span class="s">"Fruit"</span><span class="p">,</span> <span class="s">"Tomato"</span><span class="p">:</span> <span class="s">"Who knows."</span><span class="p">,</span> <span class="s">"Hot dog"</span><span class="p">:</span> <span class="s">"Definitely not a fruit"</span><span class="p">}</span>
+
+<span class="n">drinks</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Pop"</span><span class="p">:</span> <span class="s">"Fizzy drinks"</span><span class="p">,</span> <span class="s">"Orange juice"</span><span class="p">:</span> <span class="s">"Almost a fruit"</span><span class="p">}</span>
+
+<span class="c">#Prints a list of values contained in the foods dictionary</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">foods</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+
+<span class="c">#Prints a list of all the keys contained in the drinks dictionary</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">drinks</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+
+<span class="c">#Merges the dictionaries, foods now contains all of drinks.</span>
+<span class="n">foods</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">drinks</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h1 id="5-collections-and-loops">5. Collections and loops</h1>
+<p><a id="loops"></a></p>
+
+<p>Here and there, we mentioned the term <strong>enumerable</strong> when describing collections and strings. The term itself neans that the value on which it is applied can be <strong>looped over</strong> and processed piece by piece.</p>
+
+<p>In the context of strings, using a loop would allow us to get individual characters, as we have seen earlier:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">character</span> <span class="ow">in</span> <span class="s">"Hello, world!"</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">character</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In the case of ordered collections, the same structure would simply loop over the items in-order:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In this case, <code class="highlighter-rouge">num</code> will take the value of each item in <code class="highlighter-rouge">numbers</code> sequentially.</p>
+
+<p>We can also use our <code class="highlighter-rouge">range()</code> function to generate indices. Remember that <code class="highlighter-rouge">range()</code> will generate a range of numbers between 0 (unless set to another minimum) and the given maximum. As such, the valid indices in <code class="highlighter-rouge">numbers</code> can be described as <code class="highlighter-rouge">range(0, len(numbers))</code> since the maximum is <em>exclusive</em>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)):</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>This last snippet will have the same effect as before: each element of the list will be printed sequentially. The only difference is the approach: in the first, we prioritize the value and discard the index whereas in the second, we prioritize the position and then use each index to get the value.</p>
+
+<p>This model differs sensibly when we deal with <strong>dictionaries</strong>, as we cannot generate a range of keys. Instead, we will loop through the available keys and use each key to access values:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">foods</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Orange"</span><span class="p">:</span> <span class="s">"Fruit"</span><span class="p">,</span> <span class="s">"Tomato"</span><span class="p">:</span> <span class="s">"Who knows."</span><span class="p">,</span> <span class="s">"Hot dog"</span><span class="p">:</span> <span class="s">"Definitely not a fruit"</span><span class="p">}</span>
+
+<span class="k">for</span> <span class="n">food</span> <span class="ow">in</span> <span class="n">foods</span><span class="p">:</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">food</span><span class="p">,</span> <span class="n">foods</span><span class="p">[</span><span class="n">food</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p>Here, we go through all the available keys (<code class="highlighter-rouge">for food in foods</code>), and at each step, we print both the key (<code class="highlighter-rouge">food</code>) and the value (<code class="highlighter-rouge">foods[food]</code>).</p>
 
   </div>
 
