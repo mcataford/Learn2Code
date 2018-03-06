@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-03-06T16:16:28-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-03-06T16:28:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we will look at the &lt;strong&gt;interactive Python console&lt;/strong&gt;. We will explore the notion of &lt;strong&gt;variables&lt;/strong&gt; and &lt;strong&gt;methods&lt;/strong&gt;, and review definitions that will follow us for the rest of our adventure.&lt;/p&gt;
 
@@ -819,7 +819,45 @@ Our range is [0, 2, 4, 6, 8]
 &lt;p&gt;Notice that any of the above functions will change the length of the list. As such, when using lists, it becomes increasingly important to use &lt;code class=&quot;highlighter-rouge&quot;&gt;len(x)&lt;/code&gt; when referring to the collection’s length. This way, you can ensure that no matter what the condition of the list is, the maximal index is known.&lt;/p&gt;
 
 &lt;p&gt;&lt;a id=&quot;dictionaries&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;4-dictionaries&quot;&gt;4. Dictionaries&lt;/h1&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Control flow</title><link href="https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems.html" rel="alternate" type="text/html" title="Control flow" /><published>2018-02-12T10:05:23-05:00</published><updated>2018-02-12T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems.html">&lt;h1 id=&quot;truefalse-questions&quot;&gt;True/False questions&lt;/h1&gt;
+&lt;h1 id=&quot;4-dictionaries&quot;&gt;4. Dictionaries&lt;/h1&gt;
+
+&lt;p&gt;The third primary collection that we will discuss is the odd one out. While lists and tuples were &lt;strong&gt;ordered collections&lt;/strong&gt; in which elements were ordered by position/indices, &lt;strong&gt;dictionaries&lt;/strong&gt; are best described as &lt;strong&gt;unordered collections&lt;/strong&gt;: the position of elements within the structure is irrelevant, what counts is the &lt;strong&gt;keys&lt;/strong&gt; they are associated with.&lt;/p&gt;
+
+&lt;p&gt;You can visualize dictionaries as “bags” of data in which each datum is attached to a unique label. We will refer to the combination of datum and label as &lt;strong&gt;key/value pairs&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;create-dicts&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;41-creating-dictionaries&quot;&gt;4.1 Creating dictionaries&lt;/h2&gt;
+
+&lt;p&gt;Much like the previous two collections, dictionaries can be created using &lt;strong&gt;constructors&lt;/strong&gt; and &lt;strong&gt;values&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;h3 id=&quot;using-constructors&quot;&gt;Using constructors&lt;/h3&gt;
+
+&lt;p&gt;Following the same pattern as &lt;code class=&quot;highlighter-rouge&quot;&gt;list()&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;tuple()&lt;/code&gt;, the &lt;code class=&quot;highlighter-rouge&quot;&gt;dict()&lt;/code&gt; constructor can be used to create empty dictionaries or convert pre-existing data structures into dictionaries.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Creates an empty dictionary&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;my_dict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Conversion is not as straightforward as with lists and tuples because instead of having an ordered sequence of items, we now have &lt;strong&gt;key/value pairs&lt;/strong&gt;, each of which is represented by two elements of data.&lt;/p&gt;
+
+&lt;p&gt;We can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;dict()&lt;/code&gt; constructor to build a dictionary from a &lt;strong&gt;list of tuples&lt;/strong&gt; in which tuples represent &lt;strong&gt;key/value pairs&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#A list of key/value pairs&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;key_values&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;first&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;second&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;my_dict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;dict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;using-values-1&quot;&gt;Using values&lt;/h3&gt;
+
+&lt;p&gt;You can also initialize a dictionary by using a sequence of key/value pairs formatted as follows:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_dict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;first&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;second&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note the use of &lt;code class=&quot;highlighter-rouge&quot;&gt;{}&lt;/code&gt; braces. Much like tuples and parentheses, and lists and square brackets, the braces are associated with dictionaries. Inside those braces is a &lt;strong&gt;comma-separated list&lt;/strong&gt; of pairs of the form &lt;code class=&quot;highlighter-rouge&quot;&gt;key: value&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;access-dicts&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;42-accessing-and-editing-dictionaries&quot;&gt;4.2 Accessing and editing dictionaries&lt;/h2&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Control flow</title><link href="https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems.html" rel="alternate" type="text/html" title="Control flow" /><published>2018-02-12T10:05:23-05:00</published><updated>2018-02-12T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems.html">&lt;h1 id=&quot;truefalse-questions&quot;&gt;True/False questions&lt;/h1&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt; variables can have three values: &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Undefined&lt;/code&gt;.&lt;/li&gt;

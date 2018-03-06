@@ -361,6 +361,45 @@
 <p><a id="dictionaries"></a></p>
 <h1 id="4-dictionaries">4. Dictionaries</h1>
 
+<p>The third primary collection that we will discuss is the odd one out. While lists and tuples were <strong>ordered collections</strong> in which elements were ordered by position/indices, <strong>dictionaries</strong> are best described as <strong>unordered collections</strong>: the position of elements within the structure is irrelevant, what counts is the <strong>keys</strong> they are associated with.</p>
+
+<p>You can visualize dictionaries as “bags” of data in which each datum is attached to a unique label. We will refer to the combination of datum and label as <strong>key/value pairs</strong>.</p>
+
+<p><a id="create-dicts"></a></p>
+<h2 id="41-creating-dictionaries">4.1 Creating dictionaries</h2>
+
+<p>Much like the previous two collections, dictionaries can be created using <strong>constructors</strong> and <strong>values</strong>:</p>
+
+<h3 id="using-constructors">Using constructors</h3>
+
+<p>Following the same pattern as <code class="highlighter-rouge">list()</code> and <code class="highlighter-rouge">tuple()</code>, the <code class="highlighter-rouge">dict()</code> constructor can be used to create empty dictionaries or convert pre-existing data structures into dictionaries.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Creates an empty dictionary</span>
+<span class="n">my_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Conversion is not as straightforward as with lists and tuples because instead of having an ordered sequence of items, we now have <strong>key/value pairs</strong>, each of which is represented by two elements of data.</p>
+
+<p>We can use the <code class="highlighter-rouge">dict()</code> constructor to build a dictionary from a <strong>list of tuples</strong> in which tuples represent <strong>key/value pairs</strong>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#A list of key/value pairs</span>
+<span class="n">key_values</span> <span class="o">=</span> <span class="p">[(</span><span class="s">"first"</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s">"second"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+<span class="n">my_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">key_values</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="using-values-1">Using values</h3>
+
+<p>You can also initialize a dictionary by using a sequence of key/value pairs formatted as follows:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">"first"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"second"</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>Note the use of <code class="highlighter-rouge">{}</code> braces. Much like tuples and parentheses, and lists and square brackets, the braces are associated with dictionaries. Inside those braces is a <strong>comma-separated list</strong> of pairs of the form <code class="highlighter-rouge">key: value</code>.</p>
+
+<p><a id="access-dicts"></a></p>
+<h2 id="42-accessing-and-editing-dictionaries">4.2 Accessing and editing dictionaries</h2>
+
+
   </div>
 
   
