@@ -399,6 +399,19 @@
 <p><a id="access-dicts"></a></p>
 <h2 id="42-accessing-and-editing-dictionaries">4.2 Accessing and editing dictionaries</h2>
 
+<p>As we mentioned before, dictionaries do not have indices because they are not ordered. However, we can substitute indices for keys and use the same <code class="highlighter-rouge">collection[key]</code> format to access and edit entries:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">foods</span> <span class="o">=</span> <span class="p">{</span><span class="s">"Orange"</span><span class="p">:</span> <span class="s">"Fruit"</span><span class="p">,</span> <span class="s">"Tomato"</span><span class="p">:</span> <span class="s">"Who knows."</span><span class="p">,</span> <span class="s">"Hot dog"</span><span class="p">:</span> <span class="s">"Definitely not a fruit"</span><span class="p">}</span>
+
+<span class="c">#Prints "Fruit"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">foods</span><span class="p">[</span><span class="s">"Orange"</span><span class="p">])</span>
+
+<span class="c">#Prints "Definitely not a fruit"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">foods</span><span class="p">[</span><span class="s">"Hot dog"</span><span class="p">])</span>
+
+<span class="c">#Changes the value associated with the key "Orange"</span>
+<span class="n">foods</span><span class="p">[</span><span class="s">"Orange"</span><span class="p">]</span> <span class="o">=</span> <span class="s">"A yummy snack"</span>
+</code></pre></div></div>
 
   </div>
 
