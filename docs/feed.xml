@@ -1,191 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-03-08T17:05:39-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-03-09T19:41:13-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
-&lt;p&gt;In this lesson, we will look at the &lt;strong&gt;interactive Python console&lt;/strong&gt;. We will explore the notion of &lt;strong&gt;variables&lt;/strong&gt; and &lt;strong&gt;methods&lt;/strong&gt;, and review definitions that will follow us for the rest of our adventure.&lt;/p&gt;
+&lt;p&gt;In this lesson, we learn about complex constructs through which rich functionality can be implemented: &lt;strong&gt;objects&lt;/strong&gt;. We will see how objects allow us to create data structures tailored to our specific needs.&lt;/p&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;#ic&quot;&gt;Using the interactive console&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#variables&quot;&gt;Variables&lt;/a&gt;
-    &lt;ol&gt;
-      &lt;li&gt;&lt;a href=&quot;#primobj&quot;&gt;Primitives and Objects&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#creating&quot;&gt;Creating and modifying variables&lt;/a&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#objects&quot;&gt;Introduction to objects&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#strings&quot;&gt;Looking back at strings&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#collections&quot;&gt;Looking back at collections&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#creating-objects&quot;&gt;Creating objects&lt;/a&gt;
+ 3.1 &lt;a href=&quot;#classes&quot;&gt;Classes&lt;/a&gt;
+ 3.2 &lt;a href=&quot;#constructors&quot;&gt;Constructors&lt;/a&gt;
+ 3.3 &lt;a href=&quot;#methods&quot;&gt;Methods&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;&lt;a name=&quot;ic&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;1-using-the-interactive-console&quot;&gt;1. Using the interactive console&lt;/h1&gt;
-
-&lt;p&gt;For the first part of this lesson, you can use the interactive console through a Command Prompt/Terminal (by opening a Command Prompt/Terminal and typing &lt;code class=&quot;highlighter-rouge&quot;&gt;python&lt;/code&gt;) or through IDLE. Since IDLE’s interactive console is just a graphical interface wrapped around the regular Python console, you shouldn’t see any difference in function.&lt;/p&gt;
-
-&lt;p&gt;Before we get started, consider a few things about the interactive console:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;It has &lt;strong&gt;memory&lt;/strong&gt;. Any variable or method defined in the console will exist and be accessible until the console is terminated. This allows us to type long scripts one statement at a time and keep the results of each statement at hand for the next;&lt;/li&gt;
-  &lt;li&gt;It can be terminated at any time by using the exit statement &lt;code class=&quot;highlighter-rouge&quot;&gt;exit()&lt;/code&gt;;&lt;/li&gt;
-  &lt;li&gt;If the console is busy with a task, you can force termination using the Control/Command key and C, this is called a &lt;em&gt;keyboard interrupt&lt;/em&gt;;&lt;/li&gt;
-  &lt;li&gt;Any statement that produces output will print out its output on the line following a statement;&lt;/li&gt;
-  &lt;li&gt;You can view the contents of a variable at any time by using its name as a statement.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a name=&quot;ic-math&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;11-mathematical-operations&quot;&gt;1.1 Mathematical operations&lt;/h2&gt;
-
-&lt;p&gt;The most basic thing the interactive console can do it basic arithmetic. If you use any mathematical operation as a statement, you should see the results printed below. All the basic operators taught in algebra are valid. As such, we can experiment and produce the following:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://mcataford.github.io/TalkPythonToMe/assets/console-math.png&quot; alt=&quot;Arithmetic in the console&quot; /&gt;
-&lt;em&gt;Various arithmetic operations in the console&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Note that just like in classical algebra, you can use parentheses to group operations together, and chained operations such as &lt;code class=&quot;highlighter-rouge&quot;&gt;(1 + 1) * (12 * 50)&lt;/code&gt; can be composed from simpler ones.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&quot;variables&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;2-variables&quot;&gt;2. Variables&lt;/h1&gt;
-
-&lt;p&gt;What differentiates the interactive console from a simple pocket calculator is its ability to store and manipulate different kinds of data. To achieve this, we will use &lt;strong&gt;variables&lt;/strong&gt;. Variables in Python are no different from their algebraic counterparts: they act as a &lt;strong&gt;symbolic replacement for data&lt;/strong&gt;. This means that once defined, a variable can be inserted in other operations and behave as if you had inserted the data is contains.&lt;/p&gt;
-
-&lt;p&gt;Before we create our own, however, we should define a few basic &lt;strong&gt;data types&lt;/strong&gt; available in Python: these data types will determine what kind of data is stored in a variable and what sort of operations we can apply on said variable.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&quot;primobj&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;21-primitives-and-objects&quot;&gt;2.1 Primitives and Objects&lt;/h2&gt;
-
-&lt;p&gt;Python data types can be separated into two classes: &lt;strong&gt;primitives&lt;/strong&gt; and &lt;strong&gt;objects&lt;/strong&gt;. The separating criterion is fairly simple: primitives can be represented by a &lt;strong&gt;single numerical value&lt;/strong&gt; while objects require a bigger structure stored in memory, to which the variable points. Below are the three main primitive types we will be using most of the time:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Data type&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Definition&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Example values&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Integer values&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;2000000&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Floating-point values&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1.1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;-1.5&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;True or false binary values&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;In addition to these types, we need to define at least one object type: the &lt;strong&gt;string&lt;/strong&gt;. Strings are collections of characters and can contain single characters, words, sentences and even entire books.&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Data type&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Definition&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Example values&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Strings, any set of character surrounded by single or double quotation marks&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Hello, world!&quot;&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;A&quot;&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;22-operations-on-primitives&quot;&gt;2.2 Operations on primitives&lt;/h2&gt;
-
-&lt;p&gt;All of the arithmetic operations we have experimented with in the [first section] of this lesson are applicable to any primitive. In the case of &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt; (&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt; values), those will be interpreted as &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt; respectively. As such, the following is possible:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://mcataford.github.io/TalkPythonToMe/assets/python_int_cli_2.png&quot; alt=&quot;Arithmetic in the console&quot; /&gt;
-&lt;em&gt;Arithmetic using boolean values&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;This outlines what we said earlier: &lt;strong&gt;any primitive value can be represented as a number&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;23-operations-on-objects&quot;&gt;2.3 Operations on objects&lt;/h2&gt;
-
-&lt;p&gt;Operations on objects are a bit trickier. Because objects are complex structures, no two object types have the same operations! Because object operations are defined on a case by case basis, we’ll look at the one object we considered so far: the string.&lt;/p&gt;
-
-&lt;p&gt;While strings cannot be divided or subtracted from one another, two operations exist:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Operation&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Definition&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Concatenation&lt;/strong&gt;, or the union of two or more strings&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;strong&gt;Multiplication&lt;/strong&gt;, or the act of repeating strings&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;The first operation, concatenation, allows you to make longer strings out of shorter ones. This means that given three strings, we can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; operator to form a new longer one that represents the sum of the three:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://mcataford.github.io/TalkPythonToMe/assets/console-string.png&quot; alt=&quot;Concatenation&quot; /&gt;
-&lt;em&gt;Concatenating strings&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The same way, using the &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; operator will duplicate and concatenate strings. For example, typing &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;hello&quot; * 2&lt;/code&gt; would result in the string &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;hellohello&quot;&lt;/code&gt;; the initial string would be repeated twice, and the repetitions concatenated.&lt;/p&gt;
-
-&lt;h2 id=&quot;24-operations-and-data-types&quot;&gt;2.4 Operations and data types&lt;/h2&gt;
-
-&lt;p&gt;The operations defined earlier only apply between items of the same type (either primitive or object). As such, while you can add a &lt;code class=&quot;highlighter-rouge&quot;&gt;float&lt;/code&gt; to an &lt;code class=&quot;highlighter-rouge&quot;&gt;int&lt;/code&gt;, you cannot concatenate a string to a number directly as either element has a different definition of what the operation &lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; should do. To solve this issue, you can &lt;strong&gt;convert&lt;/strong&gt; one data type to the other, when possible. To do so, we will introduce three functions (also called methods):&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Method&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Definition&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;str(x)&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;If possible, converts the value &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; to a string. This would, for example, convert the integer &lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt; to the string &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;1&quot;&lt;/code&gt;.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;int(x)&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;If possible, converts the value &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; to an integer.&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;float(x)&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;If possible, convers the value &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; to a float.&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;These conversions are limited: only strings representing numbers can be converted to proper numbers using &lt;code class=&quot;highlighter-rouge&quot;&gt;float(x)&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;int(x)&lt;/code&gt;, but any float, integer or boolean can be converted to a string using &lt;code class=&quot;highlighter-rouge&quot;&gt;str(x)&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;We can use these functions to combine data of different types. Using this, we could write the following statement:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hello! I am &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;27&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; and I like Python.&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Without the type conversion, an error would occur:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://mcataford.github.io/TalkPythonToMe/assets/console-string2.png&quot; alt=&quot;TypeError during concatenation&quot; /&gt;
-&lt;em&gt;TypeError during concatenation&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&quot;creating&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;22-creating-and-modifying-variables&quot;&gt;2.2 Creating and modifying variables&lt;/h2&gt;
-
-&lt;p&gt;As we’ve seen in the previous sections, we can easily manipulate raw data in the interactive console. However, one large issue that stops us from going forward is &lt;strong&gt;data persistence&lt;/strong&gt;. While we can apply operations on numbers and strings, we have yet to &lt;em&gt;save&lt;/em&gt; anything to memory! This is where &lt;strong&gt;variables&lt;/strong&gt; come in. As we said earlier, variables are &lt;strong&gt;symbolic replacements for data&lt;/strong&gt;. Once defined, a variable and the data is contains can be substituted in any other statement.&lt;/p&gt;
-
-&lt;p&gt;Python being a &lt;strong&gt;soft-typed&lt;/strong&gt; language, we do not need to handle which data type each variable stores; the interpreter will handle that seamlessly as we use our variables. This results in a very simple model for the definition of variables:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_variable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;some_value&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Built-in modules</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/modules.html" rel="alternate" type="text/html" title="Built-in modules" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/modules</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/modules.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+&lt;p&gt;&lt;a id=&quot;objects&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;1-introduction-to-objects&quot;&gt;1. Introduction to objects&lt;/h1&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Built-in modules</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/modules.html" rel="alternate" type="text/html" title="Built-in modules" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/modules</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/modules.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we will look at the &lt;strong&gt;interactive Python console&lt;/strong&gt;. We will explore the notion of &lt;strong&gt;variables&lt;/strong&gt; and &lt;strong&gt;methods&lt;/strong&gt;, and review definitions that will follow us for the rest of our adventure.&lt;/p&gt;
 
