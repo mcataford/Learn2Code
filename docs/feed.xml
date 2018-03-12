@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-03-09T19:41:13-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-03-12T15:25:17-04:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we learn about complex constructs through which rich functionality can be implemented: &lt;strong&gt;objects&lt;/strong&gt;. We will see how objects allow us to create data structures tailored to our specific needs.&lt;/p&gt;
 
@@ -819,7 +819,35 @@ Our range is [0, 2, 4, 6, 8]
 
 &lt;h3 id=&quot;be-careful-2&quot;&gt;Be careful&lt;/h3&gt;
 
-&lt;p&gt;You should always be wary of &lt;strong&gt;altering collections&lt;/strong&gt; while iterating over them. For example, a loop in which you &lt;em&gt;append&lt;/em&gt; items to a list might never end if your frame of reference is “until the end of the list”, and one in which you alter the indices might not work very well if you rely on indices to access data.&lt;/p&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Control flow</title><link href="https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems.html" rel="alternate" type="text/html" title="Control flow" /><published>2018-02-12T10:05:23-05:00</published><updated>2018-02-12T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems.html">&lt;h1 id=&quot;truefalse-questions&quot;&gt;True/False questions&lt;/h1&gt;
+&lt;p&gt;You should always be wary of &lt;strong&gt;altering collections&lt;/strong&gt; while iterating over them. For example, a loop in which you &lt;em&gt;append&lt;/em&gt; items to a list might never end if your frame of reference is “until the end of the list”, and one in which you alter the indices might not work very well if you rely on indices to access data.&lt;/p&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Control flow</title><link href="https://mcataford.github.io/TalkPythonToMe/quiz/conditionals-quiz.html" rel="alternate" type="text/html" title="Control flow" /><published>2018-02-12T10:05:23-05:00</published><updated>2018-02-12T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/quiz/conditionals-quiz</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/quiz/conditionals-quiz.html">&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;random&lt;/code&gt; module allows you to generate pseudorandom numbers at will. By using its &lt;code class=&quot;highlighter-rouge&quot;&gt;randint(min,max)&lt;/code&gt; function, you can generate integers that satisfy &lt;code class=&quot;highlighter-rouge&quot;&gt;min &amp;lt;= x &amp;lt;= max&lt;/code&gt;. You can find an example usage below:&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;random&lt;/span&gt;
+
+   &lt;span class=&quot;n&quot;&gt;random_int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;randint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+   &lt;span class=&quot;c&quot;&gt;#Print random integer between 0 and 100.&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random_int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;Using &lt;code class=&quot;highlighter-rouge&quot;&gt;random&lt;/code&gt;, design a small program that asks the user a random mathematical problem, asks for an answer and evaluates whether the user answered correctly or not. To simplify , consider a single type of mathematical operation and only make the operands vary.&lt;/p&gt;
+
+    &lt;p&gt;For example, your script could generate math problems of the form “a + b = ?” and use &lt;code class=&quot;highlighter-rouge&quot;&gt;random&lt;/code&gt; to change &lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Using a strategy of your choice, design an &lt;strong&gt;email validator&lt;/strong&gt; function that will take a string as input and will return a boolean value describing whether the input is a valid email or not. For the purposes of this exercise, we can define a “valid email” as the following:&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;A string containing exactly one &lt;code class=&quot;highlighter-rouge&quot;&gt;@&lt;/code&gt; symbol, separating the &lt;em&gt;username&lt;/em&gt; and the &lt;em&gt;domain&lt;/em&gt; of the user;&lt;/li&gt;
+      &lt;li&gt;The &lt;em&gt;username&lt;/em&gt;  should only contain alphanumerical characters, periods and underscores;&lt;/li&gt;
+      &lt;li&gt;The &lt;em&gt;domain&lt;/em&gt; should only contain alphanumerical characters and be of the form &lt;code class=&quot;highlighter-rouge&quot;&gt;domain.xyz&lt;/code&gt; where you can assume the extension to always be 3 characters;&lt;/li&gt;
+      &lt;li&gt;The overvall format should be &lt;em&gt;username@domain.xyz&lt;/em&gt;.&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;To accomplish this task, you may want to look at the &lt;code class=&quot;highlighter-rouge&quot;&gt;re&lt;/code&gt; module or implement your own solution using &lt;strong&gt;string indices&lt;/strong&gt; and &lt;strong&gt;conditional statements&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">The random module allows you to generate pseudorandom numbers at will. By using its randint(min,max) function, you can generate integers that satisfy min &amp;lt;= x &amp;lt;= max. You can find an example usage below: import random random_int = random.randint(0,100) #Print random integer between 0 and 100. print(random_int) Using random, design a small program that asks the user a random mathematical problem, asks for an answer and evaluates whether the user answered correctly or not. To simplify , consider a single type of mathematical operation and only make the operands vary. For example, your script could generate math problems of the form “a + b = ?” and use random to change a and b. Using a strategy of your choice, design an email validator function that will take a string as input and will return a boolean value describing whether the input is a valid email or not. For the purposes of this exercise, we can define a “valid email” as the following: A string containing exactly one @ symbol, separating the username and the domain of the user; The username should only contain alphanumerical characters, periods and underscores; The domain should only contain alphanumerical characters and be of the form domain.xyz where you can assume the extension to always be 3 characters; The overvall format should be username@domain.xyz. To accomplish this task, you may want to look at the re module or implement your own solution using string indices and conditional statements.</summary></entry><entry><title type="html">Control flow</title><link href="https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems.html" rel="alternate" type="text/html" title="Control flow" /><published>2018-02-12T10:05:23-05:00</published><updated>2018-02-12T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/problems/conditionals-problems.html">&lt;h1 id=&quot;truefalse-questions&quot;&gt;True/False questions&lt;/h1&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt; variables can have three values: &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;Undefined&lt;/code&gt;.&lt;/li&gt;
@@ -1747,80 +1775,4 @@ close the block comment.
  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sentence&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><summary type="html">In the problem set, you implemented a function that prints a rectangle of variable width. Add another parameter to the function such that the user can also choose the height of the rectangle. Hint: This can be entirely implemented using the right operator and that the \n character will insert a newline in a string, which may solve a lot of problems.</summary></entry><entry><title type="html">Python basics</title><link href="https://mcataford.github.io/TalkPythonToMe/problems/basics-problems.html" rel="alternate" type="text/html" title="Python basics" /><published>2018-02-11T10:05:23-05:00</published><updated>2018-02-11T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/problems/basics-problems</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/problems/basics-problems.html">&lt;h1 id=&quot;truefalse-questions&quot;&gt;True/False questions&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;The &lt;strong&gt;interactive Python console&lt;/strong&gt; prints the output of an operation automatically.&lt;/li&gt;
-  &lt;li&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;**&lt;/code&gt; operator implements two consecutive products such that &lt;code class=&quot;highlighter-rouge&quot;&gt;a**b = a * b * b&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Primitive data types&lt;/strong&gt; are types of data that can be represented as one or several numbers.&lt;/li&gt;
-  &lt;li&gt;A &lt;strong&gt;string&lt;/strong&gt; is an example of a primitive type because each character of a string can be mapped to a number via the &lt;a href=&quot;&quot;&gt;ASCII table&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Boolean values&lt;/strong&gt; can be represented as numbers.&lt;/li&gt;
-  &lt;li&gt;A &lt;strong&gt;string&lt;/strong&gt; is represented by a collection of characters surrounded by &lt;strong&gt;double quotes&lt;/strong&gt;.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;+&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; are two operators defined for &lt;strong&gt;strings&lt;/strong&gt;; other operators are not defined and will raise an error if used with string operands.&lt;/li&gt;
-  &lt;li&gt;To concatenate two values, you must first convert them using &lt;code class=&quot;highlighter-rouge&quot;&gt;string(x)&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;You can only concatenate two values at a time.&lt;/li&gt;
-  &lt;li&gt;When defining variables, the &lt;strong&gt;data type&lt;/strong&gt; must be mentioned as well as the name and initial value.&lt;/li&gt;
-  &lt;li&gt;Any statement that can be written in the interactive Python console can also be written in a script file.&lt;/li&gt;
-  &lt;li&gt;Outside of the interactive console,  &lt;code class=&quot;highlighter-rouge&quot;&gt;print(x)&lt;/code&gt; will allow you to print output to the screen.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Functions&lt;/strong&gt; are defined using the &lt;code class=&quot;highlighter-rouge&quot;&gt;define&lt;/code&gt; keyword.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Comments&lt;/strong&gt; are ignored by the interpreter, as such, you can include as many as you wish.&lt;/li&gt;
-  &lt;li&gt;A script file can contain both space and tab &lt;strong&gt;indentation&lt;/strong&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;short-answer-questions&quot;&gt;Short answer questions&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;What is &lt;strong&gt;concatenation&lt;/strong&gt;?&lt;/li&gt;
-  &lt;li&gt;What does the &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; operator do on &lt;strong&gt;strings&lt;/strong&gt;?&lt;/li&gt;
-  &lt;li&gt;What are two ways of adding &lt;strong&gt;comments&lt;/strong&gt; to your scripts?&lt;/li&gt;
-  &lt;li&gt;What does the &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt; keyword do?&lt;/li&gt;
-  &lt;li&gt;What is the point of separating code into &lt;strong&gt;functions&lt;/strong&gt;?&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;programming-questions&quot;&gt;Programming questions&lt;/h1&gt;
-
-&lt;p&gt;&lt;em&gt;For each of the following tasks, you should produce a separate script. Do not hesitate to use comments to document your design process and how your solutions work.&lt;/em&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Write a Celsius-to-Fahrenheit conversion script. Your final solution should implement the conversion as a &lt;strong&gt;function&lt;/strong&gt; which takes in a temperature in Celsius degrees and outputs a temperature in Fahrenheit degrees. You script should make use of your function and demonstrate the conversion with at least three values. &lt;em&gt;Make sure that your script outputs the results as part of a sentence in which numbers are embedded.&lt;/em&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;In the script of Question 1, add a function that does the opposite conversion. Verify that any Celsius value can be converted to Fahrenheit and then back to Celsius without significant loss of precision.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Given a number such as &lt;code class=&quot;highlighter-rouge&quot;&gt;1.1234&lt;/code&gt;, write a script implementing a function that extracts the &lt;em&gt;fractional part&lt;/em&gt; of the number. You can use the function stub below:&lt;/p&gt;
-
-    &lt;p&gt;&lt;em&gt;Hint: Think of what type conversion does to a number.&lt;/em&gt;&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;extract_fractional&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-   &lt;span class=&quot;c&quot;&gt;#Your code&lt;/span&gt;
-
-   &lt;span class=&quot;c&quot;&gt;#Make sure to store your result in a variable and pass that variable to return.&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;
-
- &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
- Your function should be able to accept the following input and produce the output:
-
- 1.1234 -&amp;gt; 0.1234
- 0 -&amp;gt; 0.0
- 1.0 -&amp;gt; 0.0
- &quot;&quot;&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Write a function that &lt;strong&gt;prints&lt;/strong&gt; the following shape:&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;o&quot;&gt;++++++++++&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;        &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;
- &lt;span class=&quot;o&quot;&gt;++++++++++&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Can you modify the function in &lt;em&gt;4&lt;/em&gt; to allow the caller to give as input a parameter &lt;code class=&quot;highlighter-rouge&quot;&gt;width&lt;/code&gt;? You can leave the height of your shape constant such that the shape is a rectangle of variable width.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;strong&gt;If you opted to store your code on Github&lt;/strong&gt;, this is a great occasion to test out your ability to upload content in your repository! If you changed your mind and want to use it, go back to the &lt;a href=&quot;https://mcataford.github.io/TalkPythonToMe/lessons/getting-started.html#git&quot;&gt;Getting Started&lt;/a&gt; lesson to see how to set it up! You’ll also find the procedure to &lt;em&gt;commit&lt;/em&gt; and &lt;em&gt;push&lt;/em&gt; changes to Github there.&lt;/p&gt;</content><author><name></name></author><summary type="html">True/False questions</summary></entry></feed>
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">In the problem set, you implemented a function that prints a rectangle of variable width. Add another parameter to the function such that the user can also choose the height of the rectangle. Hint: This can be entirely implemented using the right operator and that the \n character will insert a newline in a string, which may solve a lot of problems.</summary></entry></feed>
