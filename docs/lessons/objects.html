@@ -136,11 +136,14 @@
 <ol>
   <li><a href="#objects">Introduction to objects</a></li>
   <li><a href="#strings">Looking back at strings</a></li>
-  <li><a href="#collections">Looking back at collections</a></li>
   <li><a href="#creating-objects">Creating objects</a>
- 3.1 <a href="#classes">Classes</a>
- 3.2 <a href="#constructors">Constructors</a>
- 3.3 <a href="#methods">Methods</a></li>
+    <ol>
+      <li><a href="#classes">Classes</a></li>
+      <li><a href="#constructors">Constructors</a></li>
+      <li><a href="#instancevars">Instance variables</a></li>
+      <li><a href="#methods">Methods</a></li>
+    </ol>
+  </li>
 </ol>
 
 <hr />
@@ -148,6 +151,130 @@
 <p><a id="objects"></a></p>
 <h1 id="1-introduction-to-objects">1. Introduction to objects</h1>
 
+<p>Much earlier in the course, when we introduced <strong>data types</strong>, we mentioned that there existed <strong>primitives</strong>, which could be expressed with a number, and <strong>objects</strong>, which were much more complex. We added that <strong>strings</strong> were our first type of object: being a sequence of character, no one number could adequately represent a string. Instead, we would store the <strong>address</strong> (a numerical value) of the location of the sequence of characters in memory.</p>
+
+<p>Later, when we introduced <strong>collections</strong>, we mentioned that they were too complex to express as single numbers as well, and that just like strings, we would store the <strong>base address</strong> of our collections in memory and use <strong>indices</strong> to navigate from that base address to each value stored.</p>
+
+<p>Now that we have a broader understanding of Python, we can complement our definition of objects:</p>
+
+<blockquote>
+  <p><strong>Objects</strong> are complex structures that can contain <strong>variables</strong> and that can possess <strong>functions</strong> that define what it can do and how it can interact with internal and external data. The variables posessed by objects are called <strong>instance variables</strong> or <strong>attributes</strong>, and the functions are called <strong>methods</strong>.</p>
+</blockquote>
+
+<p><a id="strings"></a></p>
+<h1 id="2-looking-back-at-strings">2. Looking back at strings</h1>
+
+<p>For our purposes, we will not talk much of the <strong>instance variables</strong> belonging to strings. However, they do have a number of useful <strong>methods</strong> that can help you manipulate strings depending on your needs:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Method</th>
+      <th style="text-align: center">Effect</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">lower()</code></td>
+      <td style="text-align: center">Returns the string with all its characters converted to lowercase.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">upper()</code></td>
+      <td style="text-align: center">Returns the string with all its characters converted to uppercase.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">split()</code></td>
+      <td style="text-align: center">Splits a string into a <strong>list</strong> of characters and returns it.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">strip()</code></td>
+      <td style="text-align: center">Removes space at the beginning and ending on the string and returns it.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">replace(x,y)</code></td>
+      <td style="text-align: center">Replaces all the instances of <code class="highlighter-rouge">x</code> with <code class="highlighter-rouge">y</code> in the string and returns it.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code class="highlighter-rouge">find(s)</code></td>
+      <td style="text-align: center">Returns the index of the first occurrence of <code class="highlighter-rouge">s</code> in the string</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To use any of these methods, you should always be mindful of <strong>applying it on a string</strong>: to call <code class="highlighter-rouge">split()</code> on a string variable <code class="highlighter-rouge">S</code>, for example, you would use <code class="highlighter-rouge">S.split()</code>. This differs from how we used functions in the past, which were used alone.</p>
+
+<p><a id="creating-objects"></a></p>
+<h1 id="3-creating-objects">3. Creating objects</h1>
+
+<p>Now that we have a formal definition of what objects are, we need to look at how they are created. Objects are meant to be <strong>customizable structures</strong> through which you can implement new functionality adapted to the problems you are tackling. As such, we will combine what we have learned so far to produce them.</p>
+
+<p><a id="classes"></a></p>
+<h2 id="31-classes">3.1 Classes</h2>
+
+<p><strong>Classes</strong> are the containers that will hold our objects’ code. Much like other blocks, they possess scope and have a <strong>keyword</strong> associated with them: <code class="highlighter-rouge">class</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyObject</span><span class="p">():</span>
+  <span class="c">#My object's code</span>
+</code></pre></div></div>
+
+<p>We will not get into what classes can do for us beyond containing object definitions, but if you delve deeper into Python, you’ll see that they can do a lot more than that.</p>
+
+<p>Note that just like other blocks, the code contained within a class is <strong>indented</strong>: failure to indent will result in errors. Similarly, <strong>scope</strong> applies to the class blocks, and anything declared inside of a class is only valid within that class.</p>
+
+<p>The code we will store inside of classes is called a <strong>definition</strong>. By itself, an object’s definition simply outlines the <strong>blueprint</strong> of the object. We will see later that we can use that blueprint to produce our usable objects.</p>
+
+<p><a id="constructors"></a></p>
+<h2 id="32-constructors">3.2 Constructors</h2>
+
+<p>The bare minimum required to build an object is a special method called a <strong>constructor</strong>. We have seen constructors before, when we talked about functions like <code class="highlighter-rouge">str()</code>, <code class="highlighter-rouge">list()</code> and <code class="highlighter-rouge">dict()</code>: their role is to initialize objects so that they are ready for use. Based on what we said about <strong>blueprints</strong>, we can now say that constructors will “follow the plan” outlined in the <strong>object definition</strong> and create an <strong>object instance</strong>.</p>
+
+<p>Object instances are nothing more than “one copy of a structure that follows an object’s definition”. For example, <code class="highlighter-rouge">"Hello"</code> and <code class="highlighter-rouge">"World"</code> are both <strong>string instances</strong>: they are both strings as they follow the same blueprint, despite having different content.</p>
+
+<p>To define our constructor, we will proceed the same way we did to create other functions: by using <code class="highlighter-rouge">def</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyObject</span><span class="p">():</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c">#My constructor's code</span>
+</code></pre></div></div>
+
+<p>Our constructors always have the same name: <code class="highlighter-rouge">__init__</code>: this identifies them as a “special entity”. This name also makes it easier to remember what they do because they initialize an object – any code in the constructor is executed when the object is created and only then. This makes it a perfect place to create <strong>instance variables</strong> and prepare any structure that needs setting up.</p>
+
+<p>In most cases, constructors will be used to create instance variables, which can be done through the <code class="highlighter-rouge">self</code> keyword included as the first parameter of our constructor. <code class="highlighter-rouge">self</code> refers to the “current object”, and can be used to execute other methods (as we’ll see in the next section) or to attach instance variables to our object.</p>
+
+<p>For example, we can create two instance variables in our <code class="highlighter-rouge">MyObject</code> object by adding the following to our constructor:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyObject</span><span class="p">():</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">"Blue"</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="mi">2</span>
+</code></pre></div></div>
+
+<p>By doing this, we are creating two instance variables within each object of type <code class="highlighter-rouge">MyObject</code> and we give them static values.</p>
+
+<p>Once this is done, we can create an object of type <code class="highlighter-rouge">MyObject</code> at any time by typing:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_obj</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Note the similarity with the way we created lists through <code class="highlighter-rouge">list()</code>.</p>
+
+<p>Of course, constructors are methods, which themselves are functions: input parameters can be added to their signature:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyObject</span><span class="p">():</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">colour</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="n">colour</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+</code></pre></div></div>
+
+<p>With this definition, we can now define the values of each instance’s <code class="highlighter-rouge">colour</code> and <code class="highlighter-rouge">size</code> instance variables. The new constructor can be called using <code class="highlighter-rouge">MyObject("some colour", 5)</code> or any variation thereof.</p>
+
+<p>It’s very important to note that the <code class="highlighter-rouge">self</code> input parameter doesn’t need to be given to our constructor: it is implicitly defined by the object.</p>
+
+<p><a id="instancevars"></a></p>
+<h2 id="33-instance-variables">3.3 Instance variables</h2>
+
+<p><a id="methods"></a></p>
+<h2 id="33-methods">3.3 Methods</h2>
 
   </div>
 

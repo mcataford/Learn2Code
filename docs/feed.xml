@@ -1,21 +1,149 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-03-12T17:20:50-04:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-03-19T15:21:51-04:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we learn about complex constructs through which rich functionality can be implemented: &lt;strong&gt;objects&lt;/strong&gt;. We will see how objects allow us to create data structures tailored to our specific needs.&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;a href=&quot;#objects&quot;&gt;Introduction to objects&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#strings&quot;&gt;Looking back at strings&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#collections&quot;&gt;Looking back at collections&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;#creating-objects&quot;&gt;Creating objects&lt;/a&gt;
- 3.1 &lt;a href=&quot;#classes&quot;&gt;Classes&lt;/a&gt;
- 3.2 &lt;a href=&quot;#constructors&quot;&gt;Constructors&lt;/a&gt;
- 3.3 &lt;a href=&quot;#methods&quot;&gt;Methods&lt;/a&gt;&lt;/li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;a href=&quot;#classes&quot;&gt;Classes&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#constructors&quot;&gt;Constructors&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#instancevars&quot;&gt;Instance variables&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#methods&quot;&gt;Methods&lt;/a&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr /&gt;
 
 &lt;p&gt;&lt;a id=&quot;objects&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;1-introduction-to-objects&quot;&gt;1. Introduction to objects&lt;/h1&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Built-in modules</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/modules.html" rel="alternate" type="text/html" title="Built-in modules" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/modules</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/modules.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+&lt;h1 id=&quot;1-introduction-to-objects&quot;&gt;1. Introduction to objects&lt;/h1&gt;
+
+&lt;p&gt;Much earlier in the course, when we introduced &lt;strong&gt;data types&lt;/strong&gt;, we mentioned that there existed &lt;strong&gt;primitives&lt;/strong&gt;, which could be expressed with a number, and &lt;strong&gt;objects&lt;/strong&gt;, which were much more complex. We added that &lt;strong&gt;strings&lt;/strong&gt; were our first type of object: being a sequence of character, no one number could adequately represent a string. Instead, we would store the &lt;strong&gt;address&lt;/strong&gt; (a numerical value) of the location of the sequence of characters in memory.&lt;/p&gt;
+
+&lt;p&gt;Later, when we introduced &lt;strong&gt;collections&lt;/strong&gt;, we mentioned that they were too complex to express as single numbers as well, and that just like strings, we would store the &lt;strong&gt;base address&lt;/strong&gt; of our collections in memory and use &lt;strong&gt;indices&lt;/strong&gt; to navigate from that base address to each value stored.&lt;/p&gt;
+
+&lt;p&gt;Now that we have a broader understanding of Python, we can complement our definition of objects:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Objects&lt;/strong&gt; are complex structures that can contain &lt;strong&gt;variables&lt;/strong&gt; and that can possess &lt;strong&gt;functions&lt;/strong&gt; that define what it can do and how it can interact with internal and external data. The variables posessed by objects are called &lt;strong&gt;instance variables&lt;/strong&gt; or &lt;strong&gt;attributes&lt;/strong&gt;, and the functions are called &lt;strong&gt;methods&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a id=&quot;strings&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;2-looking-back-at-strings&quot;&gt;2. Looking back at strings&lt;/h1&gt;
+
+&lt;p&gt;For our purposes, we will not talk much of the &lt;strong&gt;instance variables&lt;/strong&gt; belonging to strings. However, they do have a number of useful &lt;strong&gt;methods&lt;/strong&gt; that can help you manipulate strings depending on your needs:&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Method&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Effect&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;lower()&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns the string with all its characters converted to lowercase.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;upper()&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns the string with all its characters converted to uppercase.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;split()&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Splits a string into a &lt;strong&gt;list&lt;/strong&gt; of characters and returns it.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;strip()&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Removes space at the beginning and ending on the string and returns it.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;replace(x,y)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Replaces all the instances of &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; in the string and returns it.&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;find(s)&lt;/code&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Returns the index of the first occurrence of &lt;code class=&quot;highlighter-rouge&quot;&gt;s&lt;/code&gt; in the string&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;To use any of these methods, you should always be mindful of &lt;strong&gt;applying it on a string&lt;/strong&gt;: to call &lt;code class=&quot;highlighter-rouge&quot;&gt;split()&lt;/code&gt; on a string variable &lt;code class=&quot;highlighter-rouge&quot;&gt;S&lt;/code&gt;, for example, you would use &lt;code class=&quot;highlighter-rouge&quot;&gt;S.split()&lt;/code&gt;. This differs from how we used functions in the past, which were used alone.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;creating-objects&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;3-creating-objects&quot;&gt;3. Creating objects&lt;/h1&gt;
+
+&lt;p&gt;Now that we have a formal definition of what objects are, we need to look at how they are created. Objects are meant to be &lt;strong&gt;customizable structures&lt;/strong&gt; through which you can implement new functionality adapted to the problems you are tackling. As such, we will combine what we have learned so far to produce them.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;classes&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;31-classes&quot;&gt;3.1 Classes&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Classes&lt;/strong&gt; are the containers that will hold our objects’ code. Much like other blocks, they possess scope and have a &lt;strong&gt;keyword&lt;/strong&gt; associated with them: &lt;code class=&quot;highlighter-rouge&quot;&gt;class&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+  &lt;span class=&quot;c&quot;&gt;#My object's code&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;We will not get into what classes can do for us beyond containing object definitions, but if you delve deeper into Python, you’ll see that they can do a lot more than that.&lt;/p&gt;
+
+&lt;p&gt;Note that just like other blocks, the code contained within a class is &lt;strong&gt;indented&lt;/strong&gt;: failure to indent will result in errors. Similarly, &lt;strong&gt;scope&lt;/strong&gt; applies to the class blocks, and anything declared inside of a class is only valid within that class.&lt;/p&gt;
+
+&lt;p&gt;The code we will store inside of classes is called a &lt;strong&gt;definition&lt;/strong&gt;. By itself, an object’s definition simply outlines the &lt;strong&gt;blueprint&lt;/strong&gt; of the object. We will see later that we can use that blueprint to produce our usable objects.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;constructors&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;32-constructors&quot;&gt;3.2 Constructors&lt;/h2&gt;
+
+&lt;p&gt;The bare minimum required to build an object is a special method called a &lt;strong&gt;constructor&lt;/strong&gt;. We have seen constructors before, when we talked about functions like &lt;code class=&quot;highlighter-rouge&quot;&gt;str()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;list()&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;dict()&lt;/code&gt;: their role is to initialize objects so that they are ready for use. Based on what we said about &lt;strong&gt;blueprints&lt;/strong&gt;, we can now say that constructors will “follow the plan” outlined in the &lt;strong&gt;object definition&lt;/strong&gt; and create an &lt;strong&gt;object instance&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Object instances are nothing more than “one copy of a structure that follows an object’s definition”. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Hello&quot;&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;World&quot;&lt;/code&gt; are both &lt;strong&gt;string instances&lt;/strong&gt;: they are both strings as they follow the same blueprint, despite having different content.&lt;/p&gt;
+
+&lt;p&gt;To define our constructor, we will proceed the same way we did to create other functions: by using &lt;code class=&quot;highlighter-rouge&quot;&gt;def&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;#My constructor's code&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Our constructors always have the same name: &lt;code class=&quot;highlighter-rouge&quot;&gt;__init__&lt;/code&gt;: this identifies them as a “special entity”. This name also makes it easier to remember what they do because they initialize an object – any code in the constructor is executed when the object is created and only then. This makes it a perfect place to create &lt;strong&gt;instance variables&lt;/strong&gt; and prepare any structure that needs setting up.&lt;/p&gt;
+
+&lt;p&gt;In most cases, constructors will be used to create instance variables, which can be done through the &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt; keyword included as the first parameter of our constructor. &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt; refers to the “current object”, and can be used to execute other methods (as we’ll see in the next section) or to attach instance variables to our object.&lt;/p&gt;
+
+&lt;p&gt;For example, we can create two instance variables in our &lt;code class=&quot;highlighter-rouge&quot;&gt;MyObject&lt;/code&gt; object by adding the following to our constructor:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colour&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Blue&quot;&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;By doing this, we are creating two instance variables within each object of type &lt;code class=&quot;highlighter-rouge&quot;&gt;MyObject&lt;/code&gt; and we give them static values.&lt;/p&gt;
+
+&lt;p&gt;Once this is done, we can create an object of type &lt;code class=&quot;highlighter-rouge&quot;&gt;MyObject&lt;/code&gt; at any time by typing:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note the similarity with the way we created lists through &lt;code class=&quot;highlighter-rouge&quot;&gt;list()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Of course, constructors are methods, which themselves are functions: input parameters can be added to their signature:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MyObject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;colour&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;colour&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;colour&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;With this definition, we can now define the values of each instance’s &lt;code class=&quot;highlighter-rouge&quot;&gt;colour&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;size&lt;/code&gt; instance variables. The new constructor can be called using &lt;code class=&quot;highlighter-rouge&quot;&gt;MyObject(&quot;some colour&quot;, 5)&lt;/code&gt; or any variation thereof.&lt;/p&gt;
+
+&lt;p&gt;It’s very important to note that the &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt; input parameter doesn’t need to be given to our constructor: it is implicitly defined by the object.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;instancevars&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;33-instance-variables&quot;&gt;3.3 Instance variables&lt;/h2&gt;
+
+&lt;p&gt;&lt;a id=&quot;methods&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;33-methods&quot;&gt;3.3 Methods&lt;/h2&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Built-in modules</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/modules.html" rel="alternate" type="text/html" title="Built-in modules" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/modules</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/modules.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we will look at the &lt;strong&gt;interactive Python console&lt;/strong&gt;. We will explore the notion of &lt;strong&gt;variables&lt;/strong&gt; and &lt;strong&gt;methods&lt;/strong&gt;, and review definitions that will follow us for the rest of our adventure.&lt;/p&gt;
 
