@@ -147,20 +147,70 @@
 
     <p><strong>True</strong>: The interactive console executes statements once at a time, scripts are executed all at once.</p>
   </li>
-  <li>Outside of the interactive console,  <code class="highlighter-rouge">print(x)</code> will allow you to print output to the screen.</li>
-  <li><strong>Functions</strong> are defined using the <code class="highlighter-rouge">define</code> keyword.</li>
-  <li><strong>Comments</strong> are ignored by the interpreter, as such, you can include as many as you wish.</li>
-  <li>A script file can contain both space and tab <strong>indentation</strong>.</li>
+  <li>
+    <p>Outside of the interactive console,  <code class="highlighter-rouge">print(x)</code> will allow you to print output to the screen.</p>
+
+    <p><strong>True</strong>: <code class="highlighter-rouge">print(x)</code> will output its argument to the screen.</p>
+  </li>
+  <li>
+    <p><strong>Functions</strong> are defined using the <code class="highlighter-rouge">define</code> keyword.</p>
+
+    <p><strong>False</strong>: The <code class="highlighter-rouge">def</code> keyword is used to define functions.</p>
+  </li>
+  <li>
+    <p><strong>Comments</strong> are ignored by the interpreter, as such, you can include as many as you wish.</p>
+
+    <p><strong>True</strong>: Comments have no effect on the execution of your code.</p>
+  </li>
+  <li>
+    <p>A script file can contain both space and tab <strong>indentation</strong>.</p>
+
+    <p><strong>False</strong>: Indentation must be consistent, otherwise the interpreter will refuse to execute your script.</p>
+  </li>
 </ol>
 
 <h1 id="short-answer-questions">Short answer questions</h1>
 
 <ol>
-  <li>What is <strong>concatenation</strong>?</li>
-  <li>What does the <code class="highlighter-rouge">*</code> operator do on <strong>strings</strong>?</li>
-  <li>What are two ways of adding <strong>comments</strong> to your scripts?</li>
-  <li>What does the <code class="highlighter-rouge">return</code> keyword do?</li>
-  <li>What is the point of separating code into <strong>functions</strong>?</li>
+  <li>
+    <p>What is <strong>concatenation</strong>?</p>
+
+    <p><strong>Concatenation</strong> is the operation by which we <em>glue</em> strings together. It is represented by the <code class="highlighter-rouge">+</code> operator and will merge any two strings given to it. Non-string entities must be converted to strings before being concatenated using <code class="highlighter-rouge">str()</code> or other methods.</p>
+  </li>
+  <li>
+    <p>What does the <code class="highlighter-rouge">*</code> operator do on <strong>strings</strong>?</p>
+
+    <p>The <code class="highlighter-rouge">*</code> operator <strong>duplicates</strong> strings a certain number of times and appends each copy at the end of the string.</p>
+  </li>
+  <li>
+    <p>What are two ways of adding <strong>comments</strong> to your scripts?</p>
+
+    <p>You can use <strong>block comments</strong> bounded by three quotation marks, which allow you to have multiline comments, or <strong>line comments</strong>, which are segments starting with a <code class="highlighter-rouge">#</code> character. A block comment example is found below:</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="s">"""
+ My
+ Multiline
+ Comment
+ """</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>What does the <code class="highlighter-rouge">return</code> keyword do?</p>
+
+    <p>The <code class="highlighter-rouge">return</code> keyword will “give data back” when your function terminates its execution. It allows you to produce output that can be stored in variables or used by other functions. For all intents and purposes, the return value of a function will replace the function call when it is produced.</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">def</span> <span class="nf">my_func</span><span class="p">():</span>
+   <span class="k">return</span> <span class="s">"Hello"</span>
+
+ <span class="c">#Once this line runs, 's' is equal to "Hello"</span>
+ <span class="n">s</span> <span class="o">=</span> <span class="n">my_func</span><span class="p">()</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>What is the point of separating code into <strong>functions</strong>?</p>
+
+    <p>Code is separated into functions to allow <strong>reusability</strong>. Once packaged as a function, a piece of code can be conveniently “called” by using the function name it is associated with, preventing code duplication and bloat.</p>
+  </li>
 </ol>
 
 <h1 id="programming-questions">Programming questions</h1>
