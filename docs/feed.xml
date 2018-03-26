@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-03-26T13:47:52-04:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-03-26T14:36:51-04:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we learn about complex constructs through which rich functionality can be implemented: &lt;strong&gt;objects&lt;/strong&gt;. We will see how objects allow us to create data structures tailored to our specific needs.&lt;/p&gt;
 
@@ -13,6 +13,7 @@
       &lt;li&gt;&lt;a href=&quot;#methods&quot;&gt;Methods&lt;/a&gt;&lt;/li&gt;
     &lt;/ol&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#modeling&quot;&gt;Modeling example&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;hr /&gt;
@@ -213,7 +214,113 @@
     &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Note that this is an example of why using &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt; is important: in the &lt;code class=&quot;highlighter-rouge&quot;&gt;update_everything&lt;/code&gt; method, we have two variables named &lt;code class=&quot;highlighter-rouge&quot;&gt;colour&lt;/code&gt;: one is &lt;strong&gt;local&lt;/strong&gt; (i.e. created in the method, but not an instance variable), and the other is an instance variable attached to &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt;. The former has a scope limited to the method, the second exists as long as the object it is contained in does.&lt;/p&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Built-in modules</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/modules.html" rel="alternate" type="text/html" title="Built-in modules" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/modules</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/modules.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+&lt;p&gt;Note that this is an example of why using &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt; is important: in the &lt;code class=&quot;highlighter-rouge&quot;&gt;update_everything&lt;/code&gt; method, we have two variables named &lt;code class=&quot;highlighter-rouge&quot;&gt;colour&lt;/code&gt;: one is &lt;strong&gt;local&lt;/strong&gt; (i.e. created in the method, but not an instance variable), and the other is an instance variable attached to &lt;code class=&quot;highlighter-rouge&quot;&gt;self&lt;/code&gt;. The former has a scope limited to the method, the second exists as long as the object it is contained in does.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;modeling&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;4-modeling-example-the-library&quot;&gt;4. Modeling example: The library&lt;/h1&gt;
+
+&lt;p&gt;The main purpose of objects is to allow programmers to define data structures that go beyond simple lists and dictionaries and that address specific needs. In this example, we’ll be designing a small program that can handle &lt;strong&gt;library inventory and bookings&lt;/strong&gt; using objects and built-in data structures.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;modeling-requirements&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;41-requirements&quot;&gt;4.1 Requirements&lt;/h2&gt;
+
+&lt;p&gt;Before we start coding, we need to list out the requirements of our program to know what to aim for and to avoid overcomplicating our design. Our requirements should outline the &lt;strong&gt;structures that we need&lt;/strong&gt; and the &lt;strong&gt;actions that the program needs to be able to perform&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Structures&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A book: a book holds information such as its &lt;strong&gt;title&lt;/strong&gt;, its &lt;strong&gt;author&lt;/strong&gt;, its &lt;strong&gt;availability&lt;/strong&gt; and even &lt;strong&gt;the last time it was checked out&lt;/strong&gt;. We’ll concentrate on the first two parameters and leave the last as an exercise.&lt;/li&gt;
+  &lt;li&gt;A library: a library contains &lt;strong&gt;many books&lt;/strong&gt; and handles actions that users can execute on the books.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Note, we could design our library program further to include shelves and whatnot, the level of complexity really depends on the functionalities you want to implement&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Actions&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A user must be able to &lt;strong&gt;look for books&lt;/strong&gt; in the library’s collection&lt;/li&gt;
+  &lt;li&gt;A user must be able to &lt;strong&gt;borrow&lt;/strong&gt; a book that is available&lt;/li&gt;
+  &lt;li&gt;A user must be able to &lt;strong&gt;put back&lt;/strong&gt; a book that has been borrowed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The structural requirements (under &lt;strong&gt;structure&lt;/strong&gt;) give us guidance on which _objects__ we will implement, and the &lt;strong&gt;actions&lt;/strong&gt; give us information on the &lt;strong&gt;methods&lt;/strong&gt; that we might need.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;modeling-book&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;42-modeling-books&quot;&gt;4.2 Modeling books&lt;/h1&gt;
+
+&lt;p&gt;As stated earlier, books need at least three properties: a title, an author and whether they are available at the moment or not. Since the book cannot do anything by itself, it will not need any methods past its constructor. As such, we can build from our previous &lt;code class=&quot;highlighter-rouge&quot;&gt;MyObject&lt;/code&gt; example and write the following definition:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;author&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;author&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;available&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;Book&lt;/code&gt; class is mainly meant to &lt;strong&gt;store&lt;/strong&gt; data. We could of course add more information and even methods, but that would go beyond our design. Note that we do not need to customize the &lt;code class=&quot;highlighter-rouge&quot;&gt;available&lt;/code&gt; instance variable: when created, the &lt;code class=&quot;highlighter-rouge&quot;&gt;Book&lt;/code&gt; is available and ready to be borrowed.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;modeling-library&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;43-modeling-the-library&quot;&gt;4.3 Modeling the library&lt;/h1&gt;
+
+&lt;p&gt;The library has a lot more moving parts. It will not only contain many books, but also allow actions to be performed on the books it has.&lt;/p&gt;
+
+&lt;p&gt;Based on this, we conclude that the &lt;code class=&quot;highlighter-rouge&quot;&gt;Library&lt;/code&gt; object needs at least one instance variable: a &lt;code class=&quot;highlighter-rouge&quot;&gt;list&lt;/code&gt; containing our books! Note that we could also use a dictionary; try thinking of what advantage using a dictionary would give us over using a simple list.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;books&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;From there, we can look at adding methods to be able to &lt;strong&gt;create&lt;/strong&gt; books. For cleanliness, the user should only interact with the &lt;code class=&quot;highlighter-rouge&quot;&gt;Library&lt;/code&gt; object (as they would in real life), as such, we can add a &lt;code class=&quot;highlighter-rouge&quot;&gt;add_book&lt;/code&gt; method to our &lt;code class=&quot;highlighter-rouge&quot;&gt;Library&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Cont'd from previous snipper&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;add_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;books&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note that we use our &lt;strong&gt;constructor&lt;/strong&gt; implemented in &lt;code class=&quot;highlighter-rouge&quot;&gt;Book&lt;/code&gt; to cleanly create a new instance of the &lt;code class=&quot;highlighter-rouge&quot;&gt;Book&lt;/code&gt; object before storing the resulting object in our list, which symbolizes “the shelves.”&lt;/p&gt;
+
+&lt;p&gt;From this point on, we can create a &lt;code class=&quot;highlighter-rouge&quot;&gt;Library&lt;/code&gt; and add as many books to it by using &lt;code class=&quot;highlighter-rouge&quot;&gt;add_book&lt;/code&gt; couple with a title and an author name.&lt;/p&gt;
+
+&lt;p&gt;Seeing the current catalog would be useful as well: since our catalog is a list, we can iterate through it, printing each book’s data:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Cont'd&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;see_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;books&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Title: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;book&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; Written by: &quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;book&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;book&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;available&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;CURRENTLY AVAILABLE!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;UNAVAILABLE&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Using this, we can call &lt;code class=&quot;highlighter-rouge&quot;&gt;see_all()&lt;/code&gt; and get an overview of our library!&lt;/p&gt;
+
+&lt;p&gt;Usage would follow the model we established for &lt;code class=&quot;highlighter-rouge&quot;&gt;MyObject&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_library&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;my_library&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Oliver Twist&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Dickens&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;my_library&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_book&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Harry Potter&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;J.K. Rowling&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Prints all the book titles/authors&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;my_library&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;see_all&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The end of this example is left as an exercise:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Can you…&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Implement a method by which a user can &lt;strong&gt;look for a specific book by title&lt;/strong&gt;?&lt;/li&gt;
+    &lt;li&gt;Implement a method by which a user can &lt;strong&gt;look for all books by a certain author&lt;/strong&gt;?&lt;/li&gt;
+    &lt;li&gt;Implement a method to &lt;strong&gt;check in&lt;/strong&gt; and &lt;strong&gt;check out&lt;/strong&gt; books based on if &lt;code class=&quot;highlighter-rouge&quot;&gt;available&lt;/code&gt; is set?&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Built-in modules</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/modules.html" rel="alternate" type="text/html" title="Built-in modules" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/modules</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/modules.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we will look at the &lt;strong&gt;interactive Python console&lt;/strong&gt;. We will explore the notion of &lt;strong&gt;variables&lt;/strong&gt; and &lt;strong&gt;methods&lt;/strong&gt;, and review definitions that will follow us for the rest of our adventure.&lt;/p&gt;
 

@@ -146,6 +146,7 @@
       <li><a href="#methods">Methods</a></li>
     </ol>
   </li>
+  <li><a href="#modeling">Modeling example</a></li>
 </ol>
 
 <hr />
@@ -347,6 +348,112 @@
 </code></pre></div></div>
 
 <p>Note that this is an example of why using <code class="highlighter-rouge">self</code> is important: in the <code class="highlighter-rouge">update_everything</code> method, we have two variables named <code class="highlighter-rouge">colour</code>: one is <strong>local</strong> (i.e. created in the method, but not an instance variable), and the other is an instance variable attached to <code class="highlighter-rouge">self</code>. The former has a scope limited to the method, the second exists as long as the object it is contained in does.</p>
+
+<p><a id="modeling"></a></p>
+<h1 id="4-modeling-example-the-library">4. Modeling example: The library</h1>
+
+<p>The main purpose of objects is to allow programmers to define data structures that go beyond simple lists and dictionaries and that address specific needs. In this example, we’ll be designing a small program that can handle <strong>library inventory and bookings</strong> using objects and built-in data structures.</p>
+
+<p><a id="modeling-requirements"></a></p>
+<h2 id="41-requirements">4.1 Requirements</h2>
+
+<p>Before we start coding, we need to list out the requirements of our program to know what to aim for and to avoid overcomplicating our design. Our requirements should outline the <strong>structures that we need</strong> and the <strong>actions that the program needs to be able to perform</strong>.</p>
+
+<p><strong>Structures</strong></p>
+
+<ul>
+  <li>A book: a book holds information such as its <strong>title</strong>, its <strong>author</strong>, its <strong>availability</strong> and even <strong>the last time it was checked out</strong>. We’ll concentrate on the first two parameters and leave the last as an exercise.</li>
+  <li>A library: a library contains <strong>many books</strong> and handles actions that users can execute on the books.</li>
+</ul>
+
+<p><em>Note, we could design our library program further to include shelves and whatnot, the level of complexity really depends on the functionalities you want to implement</em></p>
+
+<p><strong>Actions</strong></p>
+
+<ul>
+  <li>A user must be able to <strong>look for books</strong> in the library’s collection</li>
+  <li>A user must be able to <strong>borrow</strong> a book that is available</li>
+  <li>A user must be able to <strong>put back</strong> a book that has been borrowed</li>
+</ul>
+
+<p>The structural requirements (under <strong>structure</strong>) give us guidance on which _objects__ we will implement, and the <strong>actions</strong> give us information on the <strong>methods</strong> that we might need.</p>
+
+<p><a id="modeling-book"></a></p>
+<h1 id="42-modeling-books">4.2 Modeling books</h1>
+
+<p>As stated earlier, books need at least three properties: a title, an author and whether they are available at the moment or not. Since the book cannot do anything by itself, it will not need any methods past its constructor. As such, we can build from our previous <code class="highlighter-rouge">MyObject</code> example and write the following definition:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Book</span><span class="p">():</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">author</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="n">title</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">author</span> <span class="o">=</span> <span class="n">author</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">available</span> <span class="o">=</span> <span class="bp">True</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">Book</code> class is mainly meant to <strong>store</strong> data. We could of course add more information and even methods, but that would go beyond our design. Note that we do not need to customize the <code class="highlighter-rouge">available</code> instance variable: when created, the <code class="highlighter-rouge">Book</code> is available and ready to be borrowed.</p>
+
+<p><a id="modeling-library"></a></p>
+<h1 id="43-modeling-the-library">4.3 Modeling the library</h1>
+
+<p>The library has a lot more moving parts. It will not only contain many books, but also allow actions to be performed on the books it has.</p>
+
+<p>Based on this, we conclude that the <code class="highlighter-rouge">Library</code> object needs at least one instance variable: a <code class="highlighter-rouge">list</code> containing our books! Note that we could also use a dictionary; try thinking of what advantage using a dictionary would give us over using a simple list.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Library</span><span class="p">():</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">books</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>From there, we can look at adding methods to be able to <strong>create</strong> books. For cleanliness, the user should only interact with the <code class="highlighter-rouge">Library</code> object (as they would in real life), as such, we can add a <code class="highlighter-rouge">add_book</code> method to our <code class="highlighter-rouge">Library</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Cont'd from previous snipper</span>
+
+  <span class="k">def</span> <span class="nf">add_book</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">author</span><span class="p">):</span>
+    <span class="n">book</span> <span class="o">=</span> <span class="n">Book</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">author</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">book</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Note that we use our <strong>constructor</strong> implemented in <code class="highlighter-rouge">Book</code> to cleanly create a new instance of the <code class="highlighter-rouge">Book</code> object before storing the resulting object in our list, which symbolizes “the shelves.”</p>
+
+<p>From this point on, we can create a <code class="highlighter-rouge">Library</code> and add as many books to it by using <code class="highlighter-rouge">add_book</code> couple with a title and an author name.</p>
+
+<p>Seeing the current catalog would be useful as well: since our catalog is a list, we can iterate through it, printing each book’s data:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Cont'd</span>
+
+  <span class="k">def</span> <span class="nf">see_all</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">book</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">books</span><span class="p">:</span>
+      <span class="k">print</span><span class="p">(</span><span class="s">"Title: "</span> <span class="o">+</span> <span class="n">book</span><span class="o">.</span><span class="n">title</span> <span class="o">+</span> <span class="s">" Written by: "</span> <span class="o">+</span> <span class="n">book</span><span class="o">.</span><span class="n">author</span><span class="p">)</span>
+      
+      <span class="k">if</span> <span class="n">book</span><span class="o">.</span><span class="n">available</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"CURRENTLY AVAILABLE!"</span><span class="p">)</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"UNAVAILABLE"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Using this, we can call <code class="highlighter-rouge">see_all()</code> and get an overview of our library!</p>
+
+<p>Usage would follow the model we established for <code class="highlighter-rouge">MyObject</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_library</span> <span class="o">=</span> <span class="n">Library</span><span class="p">()</span>
+
+<span class="n">my_library</span><span class="o">.</span><span class="n">add_book</span><span class="p">(</span><span class="s">"Oliver Twist"</span><span class="p">,</span> <span class="s">"Dickens"</span><span class="p">)</span>
+<span class="n">my_library</span><span class="o">.</span><span class="n">add_book</span><span class="p">(</span><span class="s">"Harry Potter"</span><span class="p">,</span> <span class="s">"J.K. Rowling"</span><span class="p">)</span>
+
+<span class="c">#Prints all the book titles/authors</span>
+<span class="n">my_library</span><span class="o">.</span><span class="n">see_all</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>The end of this example is left as an exercise:</p>
+
+<blockquote>
+  <p>Can you…</p>
+  <ul>
+    <li>Implement a method by which a user can <strong>look for a specific book by title</strong>?</li>
+    <li>Implement a method by which a user can <strong>look for all books by a certain author</strong>?</li>
+    <li>Implement a method to <strong>check in</strong> and <strong>check out</strong> books based on if <code class="highlighter-rouge">available</code> is set?</li>
+  </ul>
+</blockquote>
 
   </div>
 
