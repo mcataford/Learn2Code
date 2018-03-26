@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-03-26T14:36:51-04:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-03-26T16:52:54-04:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we learn about complex constructs through which rich functionality can be implemented: &lt;strong&gt;objects&lt;/strong&gt;. We will see how objects allow us to create data structures tailored to our specific needs.&lt;/p&gt;
 
@@ -742,6 +742,33 @@ Our range is [0, 2, 4, 6, 8]
   &lt;li&gt;Describe the different parameters of the &lt;code class=&quot;highlighter-rouge&quot;&gt;range()&lt;/code&gt; function and how they affect the function’s output.&lt;/li&gt;
   &lt;li&gt;How can you convert a &lt;code class=&quot;highlighter-rouge&quot;&gt;while&lt;/code&gt; loop to a &lt;code class=&quot;highlighter-rouge&quot;&gt;for&lt;/code&gt; loop?&lt;/li&gt;
   &lt;li&gt;What do you need to be careful about in order to prevent infinite loops?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;programming-questions&quot;&gt;Programming questions&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;The value Pi can be approximated using an unending summation of numbers whose result provides a good estimate of the exact value of Pi. In this problem, you will be implementing the iterative scheme called a “Gregory-Leibniz series” described &lt;a href=&quot;https://www.wikihow.com/Calculate-Pi#Calculate_Pi_Using_an_Infinite_Series_sub&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Your implementation should be a &lt;strong&gt;function&lt;/strong&gt; which takes for input the &lt;strong&gt;number of iterations&lt;/strong&gt; your approximation should go through. It should return the final value as a &lt;strong&gt;float&lt;/strong&gt;.&lt;/p&gt;
+
+    &lt;p&gt;Can you experimentally find how many iterations your implementation would need to reach 6 digits accuracy with respect to the exact value of Pi?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Fibonacci_number&quot;&gt;Fibonacci numbers&lt;/a&gt; are defined by the recursive relation F&lt;sub&gt;n+1&lt;/sub&gt; = F + F&lt;sub&gt;n-1&lt;/sub&gt;, which translates to “the next value (F&lt;sub&gt;n+1&lt;/sub&gt;) is calculated by summing up the two previous values (F&lt;sub&gt;n&lt;/sub&gt; and F&lt;sub&gt;n-1&lt;/sub&gt;).”&lt;/p&gt;
+
+    &lt;p&gt;Generating Fibonacci numbers can be done quite easily using &lt;strong&gt;loops&lt;/strong&gt; since the process of calculating those numbers is inherently repetitive. Using loops, write a &lt;strong&gt;function&lt;/strong&gt; that will compute the n&lt;sup&gt;th&lt;/sup&gt; Fibonacci number knowing that the first two numbers are 0 and 1 (i.e. F&lt;sub&gt;0&lt;/sub&gt; = 0, F&lt;sub&gt;1&lt;/sub&gt; = 1). Your function’s input should be the number of number to generate, it shouldn’t return anything and instead print each value as it is generated.&lt;/p&gt;
+
+    &lt;p&gt;Make sure that the values printed are right using the examples cited in the page about Fibonacci numbers linked earlier.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Implement a program that will &lt;strong&gt;prompt the user for a sentence&lt;/strong&gt; and count how many distinct &lt;strong&gt;words&lt;/strong&gt; are contained in it. You can ignore punctuation and define a word as “a contiguous series of characters without punctuation or whitespace”.&lt;/p&gt;
+
+    &lt;p&gt;For example, the sentence “Hello, World! Isn’t the sun bright today?” would contain 7 words.&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;Note: You do not yet need to keep track of the words, but we will later revisit this when we learn how to store &lt;strong&gt;collections&lt;/strong&gt; of data properly.&lt;/em&gt;&lt;/p&gt;
+
+    &lt;p&gt;You should make sure that your program uses &lt;strong&gt;functions&lt;/strong&gt; to encapsulate code. As an &lt;strong&gt;added challenge&lt;/strong&gt;, how would you make it so that your program asks for another sentence once it’s done?&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;</content><author><name></name></author><summary type="html">True/False questions</summary></entry><entry><title type="html">Data structure basics</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/data-structures.html" rel="alternate" type="text/html" title="Data structure basics" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/data-structures</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/data-structures.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we learn about how we can organize our data using built-in structures such as &lt;strong&gt;tuples&lt;/strong&gt;, &lt;strong&gt;lists&lt;/strong&gt; and &lt;strong&gt;dictionaries&lt;/strong&gt;.&lt;/p&gt;
