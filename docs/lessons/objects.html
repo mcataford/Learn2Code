@@ -275,8 +275,78 @@
 <p><a id="instancevars"></a></p>
 <h2 id="33-instance-variables">3.3 Instance variables</h2>
 
+<p>As we saw earlier, <strong>instance variables</strong> are variables that <em>belong</em> to the object. As such, they can be described as attributes or properties. To access an instance variable, you can use the <code class="highlighter-rouge">self</code> keyword introduced earlier – this can be done in the same manner as with any other variable.</p>
+
+<p>For cleanliness, it’s preferable to only create instance variables in the constructor, but they can be accessed and modified in any <strong>method</strong> (and even, less preferably, from outside the object):</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Using the previous definition of `MyObject`</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">(</span><span class="s">"Blue"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="c">#Accessing them from the outside</span>
+<span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">colour</span><span class="p">)</span>
+
+<span class="n">obj</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="s">"Red"</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">colour</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>To use them from <strong>methods</strong>, we need to add non-constructor methods to our object definition, which we will do below.</p>
+
 <p><a id="methods"></a></p>
 <h2 id="33-methods">3.3 Methods</h2>
+
+<p><strong>Methods</strong> are functions that can be executed on our objects. They are defined <strong>within</strong> the object’s definition and allow us to implement and package functionalities within our object to combine data storage and manipulation.</p>
+
+<p>Let’s revisit our previous definition of <code class="highlighter-rouge">MyObject</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyObject</span><span class="p">():</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">colour</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="n">colour</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+</code></pre></div></div>
+
+<p>To add new methods to our object definition, we can append new <code class="highlighter-rouge">def</code> blocks that mimic the constructor:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyObject</span><span class="p">():</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">colour</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="n">colour</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+
+  <span class="k">def</span> <span class="nf">print_everything</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colour</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>To ensure that our methods have access to our instance variables, all methods have the implicit parameter <code class="highlighter-rouge">self</code> as first input parameter. This allows the inside of the method to feature accesses and mutation using the <code class="highlighter-rouge">self</code> keyword.</p>
+
+<p>In the example above, our <code class="highlighter-rouge">print_everything</code> method takes no arguments per se, only the implicit <code class="highlighter-rouge">self</code>, and uses both of our instance variables to print output to the screen.</p>
+
+<p>Much like our <strong>list methods</strong>, we can use <code class="highlighter-rouge">MyObject</code>’s methods by instantiating a variable of type <code class="highlighter-rouge">MyObject</code> then calling the method on it:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Using the previous definition of `MyObject`</span>
+
+<span class="n">obj</span> <span class="o">=</span> <span class="n">MyObject</span><span class="p">(</span><span class="s">"small"</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">obj</span><span class="o">.</span><span class="n">print_everything</span><span class="p">()</span>
+<span class="c">#Output: "'small' 5"</span>
+</code></pre></div></div>
+
+<p>The same principles apply to methods as to normal functions. As such, you can append as many input parameters as needed to your methods to inject information in your object or to mutate the object depending on outside information. As such, we could also have a method that updates the <code class="highlighter-rouge">colour</code> and <code class="highlighter-rouge">size</code> instance variables:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyObject</span><span class="p">():</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">colour</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="n">colour</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+
+  <span class="k">def</span> <span class="nf">print_everything</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">colour</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">update_everything</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">colour</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">colour</span> <span class="o">=</span> <span class="n">colour</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+</code></pre></div></div>
+
+<p>Note that this is an example of why using <code class="highlighter-rouge">self</code> is important: in the <code class="highlighter-rouge">update_everything</code> method, we have two variables named <code class="highlighter-rouge">colour</code>: one is <strong>local</strong> (i.e. created in the method, but not an instance variable), and the other is an instance variable attached to <code class="highlighter-rouge">self</code>. The former has a scope limited to the method, the second exists as long as the object it is contained in does.</p>
 
   </div>
 
