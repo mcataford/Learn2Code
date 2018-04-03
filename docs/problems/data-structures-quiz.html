@@ -156,6 +156,27 @@
   <li>
     <p>What is the <strong>average length</strong> of news headlines in our dataset? What about the <strong>median</strong>?</p>
   </li>
+  <li>
+    <p>Design a small <strong>search engine</strong> that will allow a user to search for headlines using <strong>keywords</strong>. At first, only consider <strong>single keyword searches</strong>: can you make your script find headlines containing one or more keywords specified by the user?</p>
+  </li>
+</ol>
+
+<p>The same way we used <code class="highlighter-rouge">open()</code> with the <code class="highlighter-rouge">r</code> mode to read files, we can use the <code class="highlighter-rouge">w</code> mode to create new files and save our content. For example, if we have a list of numbers <code class="highlighter-rouge">[1,2,3,4]</code>, we can write them to a file using the following snippet:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'my_file.txt'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+  <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
+    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> <span class="o">+</span> <span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Note that <code class="highlighter-rouge">write()</code> works exactly like <code class="highlighter-rouge">print()</code>.</p>
+
+<ol>
+  <li>
+    <p>Using your newfound ability to write to files, can you build a new CSV that contains one row per unique word in the original data set, each row containing columns that describe the number of occurences of the word and the proportion (between 0 and 1) of headlines in which it appears?</p>
+
+    <p><em>Hint: to write to a CSV file, you can simply adjust your <code class="highlighter-rouge">open()</code> statement and ensure that each line uses a comma (<code class="highlighter-rouge">,</code>) as separator between data.</em></p>
+  </li>
 </ol>
 
   </div>
