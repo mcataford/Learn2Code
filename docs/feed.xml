@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-04-03T14:42:47-04:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="https://mcataford.github.io/TalkPythonToMe/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mcataford.github.io/TalkPythonToMe/" rel="alternate" type="text/html" /><updated>2018-04-03T17:11:36-04:00</updated><id>https://mcataford.github.io/TalkPythonToMe/</id><title type="html">Learning Python</title><subtitle></subtitle><entry><title type="html">Objects</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html" rel="alternate" type="text/html" title="Objects" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/objects</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/objects.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
 
 &lt;p&gt;In this lesson, we learn about complex constructs through which rich functionality can be implemented: &lt;strong&gt;objects&lt;/strong&gt;. We will see how objects allow us to create data structures tailored to our specific needs.&lt;/p&gt;
 
@@ -1169,7 +1169,32 @@ Our range is [0, 2, 4, 6, 8]
 
 &lt;h3 id=&quot;be-careful-2&quot;&gt;Be careful&lt;/h3&gt;
 
-&lt;p&gt;You should always be wary of &lt;strong&gt;altering collections&lt;/strong&gt; while iterating over them. For example, a loop in which you &lt;em&gt;append&lt;/em&gt; items to a list might never end if your frame of reference is “until the end of the list”, and one in which you alter the indices might not work very well if you rely on indices to access data.&lt;/p&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Data structure basics</title><link href="https://mcataford.github.io/TalkPythonToMe/problems/data-structures-problems.html" rel="alternate" type="text/html" title="Data structure basics" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/problems/data-structures-problems</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/problems/data-structures-problems.html">&lt;h1 id=&quot;truefalse-questions&quot;&gt;True/False questions&lt;/h1&gt;
+&lt;p&gt;You should always be wary of &lt;strong&gt;altering collections&lt;/strong&gt; while iterating over them. For example, a loop in which you &lt;em&gt;append&lt;/em&gt; items to a list might never end if your frame of reference is “until the end of the list”, and one in which you alter the indices might not work very well if you rely on indices to access data.&lt;/p&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry><entry><title type="html">Data structure basics</title><link href="https://mcataford.github.io/TalkPythonToMe/problems/data-structures-quiz.html" rel="alternate" type="text/html" title="Data structure basics" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/problems/data-structures-quiz</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/problems/data-structures-quiz.html">&lt;p&gt;Last time, we played with our very first “dataset”: the English dictionary text file. This time, we will go a bit further and use a proper dataset from &lt;a href=&quot;https://www.kaggle.com&quot;&gt;Kaggle&lt;/a&gt;, a data science hub that also acts as a repository for cool aggregated data. This quiz is an exploration of what you can do using datasets and Python.&lt;/p&gt;
+
+&lt;p&gt;Before you begin, &lt;a href=&quot;https://www.kaggle.com/therohk/million-headlines&quot;&gt;grab the dataset off Kaggle&lt;/a&gt;. The file itself is pretty big, and you might need to register for a free Kaggle account to download it. The data itself is stored as a &lt;strong&gt;CSV&lt;/strong&gt; file. CSV files are just like Excel spreadsheets: columns of data are separated by &lt;em&gt;commas&lt;/em&gt; (CSV stands for “comma-separated values”) and rows are denoted by lines.&lt;/p&gt;
+
+&lt;p&gt;To simplify the task of reading our rows, we can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;csv&lt;/code&gt; module built into Python. We can amend our previous file-reading example as follows to use the &lt;code class=&quot;highlighter-rouge&quot;&gt;csv&lt;/code&gt; module:&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;csv&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'my_file.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'r'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;row&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reader&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;input_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In the scenario above, each row is split into columns, making &lt;code class=&quot;highlighter-rouge&quot;&gt;row&lt;/code&gt; a &lt;code class=&quot;highlighter-rouge&quot;&gt;list&lt;/code&gt; of &lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt; values that you can access using the indexing system discussed in class.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Before we can explore the dataset, we need to make sure that we can access it properly. Write a short script that will &lt;strong&gt;open the CSV file&lt;/strong&gt;, &lt;strong&gt;count its rows&lt;/strong&gt; and &lt;strong&gt;print the final count&lt;/strong&gt;. You can compare your answer to the actual row count, obtained by opening the CSV file with Excel.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The CSV file contains a large number of &lt;strong&gt;news headlines&lt;/strong&gt; from the past few years. Using what you learned in the previous exercises using the dictionary file, can you write a script that will count how many times each word appears in the headlines? For simplicity, you can consider that words that are differently cased (i.e. “News” v. “news”) are the same word. From your result, you should be able to print the &lt;strong&gt;ten most common words&lt;/strong&gt; and &lt;strong&gt;how many times they appear in the dataset&lt;/strong&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;What is the &lt;strong&gt;average length&lt;/strong&gt; of news headlines in our dataset? What about the &lt;strong&gt;median&lt;/strong&gt;?&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">Last time, we played with our very first “dataset”: the English dictionary text file. This time, we will go a bit further and use a proper dataset from Kaggle, a data science hub that also acts as a repository for cool aggregated data. This quiz is an exploration of what you can do using datasets and Python.</summary></entry><entry><title type="html">Data structure basics</title><link href="https://mcataford.github.io/TalkPythonToMe/problems/data-structures-problems.html" rel="alternate" type="text/html" title="Data structure basics" /><published>2018-02-14T10:05:23-05:00</published><updated>2018-02-14T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/problems/data-structures-problems</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/problems/data-structures-problems.html">&lt;h1 id=&quot;truefalse-questions&quot;&gt;True/False questions&lt;/h1&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;lists&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;tuples&lt;/code&gt; are different names for the same data structure.&lt;/li&gt;
@@ -1442,288 +1467,4 @@ Our range is [0, 2, 4, 6, 8]
 
     &lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: &lt;a href=&quot;https://github.com/mcataford/TalkPythonToMe/blob/master/docs/code/problemset2/pbset2_q4.py&quot;&gt;pbset2_q4.py&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><summary type="html">True/False questions boolean variables can have three values: True, False and Undefined. False: Boolean values are binary, True or False. The contains operator checks whether a certain element is inside a collection. False: in checks for inclusion in a collection following the format item in collection. Because they are not primitives, strings cannot be compared using == and !=. False: While strings are not primitives, they can be compared using the == and != operators. Simple statements can be combined using and and or to build more complex boolean expressions. True: Using and and or can help you combine simple statements into composite statements. A boolean expression always evaluates to a boolean value. True: This separates their operators from the other arithmetic operators. if blocks cannot be used alone; they need an accompanying else block. False: if blocks are independent and do not need else blocks. elsif blocks allow you to add “alternative conditions” to be evaluated if the ones above are False. False: elif allows this, elsif isn’t a valid keyword. The following block would only print Foo: value = 5 if value &amp;lt; 10 and value &amp;gt; 2: print(&quot;Foo&quot;) if value &amp;lt; 20: print(&quot;Bar&quot;) elif value &amp;lt; 30: print(&quot;Baz&quot;) else: print(&quot;Bat&quot;) False: if blocks are independent from each other. As such, they are all evaluated. else and elif are the dependent blocks. The function of elif and else blocks can be emulated using if blocks only, but it is much less efficient. True: Using conditions, it’s possible to emulate elif and else, but the syntax is cumbersome. User input using input() is non-blocking: the script will continue running and will not wait for the user’s input unless the value is used in a later statement. False: input() is blocking. Once reached, an input() call will cause the script to wait until an input is given. input() can produce integers, floats or strings, depending on the type parameter given to it. False: input() produces strings, which can then be converted at-will. Short answer questions Explain the role of indentation in blocks such as if/elif/else. Indentation is used to delimit what code is part of blocks, it replaces the usage of braces in other languages like C and Java. Indentation however needs to be consistent for the interpreter to recognize when a block ends. Detail one practical example of how conditional statements can be used in scripts. Conditional statements can be used to validate data and prevent crashes: if a value isn’t valid, further operation can be prevented such that no erroneous values or unpredicted behaviour takes place. What happens if a conversion function such as int() is used on a value that does not contain a number? If int() is used on a non-numerical value, a ValueError will be raised signalling that an invalid value was given to the function int(). This will stop the script’s execution. Programming questions Revisit the temperature conversion problem of the last problem set and implement input validation for each of your conversion functions. If the value given to your function is below the minimum acceptable value, you should return the lowest converted value possible, and if the value is above the maximum acceptable value, you should return the highest converted value possible. Think of what the bounds of your input should be. Solution: pbset2_q1.py Using a combination of conditional statements, write a function that converts numerical grades to letter grades. Your overall script should use user input methods to ask the user for a numerical grade to convert and should print out a sentence in which the original entered grade and the converted garde are embedded. Solution: pbset2_q2.py If your solution in 2. used composite expressions as conditions, can you rework if such that only simple expressions are used? Solution: pbset2_q3.py Recursion is the idea that a function can call itself. By modifying the parameters that are provided to the “inside” call, we can modulate how many times a certain function will run. For example, we can write the following function: def sum_numbers_between(a,b): if a == b: return a else: return a + sum_numbers_between(a+1,b) my_sum = sum_numbers_between(0, 10) print(my_sum) In this scenario, each call of the function either returns a if the range is only composed of a (i.e. if the range has a == b) or a + sum_numbers_between(a+1,b). In the second case, note that a is incremented: this ensures that it will at some point satisfy the first condition. Using the same idea as the one exposed in the snippet above, build a function that sums up all the even numbers between two values a and b where a &amp;lt;= b. Solution: pbset2_q4.py</summary></entry><entry><title type="html">Control flow</title><link href="https://mcataford.github.io/TalkPythonToMe/lessons/conditionals.html" rel="alternate" type="text/html" title="Control flow" /><published>2018-02-12T10:05:23-05:00</published><updated>2018-02-12T10:05:23-05:00</updated><id>https://mcataford.github.io/TalkPythonToMe/lessons/conditionals</id><content type="html" xml:base="https://mcataford.github.io/TalkPythonToMe/lessons/conditionals.html">&lt;h1 id=&quot;in-this-lesson&quot;&gt;In this lesson&lt;/h1&gt;
-
-&lt;p&gt;In this lesson, we discuss how &lt;strong&gt;boolean values&lt;/strong&gt; can be used as &lt;strong&gt;conditions&lt;/strong&gt;, and how structures called &lt;strong&gt;conditional statements&lt;/strong&gt; can help you add depth in your scripts’ behaviour by selectively executing statements based on parameters of your choosing.&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;#boolean-exp&quot;&gt;Boolean expressions&lt;/a&gt;
-    &lt;ol&gt;
-      &lt;li&gt;&lt;a href=&quot;#comparison-ops&quot;&gt;Comparison operators&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#composite-statements&quot;&gt;Composite statements&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#variables-exp&quot;&gt;Variables in boolean expressions&lt;/a&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#conditionals&quot;&gt;Conditional statements&lt;/a&gt;
-    &lt;ol&gt;
-      &lt;li&gt;&lt;a href=&quot;#if&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; blocks&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#elif&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt; blocks&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#else&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; blocks&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;#complete-model&quot;&gt;A complete model&lt;/a&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#concrete-example&quot;&gt;A concrete example&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#basic-input&quot;&gt;EXTRA: Basic user input&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;a name=&quot;boolean-exp&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;1-boolean-expressions&quot;&gt;1. Boolean expressions&lt;/h1&gt;
-
-&lt;p&gt;In the &lt;a href=&quot;https://mcataford.github.io/TalkPythonToMe/lessons/conditionals.html#primobj&quot;&gt;previous lesson&lt;/a&gt;, we mentioned how the &lt;code class=&quot;highlighter-rouge&quot;&gt;boolean&lt;/code&gt; datatype was used to represent values that are either true or false. By themselves, these values aren’t very useful: their true purpose is to be the result of &lt;strong&gt;boolean expressions&lt;/strong&gt; that compare values of other types together.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&quot;comparison-ops&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;11-comparison-operators&quot;&gt;1.1 Comparison operators&lt;/h2&gt;
-
-&lt;p&gt;The same way that we can use arithmetic operators on numerical values to produce other numerical values (see &lt;a href=&quot;https://mcataford.github.io/TalkPythonToMe/lessons/basics.html#ic-math&quot;&gt;Mathematical operations&lt;/a&gt;), Python includes a number of &lt;strong&gt;comparison operators&lt;/strong&gt; taken from algebraic inequations. The table below is a collection of such operators:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Operator&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Significance&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Example&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Greater than&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;2 &amp;gt; 1&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Lesser than&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1 &amp;lt; 2&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;=&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Greater or equal to&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;5 &amp;gt;= 1&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;=&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Lesser or equal to&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1 &amp;lt;= 5&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Equal to&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1 == 1&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;!=&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Not equal to&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;1 != 2&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;As an experiment, you can use the &lt;strong&gt;interactive Python console&lt;/strong&gt; and enter the statements in the &lt;em&gt;Example&lt;/em&gt; column of the last table: you should see that all of them evaluate to &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;. Similarly, you could modify those statements such that they result in &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt;. These are called &lt;strong&gt;boolean expressions&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Note that there also exist operators that do not deal with numbers. For example, &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt; can be used between two strings (i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Marc&quot; != &quot;marc&quot;&lt;/code&gt;) to compare their contents and &lt;code class=&quot;highlighter-rouge&quot;&gt;in&lt;/code&gt; can be used to verify if an element is present in a collection (i.e. &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;a&quot; in &quot;Marc&quot;&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;Finally, any expression can be &lt;strong&gt;negated&lt;/strong&gt; using &lt;code class=&quot;highlighter-rouge&quot;&gt;not&lt;/code&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;d&quot; not in &quot;Marc&quot;&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&quot;composite-statements&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;12-composite-statements&quot;&gt;1.2 Composite statements&lt;/h2&gt;
-
-&lt;p&gt;When we talked about &lt;a href=&quot;https://mcataford.github.io/TalkPythonToMe/lessons/basics.html#ic-math&quot;&gt;mathematical operations&lt;/a&gt;), we mentioned that simple 2-operand mathematical statements can be combined into bigger, richer expressions. We could take &lt;code class=&quot;highlighter-rouge&quot;&gt;1 + 1&lt;/code&gt; and combine it with &lt;code class=&quot;highlighter-rouge&quot;&gt;2 * 8&lt;/code&gt; to obtain &lt;code class=&quot;highlighter-rouge&quot;&gt;(1 + 1) + (2 * 8)&lt;/code&gt; using parentheses, for example.&lt;/p&gt;
-
-&lt;p&gt;This usage of parentheses to combine simple statements into more complex ones also applies to boolean expressions, which can be connected together using &lt;code class=&quot;highlighter-rouge&quot;&gt;and&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;or&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;As their names imply, these operators will allow you to specify whether both or either conditions involved in a combination need to be true for the whole expression to be true. Here are a few examples of &lt;code class=&quot;highlighter-rouge&quot;&gt;and&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;or&lt;/code&gt; in action:&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Statement&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Evaluates to&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;(1 &amp;gt; 2) or (2 &amp;gt; 0)&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;(1 &amp;gt; 2) an (2 &amp;gt; 0)&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;((1 &amp;gt; 0) and (2 &amp;gt; 0)) or (1 &amp;lt; 0)&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;((1 &amp;gt; 0) and (2 &amp;gt; 0)) and (1 &amp;lt; 0)&lt;/code&gt;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Of course, any of the operators we mentioned before can be used to make up the simple expressions that are combined using &lt;code class=&quot;highlighter-rouge&quot;&gt;or&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;and&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&quot;variable-exp&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;13-variables-in-boolean-expressions&quot;&gt;1.3 Variables in boolean expressions&lt;/h2&gt;
-
-&lt;p&gt;In the previous slew of examples, we used literal values to make up our expressions. This kind of expression is, evidently, not that interesting since it never changes. When we discussed &lt;a href=&quot;https://mcataford.github.io/TalkPythonToMe/lessons/basics.html&quot;&gt;variables&lt;/a&gt;, we mentioned that they were &lt;strong&gt;symbolic replacements&lt;/strong&gt; for data: this means that you can use variables anywhere in boolean expressions - your expressions can now change based on variables that you set.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;my_age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;What is your age&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;is_old&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_old&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;In the present example, if the variable &lt;code class=&quot;highlighter-rouge&quot;&gt;my_age&lt;/code&gt; is a number over 40, we will print the value &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;, otherwise we will print &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt;. If you are puzzled by &lt;code class=&quot;highlighter-rouge&quot;&gt;input()&lt;/code&gt;, take a look at the &lt;a href=&quot;https://mcataford.github.io/TalkPythonToMe/quiz/basics-quiz.html&quot;&gt;previous lesson’s quiz, where &lt;code class=&quot;highlighter-rouge&quot;&gt;input(x)&lt;/code&gt; was introduced.&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&quot;conditionals&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;2-conditional-statements&quot;&gt;2. Conditional statements&lt;/h1&gt;
-
-&lt;p&gt;Now that we have established that we can use &lt;a href=&quot;#comparison-ops&quot;&gt;certain operators&lt;/a&gt; to obtain boolean values from the data we are manipulating, we can use the outcome of these expressions to guide which statements get executed and which do not. By using boolean expressions as &lt;strong&gt;conditions&lt;/strong&gt;, we can build blocks, called &lt;strong&gt;conditional blocks&lt;/strong&gt;, that will depend on their given condition(s) to be executed.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&quot;if&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;21-if-blocks&quot;&gt;2.1 &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; blocks&lt;/h2&gt;
-
-&lt;p&gt;The simplest conditional blocks are composed of one single unit: the &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; block. &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; blocks have a singular mission: to execute the code they contain &lt;em&gt;if and only if&lt;/em&gt; the condition that defines them evaluates to &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Their general form is as follows:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#Any code here is executed before the if block.&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#Code that gets executed if 'condition' is True&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;#Any code here is executed after the if block.&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;In the event where the condition given to the &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; block is &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt;, the block is simply skipped. For example, we could selectively print a message based on a number input by the user:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Enter a number: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The number you entered was bigger than 10!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;In the previous snippet, the &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt; call is only executed &lt;em&gt;if&lt;/em&gt; the number &lt;code class=&quot;highlighter-rouge&quot;&gt;number&lt;/code&gt; satisfies the &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; block’s condition, which is &lt;code class=&quot;highlighter-rouge&quot;&gt;number &amp;gt; 10&lt;/code&gt;. Any number that doesn’t meet this criterion will cause the condition to be &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt; and the &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; block to be skipped entirely.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&quot;elif&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;22-elif-blocks&quot;&gt;2.2 &lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt; blocks&lt;/h2&gt;
-
-&lt;p&gt;Sometimes, the &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; block alone isn’t enough to describe the behaviour that we want to implement. Since &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; is skipped if its condition is &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt;, multiple &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; blocks could be used in chain to implement the behaviour “if not the first, check another condition”:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#Code that is executed if condition1 == True&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#Code that is executed if the first &quot;if&quot; failed but condition2 is True&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This form however gets cumbersome very quickly if you have a series of other conditions to check because you always need to ensure that all the previous conditions are &lt;code class=&quot;highlighter-rouge&quot;&gt;False&lt;/code&gt;; since the &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; blocks are independent from each other, a faulty set of conditions could potentially allow them both to be executed one after the other.&lt;/p&gt;
-
-&lt;p&gt;To solve this issue and to simplify the implementation of that sort of behaviour, we introduce the &lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt; statement. &lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt; is functionally the same as &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt;, but stands for “else if”. In combination with an &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt;, an &lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt; will only be executed if the &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; it’s attached to is skipped. We could rewrite the previous block of code as:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#Code that is executed if condition1 == True&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#&quot;elif&quot; implies that condition1  was False and checks condition2&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This syntax really shines when you consider cases where you have multiple &lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt; blocks:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#Code that is executed if condition1 == True&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#&quot;elif&quot; implies that condition1  was False and checks condition2&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#&quot;elif&quot; implies that condition1 and condition2 were False and checks condition3&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#&quot;elif&quot; implies that condition1, condition2 and condition3  was False and checks condition4&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If we opted to use a contraption of &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; blocks alone, we would have to ensure that previous conditions did indeed fail before checking if the new condition is &lt;code class=&quot;highlighter-rouge&quot;&gt;True&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&quot;else&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;23-else-blocks&quot;&gt;2.3 &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; blocks&lt;/h2&gt;
-
-&lt;p&gt;THe &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; blocks complements the &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt; blocks by providing a “catch-all” scenario. Whenever an &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; is present following a combination of &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt; blocks, it is executed &lt;em&gt;if and only if&lt;/em&gt; all the previous conditional blocks fail. This means that all the blocks that have conditions will be skipped and that the &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; block will be executed before the script can move on.&lt;/p&gt;
-
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; requires no condition by definition: its condition could be expressed as “none of the previous conditions were true”.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#Code executed if condition1 is true&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#Code executed if condition2 is true but condition1 is false&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#If all else fails and both conditions are false, this is executed&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;a name=&quot;complete-model&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;24-a-complete-model&quot;&gt;2.4 A complete model&lt;/h2&gt;
-
-&lt;p&gt;Combining all three conditional blocks, we can produce a general model for conditional elements. Any valid conditional structure should…&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;…be opened by an &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; block;
-  &lt;em&gt;Note: Semantically, it wouldn’t make sense to open with an &lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt; or an &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; since these both depend on a previous element being false.&lt;/em&gt;&lt;/li&gt;
-  &lt;li&gt;…feature zero or more &lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt; block, as needed;&lt;/li&gt;
-  &lt;li&gt;…feature zero or one &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; block, as needed.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The combination of blocks that will make up your conditional statements will depend on the behaviour you are trying to implement. As such, not all blocks are relevant to all conditional statements: sometimes, a simple &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; is enough, but in other cases, several &lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt; blocks are needed to get it right.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-  Mandatory block for any conditional statement.
-  &quot;&quot;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;condition2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-  Optional block, can be present in multiples, as needed.
-  &quot;&quot;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-  Optional block, can only be present once in a statement.
-  &quot;&quot;&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;a name=&quot;concrete-example&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;3-a-concrete-example&quot;&gt;3. A concrete example&lt;/h1&gt;
-
-&lt;p&gt;In the &lt;a href=&quot;https://mcataford.github.io/TalkPythonToMe/problems/basics-problems.html&quot;&gt;previous lesson’s problem set&lt;/a&gt;, we introduced a temperature conversion problem. If you experimented with different input values for your conversion process, you probably noticed that not all values are valid.&lt;/p&gt;
-
-&lt;p&gt;For example, the absolute zero for Celsius degrees is -273.15C, which means that any value below that shouldn’t be converted and should be flagged as invalid. With conditional statements, input given to the conversion function (or collected from the user via &lt;code class=&quot;highlighter-rouge&quot;&gt;input()&lt;/code&gt;) can be &lt;em&gt;validated&lt;/em&gt; such that only values within a valid range are considered.&lt;/p&gt;
-
-&lt;p&gt;We could then add a conditional statement such as this one to ensure the validity of conversion results:&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;temperature&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;273.15&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#Return the minimal Fahrenheit value, or an error code.&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;#Compute the conversion as usual&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;a name=&quot;user-input&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;4-extra-basic-user-input&quot;&gt;4. EXTRA: Basic user input&lt;/h1&gt;
-
-&lt;p&gt;The topic of user input was briefly discussed in the last &lt;a href=&quot;https://mcataford.github.io/TalkPythonToMe/problems/basics-problems.html&quot;&gt;problem set&lt;/a&gt; and left to experimentation. In Python, user input can be gathered using the &lt;code class=&quot;highlighter-rouge&quot;&gt;input(x)&lt;/code&gt; function, which takes in a parameter, &lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;, that is printed as a prompt before the user gets to type in something and returns the user’s input.&lt;/p&gt;
-
-&lt;p&gt;This kind of user input is called &lt;strong&gt;blocking&lt;/strong&gt; because the script will stop and wait after printing the prompt (&lt;code class=&quot;highlighter-rouge&quot;&gt;x&lt;/code&gt;), only to resume when the user presses the return key.&lt;/p&gt;
-
-&lt;p&gt;Because it is hard to predict exactly what he user will enter, user input is always considered to be a &lt;strong&gt;string&lt;/strong&gt;, this means that depending on what you are capturing, you might have to use the &lt;a href=&quot;https://mcataford.github.io/TalkPythonToMe/lessons/basics.html#operations-data-types&quot;&gt;conversion functions&lt;/a&gt; we have discussed earlier to adjust the datatype of the user’s input to your needs.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;user_input&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Enter a number: &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
-Here, we convert our string to an integer to be able to 
-compare it to other numbers.
-&quot;&quot;&quot;&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;user_input_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;user_input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user_input_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The number you entered was negative!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;user_input_num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The number was positive!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;You entered 0.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Later, we will cover the scenario where we expect the user to enter a number and a non-numerical value is entered. This will be covered by &lt;strong&gt;exception-handling&lt;/strong&gt;. For now, we can simply assume that the user always answers our queries with the appropriate data.&lt;/p&gt;</content><author><name></name></author><summary type="html">In this lesson</summary></entry></feed>
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">True/False questions boolean variables can have three values: True, False and Undefined. False: Boolean values are binary, True or False. The contains operator checks whether a certain element is inside a collection. False: in checks for inclusion in a collection following the format item in collection. Because they are not primitives, strings cannot be compared using == and !=. False: While strings are not primitives, they can be compared using the == and != operators. Simple statements can be combined using and and or to build more complex boolean expressions. True: Using and and or can help you combine simple statements into composite statements. A boolean expression always evaluates to a boolean value. True: This separates their operators from the other arithmetic operators. if blocks cannot be used alone; they need an accompanying else block. False: if blocks are independent and do not need else blocks. elsif blocks allow you to add “alternative conditions” to be evaluated if the ones above are False. False: elif allows this, elsif isn’t a valid keyword. The following block would only print Foo: value = 5 if value &amp;lt; 10 and value &amp;gt; 2: print(&quot;Foo&quot;) if value &amp;lt; 20: print(&quot;Bar&quot;) elif value &amp;lt; 30: print(&quot;Baz&quot;) else: print(&quot;Bat&quot;) False: if blocks are independent from each other. As such, they are all evaluated. else and elif are the dependent blocks. The function of elif and else blocks can be emulated using if blocks only, but it is much less efficient. True: Using conditions, it’s possible to emulate elif and else, but the syntax is cumbersome. User input using input() is non-blocking: the script will continue running and will not wait for the user’s input unless the value is used in a later statement. False: input() is blocking. Once reached, an input() call will cause the script to wait until an input is given. input() can produce integers, floats or strings, depending on the type parameter given to it. False: input() produces strings, which can then be converted at-will. Short answer questions Explain the role of indentation in blocks such as if/elif/else. Indentation is used to delimit what code is part of blocks, it replaces the usage of braces in other languages like C and Java. Indentation however needs to be consistent for the interpreter to recognize when a block ends. Detail one practical example of how conditional statements can be used in scripts. Conditional statements can be used to validate data and prevent crashes: if a value isn’t valid, further operation can be prevented such that no erroneous values or unpredicted behaviour takes place. What happens if a conversion function such as int() is used on a value that does not contain a number? If int() is used on a non-numerical value, a ValueError will be raised signalling that an invalid value was given to the function int(). This will stop the script’s execution. Programming questions Revisit the temperature conversion problem of the last problem set and implement input validation for each of your conversion functions. If the value given to your function is below the minimum acceptable value, you should return the lowest converted value possible, and if the value is above the maximum acceptable value, you should return the highest converted value possible. Think of what the bounds of your input should be. Solution: pbset2_q1.py Using a combination of conditional statements, write a function that converts numerical grades to letter grades. Your overall script should use user input methods to ask the user for a numerical grade to convert and should print out a sentence in which the original entered grade and the converted garde are embedded. Solution: pbset2_q2.py If your solution in 2. used composite expressions as conditions, can you rework if such that only simple expressions are used? Solution: pbset2_q3.py Recursion is the idea that a function can call itself. By modifying the parameters that are provided to the “inside” call, we can modulate how many times a certain function will run. For example, we can write the following function: def sum_numbers_between(a,b): if a == b: return a else: return a + sum_numbers_between(a+1,b) my_sum = sum_numbers_between(0, 10) print(my_sum) In this scenario, each call of the function either returns a if the range is only composed of a (i.e. if the range has a == b) or a + sum_numbers_between(a+1,b). In the second case, note that a is incremented: this ensures that it will at some point satisfy the first condition. Using the same idea as the one exposed in the snippet above, build a function that sums up all the even numbers between two values a and b where a &amp;lt;= b. Solution: pbset2_q4.py</summary></entry></feed>
